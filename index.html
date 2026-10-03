@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>After. For after a loss</title>
+<meta name="description" content="After is a quiet place for people who have lost someone, or whose life changed when something ended. Only real people. Free. Private by default. Coming to the UK first, then France.">
+<meta property="og:title" content="After.">
+<meta property="og:description" content="Someone died, or something ended. A quiet place to be with it, with people who have been there too.">
+<meta property="og:image" content="https://wetalkafter.com/og.png">
+<meta property="og:url" content="https://wetalkafter.com/">
+<meta name="theme-color" content="#ECE7DF">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap">
+<style>
+  :root {
+    --cream: #ECE7DF; --paper: #F6F3EE; --line: #DDD6CB;
+    --forest: #2F4436; --brown: #875A47; --ink: #2A2B28; --muted: #5F5B55;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", -apple-system, system-ui, "Helvetica Neue", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh; min-height: 100svh;
+    background: var(--cream); color: var(--ink);
+    font: 400 17px/1.6 var(--sans);
+    display: flex; flex-direction: column;
+    padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
+  }
+  main {
+    flex: 1; width: 100%; max-width: 620px; margin: 0 auto;
+    display: flex; flex-direction: column; justify-content: center; gap: 28px;
+    padding: 48px 0;
+  }
+  .mark { width: 112px; height: 112px; margin-left: -14px; }
+  h1 {
+    margin: 0; font: 300 clamp(40px, 9vw, 68px)/1.04 var(--serif);
+    letter-spacing: -0.015em; color: var(--forest); text-wrap: balance;
+  }
+  h1 em { font-style: italic; color: var(--brown); }
+  .lede { margin: 0; font-size: 19px; max-width: 34em; }
+  .rule { width: 32px; height: 1.5px; background: var(--brown); border: 0; margin: 4px 0; }
+  .facts {
+    margin: 0; padding: 0; list-style: none;
+    font: 500 12px/2 var(--sans); letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted);
+  }
+  .promise {
+    margin: 0; padding: 22px 24px; background: var(--paper); border-radius: 16px;
+    font: 400 19px/1.45 var(--serif); color: var(--ink);
+  }
+  .soon { margin: 0; font-size: 16px; color: var(--muted); }
+  a { color: var(--forest); text-underline-offset: 3px; }
+  a:hover { color: var(--brown); }
+  a:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; border-radius: 2px; }
+  footer {
+    width: 100%; max-width: 620px; margin: 0 auto; padding-top: 22px;
+    border-top: 1px solid var(--line); font-size: 14px; color: var(--muted);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  footer strong { color: var(--ink); font-weight: 500; }
+  .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+</style>
+</head>
+<body>
+<main>
+  <img class="mark" src="mark.svg" alt="After">
+  <h1>Someone died, or <em>something ended.</em></h1>
+  <p class="lede">After is a quiet place to be with it. Talk one to one, join a small group for a little while, and keep what you don't want to lose. With people who have been there too.</p>
+  <hr class="rule">
+  <ul class="facts">
+    <li>Only real people</li>
+    <li>Free</li>
+    <li>Private by default</li>
+  </ul>
+  <p class="promise">No AI talks to you, reads your chats, or learns from what you share. Every conversation here is between real people. Like many small teams, we used AI tools to help design and build the app itself.</p>
+  <p class="soon">Coming to iPhone and Android, in the UK first, then France.</p>
+</main>
+<footer>
+  <span><strong>If it's too much right now:</strong> UK, Samaritans <span class="num">116 123</span> · France <span class="num">3114</span> · free, any time. If a life is in danger, call <span class="num">999</span> (UK) or <span class="num">112</span> (France).</span>
+  <span>© 2026 After</span>
+</footer>
+</body>
+</html>

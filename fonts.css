@@ -1,0 +1,7 @@
+/* After's fonts, served from this site (no Google Fonts, so nobody else
+   sees who visits). Newsreader and DM Sans, SIL Open Font License (fonts/OFL-*.txt). */
+@font-face { font-family: "Newsreader"; src: url("fonts/Newsreader-Regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Newsreader"; src: url("fonts/Newsreader-Italic.woff") format("woff"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Newsreader"; src: url("fonts/Newsreader-DisplayLight.woff") format("woff"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("fonts/DMSans-Regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("fonts/DMSans-Medium.woff") format("woff"); font-weight: 500; font-style: normal; font-display: swap; }

@@ -78,7 +78,7 @@
 
   if (!/^[0-9a-f]{64}$/.test(token)) { gone(); return; }
 
-  fetch(FUNCTION_URL + '?t=' + token, { cache: 'no-store' })
+  fetch(FUNCTION_URL, { method: 'POST', cache: 'no-store', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ t: token }) })
     .then(function (r) { if (!r.ok) throw new Error('gone'); return r.json(); })
     .then(function (m) {
       $('loading').hidden = true;

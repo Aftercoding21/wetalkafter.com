@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>After. For after a loss</title>
-<meta name="description" content="After is a quiet place for people who have lost someone, or whose life changed when something ended. Only real people. Free. Private by default. Coming to the UK first, then France.">
+<title>After. We talk after.</title>
+<meta name="description" content="After is a quiet place for people who have lost someone, or whose life changed when something ended. Small live groups, one-to-one talks and a private space for memories. Only real people. Free. Coming to the UK first, then France.">
 <meta property="og:title" content="After.">
 <meta property="og:description" content="Someone died, or something ended. A quiet place to be with it, with people who have been there too.">
 <meta property="og:image" content="https://wetalkafter.com/og.png">
@@ -16,70 +16,279 @@
 <style>
   :root {
     --cream: #ECE7DF; --paper: #F6F3EE; --line: #DDD6CB;
-    --forest: #2F4436; --brown: #875A47; --ink: #2A2B28; --muted: #5F5B55;
+    --forest: #2F4436; --brown: #875A47; --clay: #8A4F3A; --peach: #E9C3A6; --sage: #D8DDD5;
+    --ink: #2A2B28; --muted: #5F5B55; --error: #8A3B2E;
     --serif: "Newsreader", Georgia, "Times New Roman", serif;
     --sans: "DM Sans", -apple-system, system-ui, "Helvetica Neue", sans-serif;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   html, body { margin: 0; }
-  body {
-    min-height: 100vh; min-height: 100svh;
-    background: var(--cream); color: var(--ink);
-    font: 400 17px/1.6 var(--sans);
-    display: flex; flex-direction: column;
-    padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
-  }
-  main {
-    flex: 1; width: 100%; max-width: 620px; margin: 0 auto;
-    display: flex; flex-direction: column; justify-content: center; gap: 28px;
-    padding: 48px 0;
-  }
-  .mark { width: 112px; height: 112px; margin-left: -14px; }
-  h1 {
-    margin: 0; font: 300 clamp(40px, 9vw, 68px)/1.04 var(--serif);
-    letter-spacing: -0.015em; color: var(--forest); text-wrap: balance;
-  }
-  h1 em { font-style: italic; color: var(--brown); }
-  .lede { margin: 0; font-size: 19px; max-width: 34em; }
-  .rule { width: 32px; height: 1.5px; background: var(--brown); border: 0; margin: 4px 0; }
-  .facts {
-    margin: 0; padding: 0; list-style: none;
-    font: 500 12px/2 var(--sans); letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted);
-  }
-  .promise {
-    margin: 0; padding: 22px 24px; background: var(--paper); border-radius: 16px;
-    font: 400 19px/1.45 var(--serif); color: var(--ink);
-  }
-  .soon { margin: 0; font-size: 16px; color: var(--muted); }
+  body { background: var(--cream); color: var(--ink); font: 400 17px/1.6 var(--sans); }
+  .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .narrow > * { max-width: 680px; }
+  section { padding: 72px 0; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--forest); margin: 0; }
+  h2 { font-size: clamp(32px, 5vw, 44px); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 14px; }
+  h3 { font-size: 26px; line-height: 1.2; margin: 6px 0 10px; }
+  p { margin: 0 0 14px; }
   a { color: var(--forest); text-underline-offset: 3px; }
   a:hover { color: var(--brown); }
-  a:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; border-radius: 2px; }
-  footer {
-    width: 100%; max-width: 620px; margin: 0 auto; padding-top: 22px;
-    border-top: 1px solid var(--line); font-size: 14px; color: var(--muted);
-    display: flex; flex-direction: column; gap: 6px;
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--clay); outline-offset: 3px; border-radius: 4px;
   }
+  .label { font: 500 12px/1.8 var(--sans); letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  .rule { width: 32px; height: 1.5px; background: var(--brown); border: 0; margin: 4px 0 18px; }
+
+  /* Top */
+  header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
+  header.top .wrap { display: flex; align-items: center; justify-content: flex-end; gap: 16px; min-height: 44px; }
+  header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
+  header.top nav { display: flex; gap: 22px; font-size: 15px; }
+  header.top nav a { text-decoration: none; color: var(--muted); }
+  header.top nav a:hover { color: var(--forest); }
+  header.top nav .join { color: var(--forest); font-weight: 500; text-decoration: underline; }
+  @media (max-width: 720px) { header.top nav a:not(.join) { display: none; } }
+
+  /* Hero */
+  .hero { padding: 40px 0 84px; }
+  .hero .mark { width: 112px; height: 112px; margin: 0 0 28px -14px; display: block; }
+  .hero h1 { font: 300 clamp(44px, 9vw, 84px)/1.03 var(--serif); letter-spacing: -0.02em; max-width: 12ch; text-wrap: balance; margin-bottom: 26px; }
+  .hero h1 em { font-style: italic; color: var(--brown); }
+  .lede { font-size: 20px; max-width: 34em; margin-bottom: 30px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+  .button {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px;
+    border-radius: 10px; font: 600 16px var(--sans); text-decoration: none; border: 1.5px solid var(--forest);
+  }
+  .button.primary { background: var(--forest); color: #fff; }
+  .button.primary:hover { background: #3F5246; color: #fff; }
+  .button.outline { color: var(--forest); }
+  .facts { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 28px; }
+
+  /* Three parts */
+  .parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+  @media (max-width: 860px) { .parts { grid-template-columns: 1fr; } }
+  .card { background: var(--paper); border-radius: 16px; padding: 26px 26px 18px; }
+  .card p:last-child { color: var(--muted); font-size: 15px; }
+
+  /* Promise */
+  .promise { background: var(--forest); color: var(--cream); }
+  .promise h2 { color: var(--cream); }
+  .promise .label { color: var(--peach); }
+  .promise .rule { background: var(--peach); }
+  .promise .big { font: 400 clamp(22px, 3vw, 27px)/1.45 var(--serif); max-width: 32em; margin-bottom: 30px; }
+  .promise ul { list-style: none; padding: 0; margin: 0 0 22px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 32px; max-width: 860px; }
+  @media (max-width: 720px) { .promise ul { grid-template-columns: 1fr; } }
+  .promise li { color: var(--sage); padding-left: 18px; position: relative; }
+  .promise li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 6px; border-radius: 3px; background: var(--peach); }
+  .promise li strong { color: #fff; font-weight: 500; }
+  .promise .small { color: var(--sage); font-size: 15px; max-width: 40em; }
+
+  /* Price */
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 30px 0 22px; }
+  @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+  .plan { border-radius: 16px; padding: 26px; background: var(--paper); }
+  .plan.plus { background: transparent; border: 1.5px solid var(--line); }
+  .plan .price { font: 400 34px/1.1 var(--serif); color: var(--forest); margin: 4px 0 4px; }
+  .plan .price small { font: 400 16px var(--sans); color: var(--muted); }
+  .plan ul { margin: 16px 0 0; padding-left: 1.1em; }
+  .plan li { margin-bottom: 7px; }
+  .rules { max-width: 46em; color: var(--muted); font-size: 15px; }
+
+  /* FAQ */
+  details { border-top: 1px solid var(--line); padding: 4px 0; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; padding: 16px 32px 16px 0; font: 500 18px/1.4 var(--sans); position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 4px; top: 12px; font: 300 26px var(--sans); color: var(--brown); }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--ink); max-width: 40em; }
+
+  /* Join */
+  .join-box { background: var(--paper); border-radius: 16px; padding: 34px 30px; }
+  form { display: grid; gap: 14px; margin-top: 22px; max-width: 520px; }
+  label.field { display: grid; gap: 6px; font: 500 14px var(--sans); }
+  input[type=email], select {
+    min-height: 52px; border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: 0 14px;
+    font: 400 17px var(--sans); color: var(--ink); width: 100%;
+  }
+  .check { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; }
+  .check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--forest); flex: none; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  button.button { cursor: pointer; justify-self: start; }
+  button.button[disabled] { opacity: 0.6; cursor: default; }
+  .status { min-height: 1.5em; margin: 0; font-size: 15px; }
+  .status.error { color: var(--error); }
+  .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 max(28px, env(safe-area-inset-bottom)); font-size: 14px; color: var(--muted); }
+  footer p { margin: 0 0 8px; }
   footer strong { color: var(--ink); font-weight: 500; }
   .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 </style>
 </head>
 <body>
+
+<header class="top">
+  <div class="wrap">
+    <nav aria-label="On this page">
+      <a href="#how">How it works</a>
+      <a href="#promise">Our promise</a>
+      <a href="#price">Price</a>
+      <a href="#questions">Questions</a>
+      <a class="join" href="#join">Tell me when it opens</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-  <img class="mark" src="mark.svg" alt="After">
-  <h1>Someone died, or <em>something ended.</em></h1>
-  <p class="lede">After is a quiet place to be with it. Talk one to one, join a small group for a little while, and keep what you don't want to lose. With people who have been there too.</p>
-  <hr class="rule">
-  <ul class="facts">
-    <li>Only real people</li>
-    <li>Free</li>
-    <li>Private by default</li>
-  </ul>
-  <p class="promise">No AI talks to you, reads your chats, or learns from what you share. Every conversation here is between real people. Like many small teams, we used AI tools to help design and build the app itself.</p>
-  <p class="soon">Coming to iPhone and Android, in the UK first, then France.</p>
+  <section class="hero">
+    <div class="wrap">
+      <img class="mark" src="mark.svg" alt="After">
+      <h1>Someone died, or <em>something ended.</em></h1>
+      <p class="lede">After is a quiet place to be with it. Meet in a small group for a little while, talk one to one with people you’ve met, and keep what you don’t want to lose. With people who have been there too.</p>
+      <div class="buttons">
+        <a class="button primary" href="#join">Tell me when it opens</a>
+        <a class="button outline" href="#how">How it works</a>
+      </div>
+      <ul class="facts">
+        <li class="label">Only real people</li>
+        <li class="label">Free</li>
+        <li class="label">Private by default</li>
+        <li class="label">UK first, then France</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <p class="label">How it works</p>
+      <hr class="rule">
+      <h2>Three ways to be with it</h2>
+      <p class="lede" style="margin-bottom:0">Everyone in After has been through a loss. They listen as people who understand, not as counsellors.</p>
+      <div class="parts">
+        <article class="card">
+          <p class="label">Groups</p>
+          <h3>Small, live, for a little while</h3>
+          <p>Up to six people who lost someone in a similar way, together for two hours. Say as much or as little as you like, and leave quietly at any time.</p>
+          <p>Messages disappear 15 minutes after the meeting ends.</p>
+        </article>
+        <article class="card">
+          <p class="label">Talk</p>
+          <h3>One person, when you need it</h3>
+          <p>After a group, say who you’d talk with again. When they say yes too, you can message each other. On a hard night, ask “Can somebody talk now?”, and someone who’s around and has been through a similar loss can answer.</p>
+          <p>Nobody can message you unless you’ve both said yes.</p>
+        </article>
+        <article class="card">
+          <p class="label">Remember</p>
+          <h3>A private space for each person</h3>
+          <p>Keep what you don’t want to lose: writing, photos, their voice in an old voicemail, a letter, a recipe. Gentle prompts help when you don’t know where to start.</p>
+          <p>Only you can see it, unless you choose to share one memory.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="promise" id="promise">
+    <div class="wrap">
+      <p class="label">Our promise</p>
+      <hr class="rule">
+      <h2>No AI in your conversations.</h2>
+      <p class="big">No AI talks to you, reads your chats, or learns from what you share. Every conversation here is between real people.</p>
+      <ul>
+        <li><strong>Private by default.</strong> Just a username. No profile photos. Your email and number are never shown.</li>
+        <li><strong>We read only what’s reported</strong> or flagged by someone worried about you. Nothing else.</li>
+        <li><strong>Help on every screen.</strong> The crisis lines for your country, one tap away, day and night.</li>
+        <li><strong>Leave whenever you like.</strong> Delete your account in the app, and everything that’s yours goes with it.</li>
+      </ul>
+      <p class="small">Like many small teams, we used AI tools to help design and build the app itself. That never involves anything you share.</p>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="wrap">
+      <p class="label">Price</p>
+      <hr class="rule">
+      <h2>Free, and what may cost later</h2>
+      <p class="lede" style="margin-bottom:0">Crisis help, groups, Talk and writing are free, always. After+ adds more space for photos, voice notes and videos.</p>
+      <div class="plans">
+        <div class="plan">
+          <p class="label">Free, always</p>
+          <p class="price">€0</p>
+          <ul>
+            <li>Groups, Talk and Help</li>
+            <li>Unlimited writing in Remember</li>
+            <li>500 MB for photos, voice notes, videos and files (about 800 photos, or 8 hours of voice notes)</li>
+            <li>Videos up to 1 minute each</li>
+          </ul>
+        </div>
+        <div class="plan plus">
+          <p class="label">After+, later and optional</p>
+          <p class="price">€2.99 <small>a month, or €24 a year</small></p>
+          <ul>
+            <li>Everything that’s free</li>
+            <li>50 GB for photos, voice notes, videos and files</li>
+            <li>Longer videos</li>
+          </ul>
+        </div>
+      </div>
+      <p class="rules">If you ever stop paying, nothing is locked or deleted. You keep every memory and can still open, share and save them; you just can’t add more files beyond the free space. No ads, ever, and we never sell your information.</p>
+    </div>
+  </section>
+
+  <section id="questions">
+    <div class="wrap narrow">
+      <p class="label">Questions</p>
+      <hr class="rule">
+      <h2>Before you come in</h2>
+      <details>
+        <summary>Is After counselling, or a crisis service?</summary>
+        <p>No. After is support from people who have been through a loss too. They listen as people who understand, not as professionals. If you’re in danger, call 999 in the UK or 112 in France. Samaritans (116 123) and 3114 are there any time, and Help in the app shows them on every screen.</p>
+      </details>
+      <details>
+        <summary>What kind of loss is it for?</summary>
+        <p>Any loss that changed your life: a parent, a partner, a child, a brother or sister, a friend, a pet, or something that ended, like a marriage. You find groups by loss, so you’re with people in a similar place.</p>
+      </details>
+      <details>
+        <summary>Who can join?</summary>
+        <p>Anyone aged 18 or over. You choose a username; nobody sees your real name, email or number.</p>
+      </details>
+      <details>
+        <summary>When and where does it open?</summary>
+        <p>In the UK first, then France, on iPhone and Android. Leave your email below and we’ll tell you once, when it opens where you live.</p>
+      </details>
+      <details>
+        <summary>Who can read what I write?</summary>
+        <p>The people you’re talking with, and nobody else. Group messages disappear 15 minutes after each meeting. Your memories are only yours unless you share one. A person on our team reads a conversation only if someone reports it or is worried about someone in it.</p>
+      </details>
+      <details>
+        <summary>Is it really free?</summary>
+        <p>Yes. Groups, Talk, Help and writing are free, always. One day there may be an optional After+ for extra storage space for photos and recordings. If there is, nothing you already have will ever be locked.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap narrow">
+      <div class="join-box">
+        <p class="label">Tell me when it opens</p>
+        <hr class="rule">
+        <h2>We talk after.</h2>
+        <p>After opens soon, in the UK first, then France. </p>
+        <p class="soon">The list opens in a few days. Come back soon to leave your email, and we’ll write once when After opens where you live.</p>
+      </div>
+    </div>
+  </section>
 </main>
+
 <footer>
-  <span><strong>If it's too much right now:</strong> UK, Samaritans <span class="num">116 123</span> · France <span class="num">3114</span> · free, any time. If a life is in danger, call <span class="num">999</span> (UK) or <span class="num">112</span> (France).</span>
-  <span>© 2026 After</span>
+  <div class="wrap">
+    <p><strong>If it’s too much right now:</strong> UK, Samaritans <span class="num">116 123</span> · France <span class="num">3114</span> · free, any time. If a life is in danger, call <span class="num">999</span> (UK) or <span class="num">112</span> (France).</p>
+    <p><strong>After.</strong> We talk after. · wetalkafter.com · © 2026</p>
+  </div>
 </footer>
+
+
 </body>
 </html>

@@ -27,8 +27,17 @@
       sitekey: '0x4AAAAAAFQoLMx0Y7IBp_Zd',
       language: p.get('lang') || 'auto',
       theme: 'light',
-      callback: function (t) { send({ token: t }); },
-      'error-callback': function () { send({ error: true }); },
+      callback: function (t) {
+        // Opened by the app in a Safari sheet: hand the token back through the
+        // app's own link. Only After's own app links are accepted.
+        var back = p.get('return');
+        if (back && /^(after|exp|exps):\/\//.test(back)) {
+          location.href = back + (back.indexOf('?') < 0 ? '?' : '&') + 'token=' + encodeURIComponent(t);
+        } else {
+          send({ token: t });
+        }
+      },
+      'error-callback': function () { var b = p.get('return'); if (b && /^(after|exp|exps):\/\//.test(b)) location.href = b + (b.indexOf('?') < 0 ? '?' : '&') + 'error=1'; else send({ error: true }); },
       'expired-callback': function () { send({ error: true }); },
       'timeout-callback': function () { send({ error: true }); }
     });

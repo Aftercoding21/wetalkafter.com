@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Safety · After</title>
+<meta name="description" content="How After keeps its community safe: only real people, no AI in your conversations, a wall against bots, real moderators, and help one tap away.">
+<meta property="og:title" content="Safety · After">
+<meta property="og:description" content="Someone died, or something ended. A quiet place to be with it, with people who have been there too.">
+<meta property="og:image" content="https://wetalkafter.com/og.png">
+<meta property="og:url" content="https://wetalkafter.com/safety">
+<meta name="theme-color" content="#ECE7DF">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts.css">
+<style>
+  :root {
+    --cream: #ECE7DF; --paper: #F6F3EE; --line: #DDD6CB;
+    --forest: #2F4436; --brown: #875A47; --clay: #8A4F3A; --peach: #E9C3A6; --sage: #D8DDD5;
+    --ink: #2A2B28; --muted: #5F5B55; --error: #8A3B2E;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", -apple-system, system-ui, "Helvetica Neue", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; }
+  body { background: var(--cream); color: var(--ink); font: 400 17px/1.6 var(--sans); }
+  .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .narrow > * { max-width: 680px; }
+  section { padding: 72px 0; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--forest); margin: 0; }
+  h2 { font-size: clamp(32px, 5vw, 44px); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 14px; }
+  h3 { font-size: 26px; line-height: 1.2; margin: 6px 0 10px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--forest); text-underline-offset: 3px; }
+  a:hover { color: var(--brown); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--clay); outline-offset: 3px; border-radius: 4px;
+  }
+  .label { font: 500 12px/1.8 var(--sans); letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  .rule { width: 32px; height: 1.5px; background: var(--brown); border: 0; margin: 4px 0 18px; }
+
+  /* Top */
+  header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
+  header.top .wrap { display: flex; align-items: center; justify-content: flex-end; gap: 16px; min-height: 44px; }
+  header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
+  header.top nav { display: flex; gap: 22px; font-size: 15px; }
+  header.top nav a { text-decoration: none; color: var(--muted); }
+  header.top nav a:hover { color: var(--forest); }
+  header.top nav .join { color: var(--forest); font-weight: 500; text-decoration: underline; }
+  @media (max-width: 720px) { header.top nav a:not(.join) { display: none; } }
+
+  /* Hero */
+  .hero { padding: 40px 0 84px; }
+  .hero .mark { width: 112px; height: 112px; margin: 0 0 28px -14px; display: block; }
+  .hero h1 { font: 300 clamp(44px, 9vw, 84px)/1.03 var(--serif); letter-spacing: -0.02em; max-width: 12ch; text-wrap: balance; margin-bottom: 26px; }
+  .hero h1 em { font-style: italic; color: var(--brown); }
+  .lede { font-size: 20px; max-width: 34em; margin-bottom: 30px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+  .button {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px;
+    border-radius: 10px; font: 600 16px var(--sans); text-decoration: none; border: 1.5px solid var(--forest);
+  }
+  .button.primary { background: var(--forest); color: #fff; }
+  .button.primary:hover { background: #3F5246; color: #fff; }
+  .button.outline { color: var(--forest); }
+  .facts { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 28px; }
+
+  /* Three parts */
+  .parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+  @media (max-width: 860px) { .parts { grid-template-columns: 1fr; } }
+  .card { background: var(--paper); border-radius: 16px; padding: 26px 26px 18px; }
+  .card p:last-child { color: var(--muted); font-size: 15px; }
+
+  /* Promise */
+  .promise { background: var(--forest); color: var(--cream); }
+  .promise h2 { color: var(--cream); }
+  .promise .label { color: var(--peach); }
+  .promise .rule { background: var(--peach); }
+  .promise .big { font: 400 clamp(22px, 3vw, 27px)/1.45 var(--serif); max-width: 32em; margin-bottom: 30px; }
+  .promise ul { list-style: none; padding: 0; margin: 0 0 22px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 32px; max-width: 860px; }
+  @media (max-width: 720px) { .promise ul { grid-template-columns: 1fr; } }
+  .promise li { color: var(--sage); padding-left: 18px; position: relative; }
+  .promise li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 6px; border-radius: 3px; background: var(--peach); }
+  .promise li strong { color: #fff; font-weight: 500; }
+  .promise .small { color: var(--sage); font-size: 15px; max-width: 40em; }
+
+  /* Price */
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 30px 0 22px; }
+  @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+  .plan { border-radius: 16px; padding: 26px; background: var(--paper); }
+  .plan.plus { background: transparent; border: 1.5px solid var(--line); }
+  .plan .price { font: 400 34px/1.1 var(--serif); color: var(--forest); margin: 4px 0 4px; }
+  .plan .price small { font: 400 16px var(--sans); color: var(--muted); }
+  .plan ul { margin: 16px 0 0; padding-left: 1.1em; }
+  .plan li { margin-bottom: 7px; }
+  .rules { max-width: 46em; color: var(--muted); font-size: 15px; }
+
+  /* FAQ */
+  details { border-top: 1px solid var(--line); padding: 4px 0; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; padding: 16px 32px 16px 0; font: 500 18px/1.4 var(--sans); position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 4px; top: 12px; font: 300 26px var(--sans); color: var(--brown); }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--ink); max-width: 40em; }
+
+  /* Join */
+  .join-box { background: var(--paper); border-radius: 16px; padding: 34px 30px; }
+  form { display: grid; gap: 14px; margin-top: 22px; max-width: 520px; }
+  label.field { display: grid; gap: 6px; font: 500 14px var(--sans); }
+  input[type=email], select {
+    min-height: 52px; border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: 0 14px;
+    font: 400 17px var(--sans); color: var(--ink); width: 100%;
+  }
+  .check { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; }
+  .check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--forest); flex: none; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  button.button { cursor: pointer; justify-self: start; }
+  button.button[disabled] { opacity: 0.6; cursor: default; }
+  .status { min-height: 1.5em; margin: 0; font-size: 15px; }
+  .status.error { color: var(--error); }
+  .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 max(28px, env(safe-area-inset-bottom)); font-size: 14px; color: var(--muted); }
+  footer p { margin: 0 0 8px; }
+  footer strong { color: var(--ink); font-weight: 500; }
+  .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+</style><style>
+  .page h1 { font: 300 clamp(40px, 8vw, 68px)/1.05 var(--serif); letter-spacing: -0.02em; margin: 0 0 22px; max-width: 14ch; }
+  .page .lede { font-size: 19px; max-width: 36em; }
+  .blocks { display: grid; gap: 18px; margin-top: 34px; }
+  .block { background: var(--paper); border-radius: 16px; padding: 26px 26px 14px; }
+  .block h2 { font-size: 26px; line-height: 1.2; margin-bottom: 10px; }
+  .block ul { margin: 0 0 14px; padding-left: 20px; }
+  .block li { margin-bottom: 6px; }
+  .home { text-decoration: none; color: var(--forest); font-weight: 500; margin-right: auto; }
+  .help-box { border: 1.5px solid var(--forest); border-radius: 16px; padding: 22px 26px 10px; margin-top: 18px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="home" href="/">← After</a>
+    <nav aria-label="Pages">
+      <a class="join" href="/#join">Tell me when it opens</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <section>
+    <div class="wrap narrow">
+      <p class="label">Safety</p>
+      <hr class="rule">
+      <h1>A safe place to come as you are.</h1>
+      <p class="lede">People come to After at some of the hardest moments of their lives. So safety isn’t an extra here: it’s built into everything, quietly, so you can simply be with people who understand.</p>
+
+      <div class="blocks">
+        <article class="block">
+          <h2>Only real people</h2>
+          <ul>
+            <li>Every account is confirmed with a mobile number. One person, one account.</li>
+            <li>Someone who is banned can’t come back with the same number or email.</li>
+            <li>After is for adults: you must be 18 or older.</li>
+          </ul>
+        </article>
+
+        <article class="block">
+          <h2>No AI in your conversations</h2>
+          <ul>
+            <li>No AI talks to you, reads your chats, or learns from what you share. Every conversation is between real people.</li>
+            <li>Like many small teams, we used AI tools to help design and build the app itself. Never in your conversations.</li>
+          </ul>
+        </article>
+
+        <article class="block">
+          <h2>A wall against bots and AI agents</h2>
+          <ul>
+            <li>A quick human check, from Cloudflare, protects sign-up and the moment you start talking. Most of the time you won’t even notice it.</li>
+            <li>Behind it, After quietly looks for signs of a machine, never at what you write. Accounts that look automated are checked again and seen by our team.</li>
+            <li>No face scans, no ID, no waiting period. Just real people.</li>
+          </ul>
+        </article>
+
+        <article class="block">
+          <h2>If something feels wrong</h2>
+          <ul>
+            <li>You can report or block anyone, in any chat or group, in two taps.</li>
+            <li>A real person on our team reads every report and decides what happens: a warning, a suspension, or closing the account. You’ll hear back.</li>
+            <li>When several people report someone, their account is paused straight away while we look.</li>
+            <li>Links and email addresses can’t be sent in messages, because most scams aimed at grieving people start with a link.</li>
+          </ul>
+        </article>
+
+        <article class="block">
+          <h2>Groups that stay gentle</h2>
+          <ul>
+            <li>Small groups, of up to six people, for two hours. Every group has a host.</li>
+            <li>The host can ask someone to leave, and so can the group together.</li>
+            <li>Group messages disappear 15 minutes after the meeting ends.</li>
+            <li>People here listen as people who understand, not as therapists. Volunteers get clear guidance, and never act as counsellors.</li>
+          </ul>
+        </article>
+
+        <article class="block">
+          <h2>Your privacy</h2>
+          <ul>
+            <li>You only show a username. No profile photos. Your email and number are never shown to anyone.</li>
+            <li>Your memories are private unless you choose to share one.</li>
+            <li>Our team only reads conversations that someone has reported, or when someone is worried about a person’s safety.</li>
+            <li>You can delete your account, and everything in it, at any time.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="help-box">
+        <h2 style="font-size:26px;margin-bottom:10px">Help, one tap away</h2>
+        <p>Every screen in After has a Help button with a free crisis line for your country. If you write something that sounds like you’re not safe, you’ll privately see where to find help straight away. And if you’re worried about someone, you can tell us.</p>
+        <p><strong>If it’s too much right now:</strong> UK and Ireland, Samaritans <span class="num">116 123</span> · France <span class="num">3114</span> · free, any time. If a life is in danger, call <span class="num">999</span> (UK) or <span class="num">112</span> (France and Ireland).</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>After.</strong> We talk after. · <a href="/">Home</a> · <a href="/safety">Safety</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
+  </div>
+</footer>
+</body>
+</html>

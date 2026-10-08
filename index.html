@@ -121,6 +121,12 @@
   .status { min-height: 1.5em; margin: 0; font-size: 15px; }
   .status.error { color: var(--error); }
   .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); }
+  .founding { border-left: 2px solid var(--brown); padding: 2px 0 2px 16px; margin: 20px 0 6px; max-width: 34em; }
+  .founding strong { font-weight: 500; color: var(--forest); }
+  .three { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+  .three li { font-size: 15px; color: var(--muted); padding-left: 16px; position: relative; }
+  .three li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 6px; height: 6px; border-radius: 3px; background: var(--brown); }
+  #human:empty { display: none; }
 
   footer { border-top: 1px solid var(--line); padding: 28px 0 max(28px, env(safe-area-inset-bottom)); font-size: 14px; color: var(--muted); }
   footer p { margin: 0 0 8px; }
@@ -260,6 +266,10 @@
         <p>In the UK first, then France, on iPhone and Android. Leave your email below and we’ll tell you once, when it opens where you live.</p>
       </details>
       <details>
+        <summary>What does a founding member get?</summary>
+        <p>The first 500 people who leave their email get After+ free for a year: 50 GB for photos, voice notes and videos. The email we send when After opens will say how to claim it. After that year nothing is locked; you keep everything, as with anyone who stops After+.</p>
+      </details>
+      <details>
         <summary>Who can read what I write?</summary>
         <p>The people you’re talking with, and nobody else. Group messages disappear 15 minutes after each meeting. Your memories are only yours unless you share one. A person on our team reads a conversation only if someone reports it or is worried about someone in it.</p>
       </details>
@@ -276,8 +286,31 @@
         <p class="label">Tell me when it opens</p>
         <hr class="rule">
         <h2>We talk after.</h2>
-        <p>After opens soon, in the UK first, then France. </p>
-        <p class="soon">The list opens in a few days. Come back soon to leave your email, and we’ll write once when After opens where you live.</p>
+        <p>After opens soon, in the UK first, then France. We’ll send you one email when it opens where you live. That’s all.</p>
+        <p class="founding"><strong>Founding members.</strong> The first 500 people on the list get After+ free for a year. Your launch email will say how to claim it.</p>
+        <ul class="three">
+          <li>Only real people, no AI</li>
+          <li>Private by default</li>
+          <li>Small, safe groups</li>
+        </ul>
+        <form id="waitlist" novalidate>
+          <label class="field">Email
+            <input type="email" name="email" autocomplete="email" required placeholder="you@example.com">
+          </label>
+          <label class="field">Where do you live?
+            <select name="country">
+              <option value="GB">United Kingdom</option>
+              <option value="FR">France</option>
+              <option value="IE">Ireland</option>
+              <option value="other">Somewhere else</option>
+            </select>
+          </label>
+          <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          <label class="check"><input type="checkbox" name="consent" required> <span>Email me once when After opens. Keep my email only for that, then delete it.</span></label>
+          <div id="human"></div>
+          <button class="button primary" type="submit">Tell me when it opens</button>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -290,6 +323,63 @@
   </div>
 </footer>
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<script>
+(function () {
+  var form = document.getElementById('waitlist');
+  var status = document.getElementById('status');
+  var button = form.querySelector('button');
+  var FUNCTION_URL = 'https://lnnvivctgxniahykocyy.supabase.co/functions/v1/waitlist';
+  var T = {
+    thanks: 'Thank you. We’ll write once, when After opens where you live.',
+    wrong: 'Something went wrong. Please try again in a moment.',
+    email: 'Please check your email address.',
+    tick: 'Please tick the box so we can email you.',
+    sending: 'Sending…'
+  };
+  var widget = null;
 
+  function fail(text) { button.disabled = false; status.className = 'status error'; status.textContent = text; }
+
+  function send(token) {
+    fetch(FUNCTION_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: form.email.value.trim(), country: form.country.value, consent: true, website: form.website.value, token: token || '' })
+    }).then(function (r) { return r.json().then(function (d) { if (!r.ok || !d.ok) throw new Error(); }); })
+      .then(function () {
+        form.outerHTML = '<p class="thanks" role="status">' + T.thanks + '</p>';
+      })
+      .catch(function () {
+        if (widget !== null) window.turnstile.reset(widget);
+        fail(T.wrong);
+      });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = form.email.value.trim();
+    status.className = 'status';
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { fail(T.email); form.email.focus(); return; }
+    if (!form.consent.checked) { fail(T.tick); return; }
+    button.disabled = true; status.textContent = T.sending;
+    // Cloudflare's quiet "I'm a person" check. It only shows a box if it is
+    // unsure; most people never see it.
+    if (!window.turnstile) { send(''); return; }
+    if (widget === null) {
+      widget = window.turnstile.render('#human', {
+        sitekey: '0x4AAAAAAFQoLMx0Y7IBp_Zd',
+        language: 'en',
+        theme: 'light',
+        appearance: 'interaction-only',
+        execution: 'execute',
+        callback: send,
+        'error-callback': function () { fail(T.wrong); }
+      });
+    }
+    window.turnstile.execute(widget);
+  });
+})();
+</script>
 </body>
 </html>

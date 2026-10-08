@@ -121,6 +121,12 @@
   .status { min-height: 1.5em; margin: 0; font-size: 15px; }
   .status.error { color: var(--error); }
   .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); }
+  .founding { border-left: 2px solid var(--brown); padding: 2px 0 2px 16px; margin: 20px 0 6px; max-width: 34em; }
+  .founding strong { font-weight: 500; color: var(--forest); }
+  .three { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+  .three li { font-size: 15px; color: var(--muted); padding-left: 16px; position: relative; }
+  .three li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 6px; height: 6px; border-radius: 3px; background: var(--brown); }
+  #human:empty { display: none; }
 
   footer { border-top: 1px solid var(--line); padding: 28px 0 max(28px, env(safe-area-inset-bottom)); font-size: 14px; color: var(--muted); }
   footer p { margin: 0 0 8px; }
@@ -260,6 +266,10 @@
         <p>Primeiro no Reino Unido e na França, depois no Brasil, no iPhone e no Android. Avisamos uma vez só, quando abrir onde você mora.</p>
       </details>
       <details>
+        <summary>O que ganha um membro fundador?</summary>
+        <p>As primeiras 500 pessoas que deixarem o e-mail ganham um ano de After+ grátis: 50 GB para fotos, áudios e vídeos. O e-mail que mandamos quando o After abrir explica como ativar. Depois desse ano nada é bloqueado; você continua com tudo, como qualquer pessoa que sai do After+.</p>
+      </details>
+      <details>
         <summary>Quem pode ler o que eu escrevo?</summary>
         <p>As pessoas com quem você está conversando, e mais ninguém. As mensagens dos grupos somem 15 minutos depois de cada encontro. Suas lembranças são só suas, a não ser que você compartilhe uma. Alguém da nossa equipe só lê uma conversa se ela for denunciada ou se alguém se preocupar com uma pessoa nela.</p>
       </details>
@@ -276,8 +286,32 @@
         <p class="label">Quero saber quando abrir</p>
         <hr class="rule">
         <h2>A gente conversa depois.</h2>
-        <p>O After abre em breve: primeiro no Reino Unido e na França, depois no Brasil.</p>
-        <p class="soon">A lista abre em poucos dias. Volte em breve para deixar seu e-mail, e escrevemos uma vez só quando o After abrir onde você mora.</p>
+        <p>O After abre em breve: primeiro no Reino Unido e na França, depois no Brasil. Mandamos um único e-mail quando ele abrir onde você mora. Só isso.</p>
+        <p class="founding"><strong>Membros fundadores.</strong> As primeiras 500 pessoas da lista ganham um ano de After+ grátis. O e-mail de lançamento explica como ativar.</p>
+        <ul class="three">
+          <li>Só pessoas de verdade, sem IA</li>
+          <li>Privado por padrão</li>
+          <li>Grupos pequenos e seguros</li>
+        </ul>
+        <form id="waitlist" novalidate>
+          <label class="field">E-mail
+            <input type="email" name="email" autocomplete="email" required placeholder="voce@exemplo.com">
+          </label>
+          <label class="field">Onde você mora?
+            <select name="country">
+              <option value="other">Brasil</option>
+              <option value="GB">Reino Unido</option>
+              <option value="FR">França</option>
+              <option value="IE">Irlanda</option>
+              <option value="other">Outro lugar</option>
+            </select>
+          </label>
+          <label class="hp" aria-hidden="true">Deixe em branco <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          <label class="check"><input type="checkbox" name="consent" required> <span>Quero receber um único e-mail quando o After abrir. Guardem meu e-mail só para isso e depois apaguem.</span></label>
+          <div id="human"></div>
+          <button class="button primary" type="submit">Quero saber quando abrir</button>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -290,6 +324,63 @@
   </div>
 </footer>
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<script>
+(function () {
+  var form = document.getElementById('waitlist');
+  var status = document.getElementById('status');
+  var button = form.querySelector('button');
+  var FUNCTION_URL = 'https://lnnvivctgxniahykocyy.supabase.co/functions/v1/clever-processor';
+  var T = {
+    thanks: 'Obrigado. Escrevemos uma vez só, quando o After abrir onde você mora.',
+    wrong: 'Algo deu errado. Tente de novo daqui a pouco.',
+    email: 'Confira seu endereço de e-mail.',
+    tick: 'Marque a caixa para podermos te mandar o e-mail.',
+    sending: 'Enviando…'
+  };
+  var widget = null;
 
+  function fail(text) { button.disabled = false; status.className = 'status error'; status.textContent = text; }
+
+  function send(token) {
+    fetch(FUNCTION_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: form.email.value.trim(), country: form.country.value, consent: true, website: form.website.value, token: token || '' })
+    }).then(function (r) { return r.json().then(function (d) { if (!r.ok || !d.ok) throw new Error(); }); })
+      .then(function () {
+        form.outerHTML = '<p class="thanks" role="status">' + T.thanks + '</p>';
+      })
+      .catch(function () {
+        if (widget !== null) window.turnstile.reset(widget);
+        fail(T.wrong);
+      });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = form.email.value.trim();
+    status.className = 'status';
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { fail(T.email); form.email.focus(); return; }
+    if (!form.consent.checked) { fail(T.tick); return; }
+    button.disabled = true; status.textContent = T.sending;
+    // Cloudflare's quiet "I'm a person" check. It only shows a box if it is
+    // unsure; most people never see it.
+    if (!window.turnstile) { send(''); return; }
+    if (widget === null) {
+      widget = window.turnstile.render('#human', {
+        sitekey: '0x4AAAAAAFQoLMx0Y7IBp_Zd',
+        language: 'pt-BR',
+        theme: 'light',
+        appearance: 'interaction-only',
+        execution: 'execute',
+        callback: send,
+        'error-callback': function () { fail(T.wrong); }
+      });
+    }
+    window.turnstile.execute(widget);
+  });
+})();
+</script>
 </body>
 </html>

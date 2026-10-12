@@ -4,15 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>After. We talk after.</title>
-<meta name="description" content="After is a quiet place for people who have lost someone, or whose life changed when something ended. Small live groups, one-to-one talks and a private space for memories. Only real people. Free. Coming to the UK first, then France.">
+<meta name="description" content="After is a place to feel understood after a loss: the death of someone you love, the end of a relationship, a life that changed. Small live groups, one-to-one talks and a private space for memories. Only real people. Free. Coming to the UK and Ireland first, then France and Brazil.">
 <meta property="og:title" content="After.">
-<meta property="og:description" content="Someone died, or something ended. A quiet place to be with it, with people who have been there too.">
+<meta property="og:description" content="Some losses change everything. Real people. Real stories. A kinder way to feel less alone.">
 <meta property="og:image" content="https://wetalkafter.com/og.png">
 <meta property="og:url" content="https://wetalkafter.com/">
 <meta name="theme-color" content="#ECE7DF">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="fonts.css">
+<link rel="alternate" hreflang="en" href="https://wetalkafter.com/">
+<link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/">
+<link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/">
+<link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts.css">
 <style>
   :root {
     --cream: #ECE7DF; --paper: #F6F3EE; --line: #DDD6CB;
@@ -42,7 +46,9 @@
 
   /* Top */
   header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
-  header.top .wrap { display: flex; align-items: center; justify-content: flex-end; gap: 16px; min-height: 44px; }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
+  header.top .brand { font: 400 30px/1 var(--serif); color: var(--forest); text-decoration: none; letter-spacing: -0.01em; }
+  header.top .brand:hover { color: var(--forest); }
   header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
   header.top nav { display: flex; gap: 22px; font-size: 15px; }
   header.top nav a { text-decoration: none; color: var(--muted); }
@@ -120,24 +126,35 @@
   button.button[disabled] { opacity: 0.6; cursor: default; }
   .status { min-height: 1.5em; margin: 0; font-size: 15px; }
   .status.error { color: var(--error); }
-  .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); margin-top: 22px; }
-  .founding { border-left: 2px solid var(--brown); padding: 2px 0 2px 16px; margin: 20px 0 6px; max-width: 34em; }
-  .founding strong { font-weight: 500; color: var(--forest); }
-  .three { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 6px 22px; }
-  .three li { font-size: 15px; color: var(--muted); padding-left: 16px; position: relative; }
-  .three li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 6px; height: 6px; border-radius: 3px; background: var(--brown); }
-  #human:empty { display: none; }
+  .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); }
 
   footer { border-top: 1px solid var(--line); padding: 28px 0 max(28px, env(safe-area-inset-bottom)); font-size: 14px; color: var(--muted); }
   footer p { margin: 0 0 8px; }
   footer strong { color: var(--ink); font-weight: 500; }
   .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .three { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+  .three li { font-size: 15px; color: var(--muted); padding-left: 16px; position: relative; }
+  .three li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 6px; height: 6px; border-radius: 3px; background: var(--brown); }
+  #human:empty { display: none; }
+  .thanks { margin-top: 22px; }
+
+  /* Hero picture: wide on computers, tall on phones */
+  .hero { padding: 0 0 84px; }
+  .hero-img img { display: block; width: 100%; height: auto; }
+  .hero .wrap { padding-top: 48px; }
+  .hero .label { margin-bottom: 18px; }
+  .lede + .lede { margin-top: -14px; }
+  .card h3 { text-wrap: balance; }
+  .plan .also { font-size: 15px; color: var(--muted); margin: 6px 0 0; }
+  .fine { font-size: 14px; color: var(--muted); margin: 6px 0 0; }
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
+    <a class="brand" href="/" aria-label="After, home">After.</a>
     <nav aria-label="On this page">
       <a href="#how">How it works</a>
       <a href="#promise">Our promise</a>
@@ -145,6 +162,7 @@
       <a href="#questions">Questions</a>
       <a href="/story">Our story</a>
       <a href="/pt/" lang="pt-BR">Português</a>
+      <a href="/fr/" lang="fr">Français</a>
       <a class="join" href="#join">Tell me when it opens</a>
     </nav>
   </div>
@@ -152,10 +170,15 @@
 
 <main>
   <section class="hero">
+    <picture class="hero-img">
+      <source media="(max-width: 720px)" srcset="/images/hero-tall.jpg" width="853" height="1844">
+      <img src="/images/hero-wide-1600.jpg" srcset="/images/hero-wide-1600.jpg 1600w, /images/hero-wide.jpg 3000w" sizes="100vw" width="3000" height="1275" alt="After. A quiet beach at sunset." fetchpriority="high">
+    </picture>
     <div class="wrap">
-      <img class="mark" src="mark.svg" alt="After">
-      <h1>Someone died, or <em>something ended.</em></h1>
-      <p class="lede">After is a quiet place to be with it. Meet in a small group for a little while, talk one to one with people you’ve met, and keep what you don’t want to lose. With people who have been there too.</p>
+      <p class="label">Real people. Real stories. A kinder way to feel less alone.</p>
+      <h1>Some losses <em>change everything.</em></h1>
+      <p class="lede">The death of someone you love. The end of a relationship. A life that no longer looks the way you imagined.</p>
+      <p class="lede">Whatever you’re going through, After is a place to feel understood. Connect with people who have experienced something similar, share your story in a small group, talk one-on-one, or hold on to the memories that matter most. There’s no right way to feel, and no need to face it all alone.</p>
       <div class="buttons">
         <a class="button primary" href="#join">Tell me when it opens</a>
         <a class="button outline" href="#how">How it works</a>
@@ -163,35 +186,38 @@
       <ul class="facts">
         <li class="label">Only real people</li>
         <li class="label">Free</li>
-        <li class="label">Private by default</li>
-        <li class="label">UK first, then France</li>
+        <li class="label">Anonymous by choice</li>
+        <li class="label">18+</li>
       </ul>
     </div>
   </section>
 
   <section id="how">
     <div class="wrap">
-      <p class="label">How it works</p>
+      <p class="label">Three ways to connect</p>
       <hr class="rule">
-      <h2>Three ways to be with it</h2>
-      <p class="lede" style="margin-bottom:0">Everyone in After has been through a loss. They listen as people who understand, not as counsellors.</p>
+      <h2>Your way, at your own pace.</h2>
+      <p class="lede">Join a small group, talk with someone one-on-one, or keep your memories in a private space of your own. You choose what feels right for you, whenever you’re ready.</p>
+      <p class="lede" style="margin-bottom:0">You’ll meet people who understand loss because they’ve experienced it too. Not as therapists or counsellors, but as people willing to listen, share their stories, and support one another.</p>
       <div class="parts">
         <article class="card">
           <p class="label">Groups</p>
-          <h3>Small, live, for a little while</h3>
-          <p>Up to six people who lost someone in a similar way, together for two hours. Say as much or as little as you like, and leave quietly at any time.</p>
+          <h3>Small groups. Shared experiences. Real connection.</h3>
+          <p>Join a live conversation with up to six people who have experienced a similar loss. For two hours, share your story, listen to others, or simply be present. There’s no pressure to speak, and you’re always free to leave whenever you wish.</p>
           <p>Messages disappear 15 minutes after the meeting ends.</p>
         </article>
         <article class="card">
           <p class="label">Talk</p>
-          <h3>One person, when you need it</h3>
-          <p>After a group, say who you’d talk with again. When they say yes too, you can message each other. On a hard night, ask “Can somebody talk now?”, and someone who’s around and has been through a similar loss can answer.</p>
+          <h3>A personal connection, whenever you need one</h3>
+          <p>Sometimes, one conversation makes all the difference. If you connect with someone in a group and you both wish to stay in touch, you can continue talking privately.</p>
+          <p>And whenever you need someone to listen, simply ask, “Can somebody talk now?” Someone who has experienced a similar loss may be there to connect, listen, and understand.</p>
           <p>Nobody can message you unless you’ve both said yes.</p>
         </article>
         <article class="card">
           <p class="label">Remember</p>
-          <h3>A private space for each person</h3>
-          <p>Keep what you don’t want to lose: writing, photos, their voice in an old voicemail, a letter, a recipe. Gentle prompts help when you don’t know where to start.</p>
+          <h3>A private place for the memories that matter</h3>
+          <p>Some memories are too precious to lose. Keep their stories alive through photos, words, voice recordings, letters, and the little things that remind you of them.</p>
+          <p>A space that’s yours alone, where you can return to those memories whenever you wish. And when you don’t know where to begin, gentle prompts help you find the words.</p>
           <p>Only you can see it, unless you choose to share one memory.</p>
         </article>
       </div>
@@ -202,13 +228,13 @@
     <div class="wrap">
       <p class="label">Our promise</p>
       <hr class="rule">
-      <h2>No AI in your conversations.</h2>
-      <p class="big">No AI talks to you, reads your chats, or learns from what you share. Every conversation here is between real people.</p>
+      <h2>Real people. Real conversations. Your privacy matters.</h2>
+      <p class="big">After is built around genuine human connection. No AI companions, no automated replies pretending to be people. Just real conversations with others who understand what you’re going through.</p>
       <ul>
-        <li><strong>Private by default.</strong> Just a username. No profile photos. Your email and number are never shown.</li>
-        <li><strong>We read only what’s reported</strong> or flagged by someone worried about you. Nothing else.</li>
-        <li><strong>Help on every screen.</strong> The crisis lines for your country, one tap away, day and night.</li>
-        <li><strong>Leave whenever you like.</strong> Delete your account in the app, and everything that’s yours goes with it.</li>
+        <li><strong>Your identity stays private.</strong> Use a username, without a public profile photo. Your email address and phone number are never displayed to other members.</li>
+        <li><strong>Your conversations are personal.</strong> We don’t routinely read private messages. Content may be reviewed when it’s reported or flagged for safety, in accordance with our privacy and safety policies.</li>
+        <li><strong>Support resources are always within reach.</strong> Find crisis and emergency support information for your country. After is a peer-support community, not an emergency service.</li>
+        <li><strong>You’re free to leave.</strong> Delete your account directly in the app. Your personal data will be deleted in accordance with our privacy policy and applicable legal requirements.</li>
       </ul>
       <p class="small">Like many small teams, we used AI tools to help design and build the app itself. That never involves anything you share.</p>
     </div>
@@ -218,29 +244,32 @@
     <div class="wrap">
       <p class="label">Price</p>
       <hr class="rule">
-      <h2>Free, and what may cost later</h2>
-      <p class="lede" style="margin-bottom:0">Crisis help, groups, Talk and writing are free, always. After+ adds more space for photos, voice notes and videos.</p>
+      <h2>Free to connect. Optional to keep more.</h2>
+      <p class="lede" style="margin-bottom:0">At After, finding support, sharing experiences, and connecting with others will always be free. After+ simply gives you more space to preserve the memories that matter.</p>
       <div class="plans">
         <div class="plan">
           <p class="label">Free, always</p>
-          <p class="price">€0</p>
+          <p class="price">£0</p>
           <ul>
-            <li>Groups, Talk and Help</li>
+            <li>Join groups and connect with others</li>
+            <li>Share your experiences and find support</li>
             <li>Unlimited writing in Remember</li>
-            <li>500 MB for photos, voice notes, videos and files (about 800 photos, or 8 hours of voice notes)</li>
-            <li>Videos up to 1 minute each</li>
+            <li>500 MB for photos, voice notes, videos and files</li>
+            <li>Videos up to 1 minute long</li>
           </ul>
         </div>
         <div class="plan plus">
-          <p class="label">After+, later and optional</p>
-          <p class="price">€2.99 <small>a month, or €24 a year</small></p>
+          <p class="label">After+, coming later, optional</p>
+          <p class="price">£4.99 <small>a month, or £39.99 a year</small></p>
+          <p class="also">In Ireland and France: €4.99 a month, or €39.99 a year.</p>
           <ul>
-            <li>Everything that’s free</li>
+            <li>Everything in the free version</li>
             <li>50 GB for photos, voice notes, videos and files</li>
             <li>Longer videos</li>
           </ul>
         </div>
       </div>
+      <p class="rules">Connection and support will always be free. After+ is simply about having more room for your memories.</p>
       <p class="rules">If you ever stop paying, nothing is locked or deleted. You keep every memory and can still open, share and save them; you just can’t add more files beyond the free space. No ads, ever, and we never sell your information.</p>
     </div>
   </section>
@@ -252,7 +281,7 @@
       <h2>Before you come in</h2>
       <details>
         <summary>Is After counselling, or a crisis service?</summary>
-        <p>No. After is support from people who have been through a loss too. They listen as people who understand, not as professionals. If you’re in danger, call 999 in the UK or 112 in France and Ireland. Samaritans (116 123, UK and Ireland) and 3114 (France) are there any time, and Help in the app shows them on every screen.</p>
+        <p>No. After is support from people who have been through a loss too. They listen as people who understand, not as professionals. If you’re in danger, call 999 in the UK or 112 in Ireland and France. Samaritans (116 123, UK and Ireland) and 3114 (France) are there any time, and Help in the app shows them on every screen.</p>
       </details>
       <details>
         <summary>What kind of loss is it for?</summary>
@@ -264,11 +293,7 @@
       </details>
       <details>
         <summary>When and where does it open?</summary>
-        <p>In the UK first, then France, on iPhone and Android. Leave your email below and we’ll tell you once, when it opens where you live.</p>
-      </details>
-      <details>
-        <summary>What does a founding member get?</summary>
-        <p>The first 500 people who leave their email get After+ free for a year: 50 GB for photos, voice notes and videos. The email we send when After opens will say how to claim it. After that year nothing is locked; you keep everything, as with anyone who stops After+.</p>
+        <p>In the UK and Ireland first, then France, then Brazil, on iPhone and Android. Leave your email below and we’ll tell you once, when it opens where you live.</p>
       </details>
       <details>
         <summary>Who can read what I write?</summary>
@@ -286,9 +311,8 @@
       <div class="join-box">
         <p class="label">Tell me when it opens</p>
         <hr class="rule">
-        <h2>We talk after.</h2>
-        <p>After opens soon, in the UK first, then France. We’ll send you one email when it opens where you live. That’s all.</p>
-        <p class="founding"><strong>Founding members.</strong> The first 500 people on the list get After+ free for a year. Your launch email will say how to claim it.</p>
+        <h2>We’ll be here soon.</h2>
+        <p>After is coming soon, starting in the UK and Ireland, followed by France and then Brazil. Leave us your email, and we’ll let you know when After becomes available in your country. Just one email, when it’s time. Nothing more.</p>
         <ul class="three">
           <li>Only real people, no AI</li>
           <li>Private by default</li>
@@ -301,17 +325,19 @@
           <label class="field">Where do you live?
             <select name="country">
               <option value="GB">United Kingdom</option>
-              <option value="FR">France</option>
               <option value="IE">Ireland</option>
+              <option value="FR">France</option>
+              <option value="BR">Brazil</option>
               <option value="other">Somewhere else</option>
             </select>
           </label>
           <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-          <label class="check"><input type="checkbox" name="consent" required> <span>Email me once when After opens. Keep my email only for that, then delete it.</span></label>
+          <label class="check"><input type="checkbox" name="consent" required> <span>Email me once when After opens in my country.</span></label>
           <div id="human"></div>
           <button class="button primary" type="submit">Tell me when it opens</button>
           <p class="status" id="status" role="status" aria-live="polite"></p>
         </form>
+        <p class="fine">We’ll keep your email address to let you know when After launches. You can request the deletion of your email address at any time.</p>
       </div>
     </div>
   </section>
@@ -319,8 +345,8 @@
 
 <footer>
   <div class="wrap">
-    <p><strong>If it’s too much right now:</strong> UK and Ireland, Samaritans <span class="num">116 123</span> · France <span class="num">3114</span> · free, any time. If a life is in danger, call <span class="num">999</span> (UK) or <span class="num">112</span> (France and Ireland).</p>
-    <p><strong>After.</strong> We talk after. · <a href="/story">Our story</a> · <a href="/safety">Safety</a> · <a href="/pt/" lang="pt-BR">Português</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
+    <p><strong>If it’s too much right now:</strong> UK and Ireland, Samaritans <span class="num">116 123</span> · France <span class="num">3114</span> · free, any time. If a life is in danger, call <span class="num">999</span> (UK) or <span class="num">112</span> (Ireland and France).</p>
+    <p><strong>After.</strong> We talk after. · <a href="/story">Our story</a> · <a href="/safety">Safety</a> · <a href="/pt/" lang="pt-BR">Português</a> · <a href="/fr/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>
 

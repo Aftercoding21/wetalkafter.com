@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Por que criei o After · After</title>
+<meta name="description" content="Por que criei o After: minha história e o que me levou a criar esta comunidade.">
+<meta property="og:title" content="Por que criei o After">
+<meta property="og:description" content="Criei o After porque gostaria que um lugar assim existisse quando perdi meu irmão Charles.">
+<meta property="og:image" content="https://wetalkafter.com/og.png">
+<meta property="og:url" content="https://wetalkafter.com/pt/historia/">
+<meta name="theme-color" content="#ECE7DF">
+<link rel="alternate" hreflang="en" href="https://wetalkafter.com/story">
+<link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/historia/">
+<link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/histoire/">
+<link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/story">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts.css">
+<style>
+  :root {
+    --cream: #ECE7DF; --paper: #F6F3EE; --line: #DDD6CB;
+    --forest: #2F4436; --brown: #875A47; --clay: #8A4F3A; --peach: #E9C3A6; --sage: #D8DDD5;
+    --ink: #2A2B28; --muted: #5F5B55; --error: #8A3B2E;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", -apple-system, system-ui, "Helvetica Neue", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; }
+  body { background: var(--cream); color: var(--ink); font: 400 17px/1.6 var(--sans); }
+  .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .narrow > * { max-width: 680px; }
+  section { padding: 72px 0; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--forest); margin: 0; }
+  h2 { font-size: clamp(32px, 5vw, 44px); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 14px; }
+  h3 { font-size: 26px; line-height: 1.2; margin: 6px 0 10px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--forest); text-underline-offset: 3px; }
+  a:hover { color: var(--brown); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--clay); outline-offset: 3px; border-radius: 4px;
+  }
+  .label { font: 500 12px/1.8 var(--sans); letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  .rule { width: 32px; height: 1.5px; background: var(--brown); border: 0; margin: 4px 0 18px; }
+
+  /* Top */
+  header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
+  header.top .brand { font: 400 30px/1 var(--serif); color: var(--forest); text-decoration: none; letter-spacing: -0.01em; }
+  header.top .brand:hover { color: var(--forest); }
+  header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
+  header.top nav { display: flex; gap: 22px; font-size: 15px; }
+  header.top nav a { text-decoration: none; color: var(--muted); }
+  header.top nav a:hover { color: var(--forest); }
+  header.top nav .join { color: var(--forest); font-weight: 500; text-decoration: underline; }
+  @media (max-width: 720px) { header.top nav a:not(.join) { display: none; } }
+
+  /* Hero */
+  .hero { padding: 40px 0 84px; }
+  .hero .mark { width: 112px; height: 112px; margin: 0 0 28px -14px; display: block; }
+  .hero h1 { font: 300 clamp(44px, 9vw, 84px)/1.03 var(--serif); letter-spacing: -0.02em; max-width: 12ch; text-wrap: balance; margin-bottom: 26px; }
+  .hero h1 em { font-style: italic; color: var(--brown); }
+  .lede { font-size: 20px; max-width: 34em; margin-bottom: 30px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+  .button {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px;
+    border-radius: 10px; font: 600 16px var(--sans); text-decoration: none; border: 1.5px solid var(--forest);
+  }
+  .button.primary { background: var(--forest); color: #fff; }
+  .button.primary:hover { background: #3F5246; color: #fff; }
+  .button.outline { color: var(--forest); }
+  .facts { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 28px; }
+
+  /* Three parts */
+  .parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+  @media (max-width: 860px) { .parts { grid-template-columns: 1fr; } }
+  .card { background: var(--paper); border-radius: 16px; padding: 26px 26px 18px; }
+  .card p:last-child { color: var(--muted); font-size: 15px; }
+
+  /* Promise */
+  .promise { background: var(--forest); color: var(--cream); }
+  .promise h2 { color: var(--cream); }
+  .promise .label { color: var(--peach); }
+  .promise .rule { background: var(--peach); }
+  .promise .big { font: 400 clamp(22px, 3vw, 27px)/1.45 var(--serif); max-width: 32em; margin-bottom: 30px; }
+  .promise ul { list-style: none; padding: 0; margin: 0 0 22px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 32px; max-width: 860px; }
+  @media (max-width: 720px) { .promise ul { grid-template-columns: 1fr; } }
+  .promise li { color: var(--sage); padding-left: 18px; position: relative; }
+  .promise li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 6px; border-radius: 3px; background: var(--peach); }
+  .promise li strong { color: #fff; font-weight: 500; }
+  .promise .small { color: var(--sage); font-size: 15px; max-width: 40em; }
+
+  /* Price */
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 30px 0 22px; }
+  @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+  .plan { border-radius: 16px; padding: 26px; background: var(--paper); }
+  .plan.plus { background: transparent; border: 1.5px solid var(--line); }
+  .plan .price { font: 400 34px/1.1 var(--serif); color: var(--forest); margin: 4px 0 4px; }
+  .plan .price small { font: 400 16px var(--sans); color: var(--muted); }
+  .plan ul { margin: 16px 0 0; padding-left: 1.1em; }
+  .plan li { margin-bottom: 7px; }
+  .rules { max-width: 46em; color: var(--muted); font-size: 15px; }
+
+  /* FAQ */
+  details { border-top: 1px solid var(--line); padding: 4px 0; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; padding: 16px 32px 16px 0; font: 500 18px/1.4 var(--sans); position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 4px; top: 12px; font: 300 26px var(--sans); color: var(--brown); }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--ink); max-width: 40em; }
+
+  /* Join */
+  .join-box { background: var(--paper); border-radius: 16px; padding: 34px 30px; }
+  form { display: grid; gap: 14px; margin-top: 22px; max-width: 520px; }
+  label.field { display: grid; gap: 6px; font: 500 14px var(--sans); }
+  input[type=email], select {
+    min-height: 52px; border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: 0 14px;
+    font: 400 17px var(--sans); color: var(--ink); width: 100%;
+  }
+  .check { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; }
+  .check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--forest); flex: none; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  button.button { cursor: pointer; justify-self: start; }
+  button.button[disabled] { opacity: 0.6; cursor: default; }
+  .status { min-height: 1.5em; margin: 0; font-size: 15px; }
+  .status.error { color: var(--error); }
+  .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 max(28px, env(safe-area-inset-bottom)); font-size: 14px; color: var(--muted); }
+  footer p { margin: 0 0 8px; }
+  footer strong { color: var(--ink); font-weight: 500; }
+  .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .page h1 { font: 300 clamp(40px, 8vw, 68px)/1.05 var(--serif); letter-spacing: -0.02em; margin: 0 0 22px; max-width: 14ch; }
+  .page .lede { font-size: 19px; max-width: 36em; }
+  .blocks { display: grid; gap: 18px; margin-top: 34px; }
+  .block { background: var(--paper); border-radius: 16px; padding: 26px 26px 14px; }
+  .block h2 { font-size: 26px; line-height: 1.2; margin-bottom: 10px; }
+  .block ul { margin: 0 0 14px; padding-left: 20px; }
+  .block li { margin-bottom: 6px; }
+  .help-box { border: 1.5px solid var(--forest); border-radius: 16px; padding: 22px 26px 10px; margin-top: 18px; }
+  .story p { font: 400 20px/1.65 var(--serif); margin: 0 0 18px; max-width: 34em; }
+  .story p.beat { font-size: clamp(26px, 4vw, 32px); line-height: 1.3; color: var(--forest); margin: 34px 0; }
+  .story .note { font: 400 15px/1.6 var(--sans); color: var(--muted); margin-bottom: 34px; }
+  .story .help-box p { font: 400 17px/1.6 var(--sans); margin: 0 0 14px; }
+  .story .sign { font-style: italic; color: var(--brown); margin-top: 30px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/pt/" aria-label="After, início">After.</a>
+    <nav aria-label="Nesta página">
+      <a class="join" href="/pt/#join">Quero saber quando abrir</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page story">
+  <section>
+    <div class="wrap narrow">
+      <p class="label">Nossa história</p>
+      <hr class="rule">
+      <h1>Por que criei o After</h1>
+      <p class="lede">Minha história e o que me levou a criar esta comunidade.</p>
+      <p class="note">Esta história fala sobre a perda repentina do meu irmão. Leia quando se sentir à vontade.</p>
+      <p>Acho que tenho medo da morte desde que me entendo por gente.</p>
+      <p>Eu tinha uns sete anos quando vi, pela primeira vez, alguém que eu amava dentro de um caixão.</p>
+      <p>Era o meu avô.</p>
+      <p>Lembro de olhar para ele e me perguntar: <em>O que está acontecendo? Para onde ele foi? Como alguém pode simplesmente deixar de existir?</em></p>
+      <p>Foi naquele momento que entendi que as pessoas que amamos não vivem para sempre.</p>
+      <p>E eu não conseguia aceitar isso.</p>
+      <p>Quando era pequena, eu rezava para Deus, para o universo, para quem quer que pudesse me ouvir, pedindo que deixassem minha família viver por cem anos.</p>
+      <p>Mas então eu pensava: <em>cem anos também acabam.</em></p>
+      <p>Então eu pedia mil anos.</p>
+      <p>Até perceber que mil anos também chegariam ao fim.</p>
+      <p>Foi aí que comecei a pedir que vivessem para sempre.</p>
+      <p>Nossa vida em família nem sempre foi fácil. Tivemos momentos difíceis, como tantas outras famílias. Mas, apesar de tudo, meu maior medo era sempre o mesmo: perder alguém que eu amava.</p>
+      <p>Até que, no dia 15 de janeiro de 2003, meu maior medo se tornou realidade.</p>
+      <p>Meu irmão mais novo, Charles, morreu em um acidente.</p>
+      <p>Ele tinha apenas 21 anos.</p>
+      <p>Só fiquei sabendo tarde da noite. Ele estava sem documentos de identificação, e eu precisei sair à procura dele. Tive que enfrentar a realidade inimaginável de encontrar o corpo do meu irmão, ligar para os meus pais para contar que o filho deles havia morrido e levar o corpo dele para casa.</p>
+      <p>Naquela noite, eu não sabia como seria possível continuar vivendo.</p>
+      <p>Meu mundo tinha parado.</p>
+      <p>Durante os três anos seguintes, chorei mais do que imaginava que um ser humano fosse capaz de chorar.</p>
+      <p>Li um livro atrás do outro, procurando respostas. Tentando entender a vida, a morte, o amor e por que somos capazes de sentir um amor tão extraordinário por alguém se, um dia, tudo pode acabar de repente.</p>
+      <p>Eu queria encontrar algum sentido naquilo que, para mim, não fazia sentido nenhum.</p>
+      <p>E, com o passar dos anos, outra coisa aconteceu.</p>
+      <p class="beat">As pessoas pararam de perguntar.</p>
+      <p>Algumas achavam que, depois de tanto tempo, eu já deveria estar melhor. Outras simplesmente não sabiam o que dizer.</p>
+      <p>E, aos poucos, eu também parei de falar sobre o assunto.</p>
+      <p>Não porque a dor tivesse desaparecido.</p>
+      <p>Mas porque eu sentia que já não havia mais espaço para o meu luto.</p>
+      <p>Mesmo vinte anos depois, quando me permitia pensar profundamente na perda do Charles, o choque podia ser tão intenso como se tudo tivesse acontecido no dia anterior.</p>
+      <p>Eu revivia o pânico, o desespero, a tragédia daquela noite.</p>
+      <p>Até que percebi que precisava de ajuda.</p>
+      <p>Procurei a terapia EMDR. Sei que ela não é a resposta para todo mundo, mas me ajudou a começar a olhar para lembranças das quais passei anos tentando fugir.</p>
+      <p>E alguma coisa mudou.</p>
+      <p>Percebi que, finalmente, conseguia falar um pouco mais sobre o meu irmão.</p>
+      <p>E eu queria falar.</p>
+      <p>Queria falar dele, do que aconteceu, de tudo o que senti e de tantas coisas que, até hoje, ainda não consigo compreender.</p>
+      <p>Mas com quem?</p>
+      <p>As pessoas têm suas próprias vidas, seus próprios problemas. Nem sempre você quer ligar para um amigo e levar tristeza para o dia dele.</p>
+      <p>Então acaba guardando tudo dentro de si.</p>
+      <p>E comecei a pensar: <em>quantas pessoas, pelo mundo, estão vivendo exatamente a mesma coisa?</em></p>
+      <p><em>Quantas pessoas têm uma história que gostariam tanto de contar, mas não encontram alguém com quem se sintam à vontade para compartilhar?</em></p>
+      <p>Quando comecei a imaginar o After, pensei na possibilidade de usar inteligência artificial para oferecer apoio.</p>
+      <p>E a inteligência artificial pode ser extremamente útil. Ela pode nos ajudar a compreender nossas emoções, entender o que estamos vivendo e encontrar palavras quando não conseguimos expressar o que sentimos.</p>
+      <p>Mas percebi que, para mim, faltava alguma coisa.</p>
+      <p>Eu não queria apenas alguém que me explicasse o meu luto.</p>
+      <p>Eu queria alguém que entendesse porque já tinha vivido algo parecido.</p>
+      <p>Alguém que pudesse dizer: “Eu sei o que você quer dizer”, e realmente soubesse.</p>
+      <p>Alguém que não se sentisse desconfortável ao me ouvir falar do meu irmão pela centésima vez.</p>
+      <p>Alguém que talvez também quisesse falar do próprio irmão, da mãe, do pai, de um filho, de um companheiro ou de um amigo.</p>
+      <p>Foi então que entendi o que o After deveria ser.</p>
+      <p class="beat">Uma comunidade construída em torno das conexões humanas.</p>
+      <p>Um lugar onde as pessoas possam compartilhar suas experiências sem precisar se identificar. Sem julgamentos, sem pressão para melhorar e sem medo de entristecer o dia de alguém.</p>
+      <p>E não apenas para falar sobre a morte.</p>
+      <p>Porque a vida pode mudar de tantas maneiras.</p>
+      <p>Um divórcio, uma doença, uma separação, a perda de quem acreditávamos ser ou a necessidade de recomeçar quando o futuro que imaginávamos deixa de existir.</p>
+      <p>Todos nós passamos por momentos que dividem nossa vida em um antes e um depois.</p>
+      <p>E, às vezes, a pessoa que pode nos fazer sentir menos sozinhos é alguém que nunca conhecemos, em algum lugar do mundo, mas que passou por algo parecido.</p>
+      <p>Criei o After porque gostaria que um lugar assim existisse quando perdi o Charles.</p>
+      <p>E porque, 23 anos depois, ainda quero falar sobre o meu irmão.</p>
+      <p>Não porque eu seja incapaz de seguir em frente.</p>
+      <p>Mas porque ele existiu.</p>
+      <p>Porque a vida dele importou.</p>
+      <p>Porque eu o amei.</p>
+      <p>E porque vou amá-lo para sempre.</p>
+      <p>Acredito que existam milhões de pessoas que sentem o mesmo por alguém, ou por alguma coisa, que perderam.</p>
+      <p>E talvez, se conseguirmos nos encontrar, essa caminhada possa ser um pouco menos solitária.</p>
+      <p>Foi por isso que criei o After.</p>
+      <p class="beat">Pessoas de verdade. Histórias de verdade. Um lugar onde sua voz tem espaço.</p>
+      <p class="sign">Sandra, fundadora do After</p>
+
+      <div class="help-box">
+        <h2 style="font-size:26px;margin-bottom:10px">Vamos nos encontrar</h2>
+        <p>O After abre em breve: primeiro no Reino Unido e na Irlanda, depois na França e no Brasil. Deixe seu e-mail e escrevemos uma única vez, quando ele abrir onde você mora.</p>
+        <p><a class="button primary" href="/pt/#join">Quero saber quando abrir</a></p>
+        <p><strong>Se estiver pesado demais agora:</strong> no Brasil, CVV <span class="num">188</span>, ligação gratuita, a qualquer hora, ou chat em <a href="https://cvv.org.br">cvv.org.br</a>. Se uma vida estiver em perigo, ligue <span class="num">192</span> (SAMU).</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>After.</strong> A gente conversa depois. · <a href="/pt/">Início</a> · <a href="/pt/seguranca/">Segurança</a> · <a href="/story" lang="en">English</a> · <a href="/fr/histoire/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -4,12 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>After. A gente conversa depois.</title>
-<meta name="description" content="O After é um lugar tranquilo para quem perdeu alguém, ou teve a vida mudada quando algo terminou. Grupos pequenos ao vivo, conversas a dois e um espaço privado para as lembranças. Só pessoas de verdade. Grátis.">
+<meta name="description" content="O After é um espaço acolhedor para quem passou por uma perda: a morte de alguém que você ama, o fim de um relacionamento, uma mudança de vida. Grupos pequenos ao vivo, conversas a dois e um espaço privado para as lembranças. Só pessoas de verdade. Grátis.">
 <meta property="og:title" content="After.">
-<meta property="og:description" content="Alguém morreu, ou algo chegou ao fim. Um lugar tranquilo para viver isso, com quem já passou por algo parecido.">
+<meta property="og:description" content="Algumas perdas mudam tudo. Pessoas de verdade. Histórias de verdade.">
 <meta property="og:image" content="https://wetalkafter.com/og.png">
 <meta property="og:url" content="https://wetalkafter.com/pt/">
 <meta name="theme-color" content="#ECE7DF">
+<link rel="alternate" hreflang="en" href="https://wetalkafter.com/">
+<link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/">
+<link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/">
+<link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/fonts.css">
@@ -42,7 +46,9 @@
 
   /* Top */
   header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
-  header.top .wrap { display: flex; align-items: center; justify-content: flex-end; gap: 16px; min-height: 44px; }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
+  header.top .brand { font: 400 30px/1 var(--serif); color: var(--forest); text-decoration: none; letter-spacing: -0.01em; }
+  header.top .brand:hover { color: var(--forest); }
   header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
   header.top nav { display: flex; gap: 22px; font-size: 15px; }
   header.top nav a { text-decoration: none; color: var(--muted); }
@@ -120,30 +126,43 @@
   button.button[disabled] { opacity: 0.6; cursor: default; }
   .status { min-height: 1.5em; margin: 0; font-size: 15px; }
   .status.error { color: var(--error); }
-  .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); margin-top: 22px; }
-  .founding { border-left: 2px solid var(--brown); padding: 2px 0 2px 16px; margin: 20px 0 6px; max-width: 34em; }
-  .founding strong { font-weight: 500; color: var(--forest); }
-  .three { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 6px 22px; }
-  .three li { font-size: 15px; color: var(--muted); padding-left: 16px; position: relative; }
-  .three li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 6px; height: 6px; border-radius: 3px; background: var(--brown); }
-  #human:empty { display: none; }
+  .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); }
 
   footer { border-top: 1px solid var(--line); padding: 28px 0 max(28px, env(safe-area-inset-bottom)); font-size: 14px; color: var(--muted); }
   footer p { margin: 0 0 8px; }
   footer strong { color: var(--ink); font-weight: 500; }
   .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .three { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+  .three li { font-size: 15px; color: var(--muted); padding-left: 16px; position: relative; }
+  .three li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 6px; height: 6px; border-radius: 3px; background: var(--brown); }
+  #human:empty { display: none; }
+  .thanks { margin-top: 22px; }
+
+  /* Hero picture: wide on computers, tall on phones */
+  .hero { padding: 0 0 84px; }
+  .hero-img img { display: block; width: 100%; height: auto; }
+  .hero .wrap { padding-top: 48px; }
+  .hero .label { margin-bottom: 18px; }
+  .lede + .lede { margin-top: -14px; }
+  .card h3 { text-wrap: balance; }
+  .plan .also { font-size: 15px; color: var(--muted); margin: 6px 0 0; }
+  .fine { font-size: 14px; color: var(--muted); margin: 6px 0 0; }
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
+    <a class="brand" href="/pt/" aria-label="After, início">After.</a>
     <nav aria-label="Nesta página">
       <a href="#how">Como funciona</a>
-      <a href="#promise">Nossa promessa</a>
+      <a href="#promise">Nosso compromisso</a>
       <a href="#price">Preço</a>
       <a href="#questions">Perguntas</a>
+      <a href="/pt/historia/">Nossa história</a>
       <a href="/" lang="en">English</a>
+      <a href="/fr/" lang="fr">Français</a>
       <a class="join" href="#join">Quero saber quando abrir</a>
     </nav>
   </div>
@@ -151,10 +170,15 @@
 
 <main>
   <section class="hero">
+    <picture class="hero-img">
+      <source media="(max-width: 720px)" srcset="/images/hero-tall.jpg" width="853" height="1844">
+      <img src="/images/hero-wide-1600.jpg" srcset="/images/hero-wide-1600.jpg 1600w, /images/hero-wide.jpg 3000w" sizes="100vw" width="3000" height="1275" alt="After. Uma praia tranquila ao pôr do sol." fetchpriority="high">
+    </picture>
     <div class="wrap">
-      <img class="mark" src="/mark.svg" alt="After">
-      <h1>Alguém morreu, ou <em>algo chegou ao fim.</em></h1>
-      <p class="lede">O After é um lugar tranquilo para viver isso. Encontre um grupo pequeno por um tempinho, converse a dois com pessoas que você conheceu e guarde o que você não quer perder. Com quem já passou por algo parecido.</p>
+      <p class="label">Pessoas de verdade. Histórias de verdade. Um jeito mais gentil de se sentir menos sozinho.</p>
+      <h1>Algumas perdas <em>mudam tudo.</em></h1>
+      <p class="lede">A morte de alguém que você ama. O fim de um relacionamento. Uma mudança de vida que você nunca imaginou enfrentar.</p>
+      <p class="lede">Seja qual for a sua perda, o After é um espaço acolhedor para encontrar pessoas que entendem o que você está vivendo, porque já passaram por algo parecido. Compartilhe sua história em pequenos grupos, converse individualmente ou preserve as lembranças que mais importam para você. Aqui, não existe uma maneira certa de sentir, nem a obrigação de enfrentar tudo sozinho.</p>
       <div class="buttons">
         <a class="button primary" href="#join">Quero saber quando abrir</a>
         <a class="button outline" href="#how">Como funciona</a>
@@ -162,35 +186,38 @@
       <ul class="facts">
         <li class="label">Só pessoas de verdade</li>
         <li class="label">Grátis</li>
-        <li class="label">Privado por padrão</li>
-        <li class="label">Em breve no Brasil</li>
+        <li class="label">Anônimo, se você quiser</li>
+        <li class="label">18+</li>
       </ul>
     </div>
   </section>
 
   <section id="how">
     <div class="wrap">
-      <p class="label">Como funciona</p>
+      <p class="label">Três formas de se conectar</p>
       <hr class="rule">
-      <h2>Três jeitos de atravessar isso</h2>
-      <p class="lede" style="margin-bottom:0">Todo mundo no After já passou por uma perda. Aqui as pessoas se escutam como quem entende, não como terapeutas.</p>
+      <h2>Do seu jeito, no seu tempo.</h2>
+      <p class="lede">Participe de um grupo, converse com alguém ou guarde suas lembranças em um espaço só seu. Você escolhe o que faz sentido para você, quando fizer sentido.</p>
+      <p class="lede" style="margin-bottom:0">Aqui, as conexões acontecem entre pessoas que também já passaram por uma perda. Não como terapeutas, mas como gente que se escuta, compartilha experiências e encontra apoio umas nas outras.</p>
       <div class="parts">
         <article class="card">
           <p class="label">Grupos</p>
-          <h3>Pequenos, ao vivo, por um tempinho</h3>
-          <p>Até seis pessoas que viveram uma perda parecida, juntas por duas horas. Fale o quanto quiser, ou quase nada, e saia em silêncio quando quiser.</p>
+          <h3>Grupos pequenos, conversas de verdade</h3>
+          <p>Um encontro ao vivo, com até seis pessoas que passaram por perdas parecidas. Durante duas horas, você pode compartilhar sua história, ouvir outras experiências ou simplesmente estar ali. Sem pressão para falar, sem julgamentos e com toda a liberdade para sair quando quiser.</p>
           <p>As mensagens somem 15 minutos depois que o encontro termina.</p>
         </article>
         <article class="card">
           <p class="label">Conversar</p>
-          <h3>Uma pessoa, quando você precisar</h3>
-          <p>Depois de um grupo, diga com quem você conversaria de novo. Quando a pessoa também disser sim, vocês podem trocar mensagens. Numa noite difícil, pergunte “Alguém pode conversar agora?”, e alguém disponível, que passou por uma perda parecida, pode responder.</p>
+          <h3>Alguém para conversar, quando você precisar</h3>
+          <p>Às vezes, tudo o que a gente precisa é de alguém que entenda. Se você conhecer uma pessoa em um grupo e os dois quiserem continuar em contato, poderão conversar em particular.</p>
+          <p>E, sempre que sentir vontade de conversar, é só perguntar: “Alguém pode conversar agora?” Quem já passou por uma perda parecida pode estar disponível para ouvir, trocar experiências ou simplesmente fazer companhia.</p>
           <p>Ninguém pode mandar mensagem para você sem um sim dos dois lados.</p>
         </article>
         <article class="card">
-          <p class="label">Lembranças</p>
-          <h3>Um espaço privado para cada pessoa</h3>
-          <p>Guarde o que você não quer perder: textos, fotos, a voz num áudio antigo, uma carta, uma receita. Sugestões delicadas ajudam quando você não sabe por onde começar.</p>
+          <p class="label">Lembrar</p>
+          <h3>Um lugar para guardar o que importa</h3>
+          <p>Algumas lembranças são preciosas demais para se perder. Uma foto, uma carta, uma mensagem de voz, uma receita de família ou uma história que você não quer esquecer.</p>
+          <p>No After, você tem um espaço privado para guardar tudo isso e revisitar essas memórias sempre que quiser. E, quando faltar inspiração ou as palavras não vierem, pequenas sugestões ajudam você a começar.</p>
           <p>Só você vê, a não ser que escolha compartilhar uma lembrança.</p>
         </article>
       </div>
@@ -199,15 +226,15 @@
 
   <section class="promise" id="promise">
     <div class="wrap">
-      <p class="label">Nossa promessa</p>
+      <p class="label">Nosso compromisso</p>
       <hr class="rule">
-      <h2>Nada de IA nas suas conversas.</h2>
-      <p class="big">Nenhuma IA fala com você, lê suas conversas ou aprende com o que você compartilha. Aqui, toda conversa acontece entre pessoas de verdade.</p>
+      <h2>Conexões humanas, com respeito e privacidade.</h2>
+      <p class="big">Quando a gente passa por um momento difícil, faz diferença encontrar alguém que realmente entenda. O After nasceu para criar esse espaço: um lugar onde pessoas se encontram, compartilham suas histórias e se escutam de verdade. Sem inteligência artificial se passando por gente. Apenas pessoas, com suas próprias experiências, oferecendo companhia umas às outras.</p>
       <ul>
-        <li><strong>Privado por padrão.</strong> Só um nome de usuário. Sem fotos de perfil. Seu e-mail e seu número nunca aparecem.</li>
-        <li><strong>Só lemos o que é denunciado</strong> ou sinalizado por alguém que se preocupa com você. Mais nada.</li>
-        <li><strong>Ajuda em todas as telas.</strong> As linhas de apoio do seu país, a um toque, dia e noite.</li>
-        <li><strong>Saia quando quiser.</strong> Apague sua conta no app, e tudo o que é seu vai junto.</li>
+        <li><strong>Você escolhe o que quer mostrar.</strong> Aqui, basta um nome de usuário. Não é preciso usar foto de perfil, e seu e-mail e telefone não ficam visíveis para outros membros.</li>
+        <li><strong>Suas conversas merecem respeito.</strong> Não lemos suas mensagens privadas rotineiramente. Conteúdos podem ser analisados quando há denúncia ou sinalização por motivos de segurança, conforme nossas políticas.</li>
+        <li><strong>Se precisar de outro tipo de ajuda, ela está ao seu alcance.</strong> Encontre informações sobre serviços de apoio emocional e emergência do seu país. O After não é um serviço de emergência.</li>
+        <li><strong>Você é livre para seguir seu caminho.</strong> Exclua sua conta pelo aplicativo. Seus dados serão tratados conforme nossa Política de Privacidade e as exigências legais.</li>
       </ul>
       <p class="small">Como muitas equipes pequenas, usamos ferramentas de IA para ajudar a criar o próprio app. Isso nunca envolve nada do que você compartilha.</p>
     </div>
@@ -217,29 +244,31 @@
     <div class="wrap">
       <p class="label">Preço</p>
       <hr class="rule">
-      <h2>Grátis, e o que pode ser pago depois</h2>
-      <p class="lede" style="margin-bottom:0">Ajuda em crise, grupos, Conversar e escrita são grátis, sempre. O After+ dá mais espaço para fotos, áudios e vídeos.</p>
+      <h2>Estar junto não tem preço.</h2>
+      <p class="lede" style="margin-bottom:0">No After, conversar, compartilhar experiências e encontrar apoio será sempre gratuito. O After+ é uma opção para quem quiser mais espaço para guardar suas lembranças.</p>
       <div class="plans">
         <div class="plan">
           <p class="label">Grátis, sempre</p>
           <p class="price">R$ 0</p>
           <ul>
-            <li>Grupos, Conversar e Ajuda</li>
-            <li>Escrita sem limite em Lembranças</li>
-            <li>500 MB para fotos, áudios, vídeos e arquivos (cerca de 800 fotos, ou 8 horas de áudio)</li>
-            <li>Vídeos de até 1 minuto cada</li>
+            <li>Participe de grupos e converse com outras pessoas</li>
+            <li>Compartilhe suas experiências e encontre apoio</li>
+            <li>Escreva quantas histórias e lembranças quiser, sem limite</li>
+            <li>Guarde até 500 MB de fotos, áudios, vídeos e arquivos</li>
+            <li>Compartilhe vídeos de até 1 minuto</li>
           </ul>
         </div>
         <div class="plan plus">
-          <p class="label">After+, mais tarde e opcional</p>
-          <p class="price">R$ 9,99 <small>por mês, ou R$ 79,90 por ano</small></p>
+          <p class="label">After+, opcional, em breve</p>
+          <p class="price">R$ 19,90 <small>por mês, ou R$ 159,90 por ano</small></p>
           <ul>
-            <li>Tudo o que é grátis</li>
-            <li>50 GB para fotos, áudios, vídeos e arquivos</li>
-            <li>Vídeos mais longos</li>
+            <li>Tudo o que já é gratuito</li>
+            <li>50 GB para guardar fotos, áudios, vídeos e arquivos</li>
+            <li>Espaço para vídeos mais longos</li>
           </ul>
         </div>
       </div>
+      <p class="rules">O acolhimento nunca será pago. O After+ oferece apenas mais espaço para suas memórias.</p>
       <p class="rules">Se um dia você parar de pagar, nada é bloqueado nem apagado. Você continua com todas as lembranças e ainda pode abrir, compartilhar e salvar; só não pode adicionar arquivos além do espaço grátis. Nada de anúncios, nunca, e nunca vendemos seus dados.</p>
     </div>
   </section>
@@ -263,11 +292,7 @@
       </details>
       <details>
         <summary>Quando e onde ele abre?</summary>
-        <p>Primeiro no Reino Unido e na França, depois no Brasil, no iPhone e no Android. Avisamos uma vez só, quando abrir onde você mora.</p>
-      </details>
-      <details>
-        <summary>O que ganha um membro fundador?</summary>
-        <p>As primeiras 500 pessoas que deixarem o e-mail ganham um ano de After+ grátis: 50 GB para fotos, áudios e vídeos. O e-mail que mandamos quando o After abrir explica como ativar. Depois desse ano nada é bloqueado; você continua com tudo, como qualquer pessoa que sai do After+.</p>
+        <p>Primeiro no Reino Unido e na Irlanda, depois na França e, em seguida, no Brasil, no iPhone e no Android. Avisamos uma vez só, quando abrir onde você mora.</p>
       </details>
       <details>
         <summary>Quem pode ler o que eu escrevo?</summary>
@@ -285,9 +310,8 @@
       <div class="join-box">
         <p class="label">Quero saber quando abrir</p>
         <hr class="rule">
-        <h2>A gente conversa depois.</h2>
-        <p>O After abre em breve: primeiro no Reino Unido e na França, depois no Brasil. Mandamos um único e-mail quando ele abrir onde você mora. Só isso.</p>
-        <p class="founding"><strong>Membros fundadores.</strong> As primeiras 500 pessoas da lista ganham um ano de After+ grátis. O e-mail de lançamento explica como ativar.</p>
+        <h2>A gente se fala em breve.</h2>
+        <p>O After está chegando. Primeiro ao Reino Unido e à Irlanda, depois à França e, em seguida, ao Brasil. Deixe seu e-mail e avisaremos quando o After estiver disponível no seu país. Uma única mensagem, na hora certa.</p>
         <ul class="three">
           <li>Só pessoas de verdade, sem IA</li>
           <li>Privado por padrão</li>
@@ -299,19 +323,20 @@
           </label>
           <label class="field">Onde você mora?
             <select name="country">
-              <option value="other">Brasil</option>
+              <option value="BR">Brasil</option>
               <option value="GB">Reino Unido</option>
-              <option value="FR">França</option>
               <option value="IE">Irlanda</option>
+              <option value="FR">França</option>
               <option value="other">Outro lugar</option>
             </select>
           </label>
           <label class="hp" aria-hidden="true">Deixe em branco <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-          <label class="check"><input type="checkbox" name="consent" required> <span>Quero receber um único e-mail quando o After abrir. Guardem meu e-mail só para isso e depois apaguem.</span></label>
+          <label class="check"><input type="checkbox" name="consent" required> <span>Quero ser avisado por e-mail quando o After estiver disponível no meu país.</span></label>
           <div id="human"></div>
           <button class="button primary" type="submit">Quero saber quando abrir</button>
           <p class="status" id="status" role="status" aria-live="polite"></p>
         </form>
+        <p class="fine">Guardaremos seu endereço de e-mail para avisar quando o After for lançado. Você poderá solicitar a exclusão do seu endereço de e-mail a qualquer momento.</p>
       </div>
     </div>
   </section>
@@ -319,8 +344,8 @@
 
 <footer>
   <div class="wrap">
-    <p><strong>Se estiver pesado demais agora:</strong> no Brasil, CVV <span class="num">188</span>, ligação gratuita, a qualquer hora, ou chat em <a href="https://cvv.org.br/">cvv.org.br</a>. Se uma vida estiver em perigo, ligue <span class="num">192</span> (SAMU).</p>
-    <p><strong>After.</strong> A gente conversa depois. · <a href="/pt/seguranca/">Segurança</a> · <a href="/" lang="en">English</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
+    <p><strong>Se estiver pesado demais agora:</strong> no Brasil, CVV <span class="num">188</span>, ligação gratuita, a qualquer hora, ou chat em <a href="https://cvv.org.br">cvv.org.br</a>. Se uma vida estiver em perigo, ligue <span class="num">192</span> (SAMU).</p>
+    <p><strong>After.</strong> A gente conversa depois. · <a href="/pt/historia/">Nossa história</a> · <a href="/pt/seguranca/">Segurança</a> · <a href="/" lang="en">English</a> · <a href="/fr/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>
 
@@ -370,7 +395,7 @@
     if (widget === null) {
       widget = window.turnstile.render('#human', {
         sitekey: '0x4AAAAAAFQoLMx0Y7IBp_Zd',
-        language: 'pt-BR',
+        language: 'pt-br',
         theme: 'light',
         appearance: 'interaction-only',
         execution: 'execute',

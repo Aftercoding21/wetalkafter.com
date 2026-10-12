@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>After. On se parle après.</title>
+<meta name="description" content="After est un espace où se sentir compris après une perte : la mort d’un être cher, la fin d’une relation, une vie qui a changé. De petits groupes en direct, des échanges en tête-à-tête et un espace privé pour vos souvenirs. Uniquement de vraies personnes. Gratuit.">
+<meta property="og:title" content="After.">
+<meta property="og:description" content="Certaines pertes changent tout. De vraies personnes. De vraies histoires.">
+<meta property="og:image" content="https://wetalkafter.com/og.png">
+<meta property="og:url" content="https://wetalkafter.com/fr/">
+<meta name="theme-color" content="#ECE7DF">
+<link rel="alternate" hreflang="en" href="https://wetalkafter.com/">
+<link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/">
+<link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/">
+<link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts.css">
+<style>
+  :root {
+    --cream: #ECE7DF; --paper: #F6F3EE; --line: #DDD6CB;
+    --forest: #2F4436; --brown: #875A47; --clay: #8A4F3A; --peach: #E9C3A6; --sage: #D8DDD5;
+    --ink: #2A2B28; --muted: #5F5B55; --error: #8A3B2E;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", -apple-system, system-ui, "Helvetica Neue", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; }
+  body { background: var(--cream); color: var(--ink); font: 400 17px/1.6 var(--sans); }
+  .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .narrow > * { max-width: 680px; }
+  section { padding: 72px 0; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--forest); margin: 0; }
+  h2 { font-size: clamp(32px, 5vw, 44px); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 14px; }
+  h3 { font-size: 26px; line-height: 1.2; margin: 6px 0 10px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--forest); text-underline-offset: 3px; }
+  a:hover { color: var(--brown); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--clay); outline-offset: 3px; border-radius: 4px;
+  }
+  .label { font: 500 12px/1.8 var(--sans); letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  .rule { width: 32px; height: 1.5px; background: var(--brown); border: 0; margin: 4px 0 18px; }
+
+  /* Top */
+  header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
+  header.top .brand { font: 400 30px/1 var(--serif); color: var(--forest); text-decoration: none; letter-spacing: -0.01em; }
+  header.top .brand:hover { color: var(--forest); }
+  header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
+  header.top nav { display: flex; gap: 22px; font-size: 15px; }
+  header.top nav a { text-decoration: none; color: var(--muted); }
+  header.top nav a:hover { color: var(--forest); }
+  header.top nav .join { color: var(--forest); font-weight: 500; text-decoration: underline; }
+  @media (max-width: 720px) { header.top nav a:not(.join) { display: none; } }
+
+  /* Hero */
+  .hero { padding: 40px 0 84px; }
+  .hero .mark { width: 112px; height: 112px; margin: 0 0 28px -14px; display: block; }
+  .hero h1 { font: 300 clamp(44px, 9vw, 84px)/1.03 var(--serif); letter-spacing: -0.02em; max-width: 12ch; text-wrap: balance; margin-bottom: 26px; }
+  .hero h1 em { font-style: italic; color: var(--brown); }
+  .lede { font-size: 20px; max-width: 34em; margin-bottom: 30px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+  .button {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px;
+    border-radius: 10px; font: 600 16px var(--sans); text-decoration: none; border: 1.5px solid var(--forest);
+  }
+  .button.primary { background: var(--forest); color: #fff; }
+  .button.primary:hover { background: #3F5246; color: #fff; }
+  .button.outline { color: var(--forest); }
+  .facts { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 28px; }
+
+  /* Three parts */
+  .parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+  @media (max-width: 860px) { .parts { grid-template-columns: 1fr; } }
+  .card { background: var(--paper); border-radius: 16px; padding: 26px 26px 18px; }
+  .card p:last-child { color: var(--muted); font-size: 15px; }
+
+  /* Promise */
+  .promise { background: var(--forest); color: var(--cream); }
+  .promise h2 { color: var(--cream); }
+  .promise .label { color: var(--peach); }
+  .promise .rule { background: var(--peach); }
+  .promise .big { font: 400 clamp(22px, 3vw, 27px)/1.45 var(--serif); max-width: 32em; margin-bottom: 30px; }
+  .promise ul { list-style: none; padding: 0; margin: 0 0 22px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 32px; max-width: 860px; }
+  @media (max-width: 720px) { .promise ul { grid-template-columns: 1fr; } }
+  .promise li { color: var(--sage); padding-left: 18px; position: relative; }
+  .promise li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 6px; border-radius: 3px; background: var(--peach); }
+  .promise li strong { color: #fff; font-weight: 500; }
+  .promise .small { color: var(--sage); font-size: 15px; max-width: 40em; }
+
+  /* Price */
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 30px 0 22px; }
+  @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+  .plan { border-radius: 16px; padding: 26px; background: var(--paper); }
+  .plan.plus { background: transparent; border: 1.5px solid var(--line); }
+  .plan .price { font: 400 34px/1.1 var(--serif); color: var(--forest); margin: 4px 0 4px; }
+  .plan .price small { font: 400 16px var(--sans); color: var(--muted); }
+  .plan ul { margin: 16px 0 0; padding-left: 1.1em; }
+  .plan li { margin-bottom: 7px; }
+  .rules { max-width: 46em; color: var(--muted); font-size: 15px; }
+
+  /* FAQ */
+  details { border-top: 1px solid var(--line); padding: 4px 0; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; padding: 16px 32px 16px 0; font: 500 18px/1.4 var(--sans); position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 4px; top: 12px; font: 300 26px var(--sans); color: var(--brown); }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--ink); max-width: 40em; }
+
+  /* Join */
+  .join-box { background: var(--paper); border-radius: 16px; padding: 34px 30px; }
+  form { display: grid; gap: 14px; margin-top: 22px; max-width: 520px; }
+  label.field { display: grid; gap: 6px; font: 500 14px var(--sans); }
+  input[type=email], select {
+    min-height: 52px; border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: 0 14px;
+    font: 400 17px var(--sans); color: var(--ink); width: 100%;
+  }
+  .check { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; }
+  .check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--forest); flex: none; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  button.button { cursor: pointer; justify-self: start; }
+  button.button[disabled] { opacity: 0.6; cursor: default; }
+  .status { min-height: 1.5em; margin: 0; font-size: 15px; }
+  .status.error { color: var(--error); }
+  .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 max(28px, env(safe-area-inset-bottom)); font-size: 14px; color: var(--muted); }
+  footer p { margin: 0 0 8px; }
+  footer strong { color: var(--ink); font-weight: 500; }
+  .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .three { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+  .three li { font-size: 15px; color: var(--muted); padding-left: 16px; position: relative; }
+  .three li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 6px; height: 6px; border-radius: 3px; background: var(--brown); }
+  #human:empty { display: none; }
+  .thanks { margin-top: 22px; }
+
+  /* Hero picture: wide on computers, tall on phones */
+  .hero { padding: 0 0 84px; }
+  .hero-img img { display: block; width: 100%; height: auto; }
+  .hero .wrap { padding-top: 48px; }
+  .hero .label { margin-bottom: 18px; }
+  .lede + .lede { margin-top: -14px; }
+  .card h3 { text-wrap: balance; }
+  .plan .also { font-size: 15px; color: var(--muted); margin: 6px 0 0; }
+  .fine { font-size: 14px; color: var(--muted); margin: 6px 0 0; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/fr/" aria-label="After, accueil">After.</a>
+    <nav aria-label="Sur cette page">
+      <a href="#how">Comment ça marche</a>
+      <a href="#promise">Notre engagement</a>
+      <a href="#price">Tarifs</a>
+      <a href="#questions">Questions</a>
+      <a href="/fr/histoire/">Notre histoire</a>
+      <a href="/" lang="en">English</a>
+      <a href="/pt/" lang="pt-BR">Português</a>
+      <a class="join" href="#join">Prévenez-moi à l’ouverture</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <picture class="hero-img">
+      <source media="(max-width: 720px)" srcset="/images/hero-tall.jpg" width="853" height="1844">
+      <img src="/images/hero-wide-1600.jpg" srcset="/images/hero-wide-1600.jpg 1600w, /images/hero-wide.jpg 3000w" sizes="100vw" width="3000" height="1275" alt="After. Une plage paisible au coucher du soleil." fetchpriority="high">
+    </picture>
+    <div class="wrap">
+      <p class="label">De vraies personnes. De vraies histoires. Une façon plus douce de se sentir moins seul.</p>
+      <h1>Certaines pertes <em>changent tout.</em></h1>
+      <p class="lede">La perte d’un être cher. La fin d’une relation. Une vie qui ne ressemble plus à celle que vous aviez imaginée.</p>
+      <p class="lede">Quelle que soit l’épreuve que vous traversez, After est un espace où vous pouvez vous sentir compris. Rencontrez des personnes ayant vécu une expérience similaire, partagez votre histoire dans un petit groupe, échangez en tête-à-tête ou préservez les souvenirs qui comptent le plus. Il n’y a pas de bonne ou de mauvaise façon de ressentir les choses, et vous n’avez pas à tout affronter seul.</p>
+      <div class="buttons">
+        <a class="button primary" href="#join">Prévenez-moi à l’ouverture</a>
+        <a class="button outline" href="#how">Comment ça marche</a>
+      </div>
+      <ul class="facts">
+        <li class="label">Uniquement de vraies personnes</li>
+        <li class="label">Gratuit</li>
+        <li class="label">Anonyme si vous le souhaitez</li>
+        <li class="label">18+</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <p class="label">Trois façons de créer des liens</p>
+      <hr class="rule">
+      <h2>À votre façon, à votre rythme.</h2>
+      <p class="lede">Participez à un petit groupe, échangez en tête-à-tête avec quelqu’un ou gardez vos souvenirs dans un espace rien qu’à vous. À vous de choisir ce qui vous convient, quand vous vous sentez prêt.</p>
+      <p class="lede" style="margin-bottom:0">Vous y rencontrerez des personnes qui connaissent la perte pour l’avoir vécue. Pas en tant que thérapeutes, mais comme des personnes prêtes à écouter, à partager et à se soutenir mutuellement.</p>
+      <div class="parts">
+        <article class="card">
+          <p class="label">Groupes</p>
+          <h3>De petits groupes, des expériences partagées, de vrais liens.</h3>
+          <p>Participez à une rencontre en direct avec six personnes au maximum ayant vécu une perte similaire. Pendant deux heures, racontez votre histoire, écoutez les autres ou soyez simplement présent. Vous n’êtes jamais obligé de parler et vous pouvez partir à tout moment.</p>
+          <p>Les messages disparaissent 15 minutes après la fin de la rencontre.</p>
+        </article>
+        <article class="card">
+          <p class="label">Parler</p>
+          <h3>Une personne à qui parler, quand vous en ressentez le besoin</h3>
+          <p>Parfois, une seule conversation peut faire la différence. Si vous vous sentez proche d’une personne rencontrée dans un groupe et que vous souhaitez tous les deux garder le contact, vous pouvez continuer à échanger en privé.</p>
+          <p>Et lorsque vous avez besoin de parler, demandez simplement : « Quelqu’un peut parler maintenant ? » Une personne ayant traversé une épreuve similaire pourra peut-être vous écouter, échanger et vous comprendre.</p>
+          <p>Personne ne peut vous écrire sans que vous ayez tous les deux dit oui.</p>
+        </article>
+        <article class="card">
+          <p class="label">Souvenirs</p>
+          <h3>Un espace pour garder ce qui compte.</h3>
+          <p>Certains souvenirs sont trop précieux pour être oubliés. Préservez des photos, des mots, des messages vocaux, des lettres et ces petits détails qui vous rappellent un être cher.</p>
+          <p>Un espace rien qu’à vous, pour retrouver ces souvenirs quand vous le souhaitez. Et lorsque les mots ne viennent pas, quelques suggestions toutes simples peuvent vous aider à commencer.</p>
+          <p>Vous seul pouvez le voir, sauf si vous choisissez de partager un souvenir.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="promise" id="promise">
+    <div class="wrap">
+      <p class="label">Notre engagement</p>
+      <hr class="rule">
+      <h2>Des liens humains, dans le respect de votre vie privée.</h2>
+      <p class="big">Dans les moments difficiles, rencontrer quelqu’un qui comprend peut faire toute la différence. After est né de cette idée : un espace où l’on se retrouve, où l’on partage son histoire et où l’on s’écoute vraiment. Sans intelligence artificielle qui se fait passer pour une personne. Simplement des êtres humains qui se tiennent compagnie.</p>
+      <ul>
+        <li><strong>Vous choisissez ce que vous partagez.</strong> Un pseudonyme suffit pour vous présenter aux autres. Aucune photo de profil n’est nécessaire et votre adresse e-mail ainsi que votre numéro de téléphone ne sont pas visibles des autres membres.</li>
+        <li><strong>Vos conversations méritent le respect.</strong> Nous ne lisons pas systématiquement vos messages privés. Certains contenus peuvent être examinés lorsqu’ils sont signalés pour des raisons de sécurité, conformément à nos politiques.</li>
+        <li><strong>Des ressources d’aide à portée de main.</strong> Retrouvez les coordonnées de services de soutien et d’urgence dans votre pays. After est une communauté d’entraide, pas un service d’urgence.</li>
+        <li><strong>Vous êtes libre de partir.</strong> Supprimez votre compte directement dans l’application. Vos données seront traitées conformément à notre politique de confidentialité et aux obligations légales applicables.</li>
+      </ul>
+      <p class="small">Comme beaucoup de petites équipes, nous avons utilisé des outils d’IA pour nous aider à concevoir et à créer l’application. Cela ne concerne jamais ce que vous partagez.</p>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="wrap">
+      <p class="label">Tarifs</p>
+      <hr class="rule">
+      <h2>Être ensemble, ça n’a pas de prix.</h2>
+      <p class="lede" style="margin-bottom:0">Sur After, trouver du soutien, partager son expérience et créer des liens restera toujours gratuit. After+ offre simplement davantage d’espace pour préserver vos souvenirs.</p>
+      <div class="plans">
+        <div class="plan">
+          <p class="label">Gratuit, toujours</p>
+          <p class="price">0 €</p>
+          <ul>
+            <li>Participez aux groupes et échangez avec d’autres membres</li>
+            <li>Partagez vos expériences et trouvez du soutien</li>
+            <li>Écrivez autant de récits et de souvenirs que vous le souhaitez</li>
+            <li>Stockez jusqu’à 500 Mo de photos, messages vocaux, vidéos et fichiers</li>
+            <li>Vidéos d’une minute maximum</li>
+          </ul>
+        </div>
+        <div class="plan plus">
+          <p class="label">After+, plus tard, en option</p>
+          <p class="price">4,99 € <small>par mois, ou 39,99 € par an</small></p>
+          <ul>
+            <li>Tout ce qui est gratuit</li>
+            <li>50 Go pour les photos, messages vocaux, vidéos et fichiers</li>
+            <li>Des vidéos plus longues</li>
+          </ul>
+        </div>
+      </div>
+      <p class="rules">Les échanges et le soutien resteront toujours gratuits. After+ vous offre simplement plus de place pour vos souvenirs.</p>
+      <p class="rules">Si vous arrêtez de payer, rien n’est bloqué ni supprimé. Vous gardez tous vos souvenirs et pouvez toujours les ouvrir, les partager et les enregistrer ; vous ne pouvez simplement plus ajouter de fichiers au-delà de l’espace gratuit. Jamais de publicité, et nous ne vendons jamais vos données.</p>
+    </div>
+  </section>
+
+  <section id="questions">
+    <div class="wrap narrow">
+      <p class="label">Questions</p>
+      <hr class="rule">
+      <h2>Avant d’entrer</h2>
+      <details>
+        <summary>After, c’est une thérapie ou un service de crise ?</summary>
+        <p>Non. After, c’est le soutien de personnes qui ont elles aussi traversé une perte. Elles écoutent en tant que personnes qui comprennent, pas en tant que professionnels. Si vous êtes en danger, appelez le 15 (SAMU) ou le 112. Le 3114, numéro national de prévention du suicide, répond gratuitement, jour et nuit, et le bouton Aide de l’application l’affiche sur chaque écran.</p>
+      </details>
+      <details>
+        <summary>Pour quel type de perte ?</summary>
+        <p>Toute perte qui a bouleversé votre vie : un parent, un conjoint, un enfant, un frère ou une sœur, un ami, un animal, ou quelque chose qui a pris fin, comme un mariage. Les groupes sont organisés par type de perte, pour que vous soyez avec des personnes qui vivent quelque chose de semblable.</p>
+      </details>
+      <details>
+        <summary>Qui peut s’inscrire ?</summary>
+        <p>Toute personne âgée de 18 ans ou plus. Vous choisissez un pseudonyme ; personne ne voit votre vrai nom, votre e-mail ni votre numéro.</p>
+      </details>
+      <details>
+        <summary>Quand et où After ouvre-t-il ?</summary>
+        <p>D’abord au Royaume-Uni et en Irlande, puis en France et au Brésil, sur iPhone et Android. Nous vous écrirons une seule fois, quand After ouvrira là où vous vivez.</p>
+      </details>
+      <details>
+        <summary>Qui peut lire ce que j’écris ?</summary>
+        <p>Les personnes avec qui vous échangez, et personne d’autre. Les messages des groupes disparaissent 15 minutes après chaque rencontre. Vos souvenirs n’appartiennent qu’à vous, sauf si vous choisissez d’en partager un. Une personne de notre équipe ne lit une conversation que si elle est signalée ou si quelqu’un s’inquiète pour l’une des personnes qui y participent.</p>
+      </details>
+      <details>
+        <summary>Est-ce vraiment gratuit ?</summary>
+        <p>Oui. Les groupes, Parler, l’Aide et l’écriture sont gratuits, pour toujours. Un jour, il pourra exister un After+ optionnel, avec plus d’espace pour les photos et les enregistrements. Si c’est le cas, rien de ce que vous avez déjà ne sera bloqué.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap narrow">
+      <div class="join-box">
+        <p class="label">Prévenez-moi à l’ouverture</p>
+        <hr class="rule">
+        <h2>Nous serons bientôt là.</h2>
+        <p>After arrive bientôt, d’abord au Royaume-Uni et en Irlande, puis en France et au Brésil. Laissez-nous votre adresse e-mail et nous vous préviendrons lorsque After sera disponible dans votre pays. Un seul e-mail, au bon moment. Rien de plus.</p>
+        <ul class="three">
+          <li>Uniquement de vraies personnes, sans IA</li>
+          <li>Privé par défaut</li>
+          <li>De petits groupes sûrs</li>
+        </ul>
+        <form id="waitlist" novalidate>
+          <label class="field">E-mail
+            <input type="email" name="email" autocomplete="email" required placeholder="vous@exemple.fr">
+          </label>
+          <label class="field">Où vivez-vous ?
+            <select name="country">
+              <option value="FR">France</option>
+              <option value="GB">Royaume-Uni</option>
+              <option value="IE">Irlande</option>
+              <option value="BR">Brésil</option>
+              <option value="other">Ailleurs</option>
+            </select>
+          </label>
+          <label class="hp" aria-hidden="true">Laissez ce champ vide <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          <label class="check"><input type="checkbox" name="consent" required> <span>Prévenez-moi par e-mail lorsque After sera disponible dans mon pays.</span></label>
+          <div id="human"></div>
+          <button class="button primary" type="submit">Prévenez-moi à l’ouverture</button>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="fine">Nous conserverons votre adresse e-mail afin de vous informer du lancement d’After. Vous pourrez demander la suppression de votre adresse à tout moment.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Si c’est trop lourd en ce moment :</strong> en France, le <span class="num">3114</span>, gratuit, jour et nuit. Si une vie est en danger, appelez le <span class="num">15</span> (SAMU) ou le <span class="num">112</span>.</p>
+    <p><strong>After.</strong> On se parle après. · <a href="/fr/histoire/">Notre histoire</a> · <a href="/fr/securite/">Sécurité</a> · <a href="/" lang="en">English</a> · <a href="/pt/" lang="pt-BR">Português</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<script>
+(function () {
+  var form = document.getElementById('waitlist');
+  var status = document.getElementById('status');
+  var button = form.querySelector('button');
+  var FUNCTION_URL = 'https://lnnvivctgxniahykocyy.supabase.co/functions/v1/clever-processor';
+  var T = {
+    thanks: 'Merci. Nous vous préviendrons dès qu’After sera disponible !',
+    wrong: 'Un problème est survenu. Merci de réessayer dans un instant.',
+    email: 'Merci de vérifier votre adresse e-mail.',
+    tick: 'Merci de cocher la case pour que nous puissions vous écrire.',
+    sending: 'Envoi…'
+  };
+  var widget = null;
+
+  function fail(text) { button.disabled = false; status.className = 'status error'; status.textContent = text; }
+
+  function send(token) {
+    fetch(FUNCTION_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: form.email.value.trim(), country: form.country.value, consent: true, website: form.website.value, token: token || '' })
+    }).then(function (r) { return r.json().then(function (d) { if (!r.ok || !d.ok) throw new Error(); }); })
+      .then(function () {
+        form.outerHTML = '<p class="thanks" role="status">' + T.thanks + '</p>';
+      })
+      .catch(function () {
+        if (widget !== null) window.turnstile.reset(widget);
+        fail(T.wrong);
+      });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = form.email.value.trim();
+    status.className = 'status';
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { fail(T.email); form.email.focus(); return; }
+    if (!form.consent.checked) { fail(T.tick); return; }
+    button.disabled = true; status.textContent = T.sending;
+    // Cloudflare's quiet "I'm a person" check. It only shows a box if it is
+    // unsure; most people never see it.
+    if (!window.turnstile) { send(''); return; }
+    if (widget === null) {
+      widget = window.turnstile.render('#human', {
+        sitekey: '0x4AAAAAAFQoLMx0Y7IBp_Zd',
+        language: 'fr',
+        theme: 'light',
+        appearance: 'interaction-only',
+        execution: 'execute',
+        callback: send,
+        'error-callback': function () { fail(T.wrong); }
+      });
+    }
+    window.turnstile.execute(widget);
+  });
+})();
+</script>
+</body>
+</html>

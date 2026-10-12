@@ -138,6 +138,7 @@
   .three li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 6px; height: 6px; border-radius: 3px; background: var(--brown); }
   #human:empty { display: none; }
   .thanks { margin-top: 22px; }
+  .share-btn { margin-top: 14px; font: 500 15px/1 var(--sans); color: var(--forest); background: transparent; border: 1.5px solid var(--forest); border-radius: 999px; padding: 12px 20px; cursor: pointer; }
 
   /* Hero picture: wide on computers, tall on phones */
   .hero { padding: 0 0 84px; }
@@ -410,7 +411,7 @@
             <li>Join groups and connect with others</li>
             <li>Share your experiences and find support</li>
             <li>Unlimited writing in Remember</li>
-            <li>500 MB for photos, voice notes, videos and files</li>
+            <li>Keep 50 photos, 5 videos and 20 voice notes</li>
             <li>Videos up to 1 minute long</li>
           </ul>
         </div>
@@ -420,8 +421,8 @@
           <p class="also">In Ireland and France: €4.99 a month, or €39.99 a year.</p>
           <ul>
             <li>Everything in the free version</li>
-            <li>50 GB for photos, voice notes, videos and files</li>
-            <li>Longer videos</li>
+            <li>Unlimited photos and voice notes</li>
+            <li>Videos up to 10 minutes long</li>
           </ul>
         </div>
       </div>
@@ -514,6 +515,9 @@
   var button = form.querySelector('button');
   var FUNCTION_URL = 'https://lnnvivctgxniahykocyy.supabase.co/functions/v1/clever-processor';
   var T = {
+    share: 'Tell a friend',
+    share_text: 'After: a kind place for anyone living with grief, loss or a big change. Real people, no AI.',
+    copied: 'Link copied. Thank you for sharing.',
     thanks: 'Thank you. We’ll let you know once After is live!',
     wrong: 'Something went wrong. Please try again in a moment.',
     email: 'Please check your email address.',
@@ -531,7 +535,12 @@
       body: JSON.stringify({ email: form.email.value.trim(), country: form.country.value, consent: true, website: form.website.value, token: token || '' })
     }).then(function (r) { return r.json().then(function (d) { if (!r.ok || !d.ok) throw new Error(); }); })
       .then(function () {
-        form.outerHTML = '<p class="thanks" role="status">' + T.thanks + '</p>';
+        form.outerHTML = '<p class="thanks" role="status">' + T.thanks + '</p>' + '<button type="button" class="share-btn" id="share">' + T.share + '</button><p class="status" id="shared"></p>';
+        var url = location.origin + location.pathname;
+        document.getElementById('share').addEventListener('click', function () {
+          if (navigator.share) { navigator.share({ title: 'After', text: T.share_text, url: url }).catch(function () {}); return; }
+          navigator.clipboard.writeText(T.share_text + ' ' + url).then(function () { document.getElementById('shared').textContent = T.copied; });
+        });
       })
       .catch(function () {
         if (widget !== null) window.turnstile.reset(widget);

@@ -47,8 +47,8 @@
   /* Top */
   header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
   header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
-  header.top .brand { font: 400 30px/1 var(--serif); color: var(--forest); text-decoration: none; letter-spacing: -0.01em; }
-  header.top .brand:hover { color: var(--forest); }
+  header.top .brand { display: block; line-height: 0; }
+  header.top .brand img { display: block; height: 32px; width: auto; }
   header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
   header.top nav { display: flex; gap: 22px; font-size: 15px; }
   header.top nav a { text-decoration: none; color: var(--muted); }
@@ -148,13 +148,19 @@
   .card h3 { text-wrap: balance; }
   .plan .also { font-size: 15px; color: var(--muted); margin: 6px 0 0; }
   .fine { font-size: 14px; color: var(--muted); margin: 6px 0 0; }
+  /* App store buttons, not live yet */
+  .stores { display: flex; flex-wrap: wrap; gap: 10px; margin: -18px 0 32px; }
+  .store { display: inline-flex; flex-direction: column; justify-content: center; min-width: 150px; padding: 8px 16px;
+    border: 1.5px solid var(--line); border-radius: 10px; color: var(--muted); cursor: default; user-select: none; }
+  .store-name { font: 600 16px/1.2 var(--sans); }
+  .store-soon { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/" aria-label="After, home">After.</a>
+    <a class="brand" href="/" aria-label="After, home"><img src="/images/wordmark.png" width="93" height="32" alt="After"></a>
     <nav aria-label="On this page">
       <a href="#how">How it works</a>
       <a href="#promise">Our promise</a>
@@ -182,6 +188,10 @@
       <div class="buttons">
         <a class="button primary" href="#join">Tell me when it opens</a>
         <a class="button outline" href="#how">How it works</a>
+      </div>
+      <div class="stores" role="group" aria-label="The After app">
+        <span class="store" aria-disabled="true"><span class="store-name">App Store</span><span class="store-soon">Coming soon</span></span>
+        <span class="store" aria-disabled="true"><span class="store-name">Google Play</span><span class="store-soon">Coming soon</span></span>
       </div>
       <ul class="facts">
         <li class="label">Only real people</li>
@@ -337,7 +347,7 @@
           <button class="button primary" type="submit">Tell me when it opens</button>
           <p class="status" id="status" role="status" aria-live="polite"></p>
         </form>
-        <p class="fine">We’ll keep your email address to let you know when After launches. You can request the deletion of your email address at any time.</p>
+        <p class="fine">We’ll keep your email address to let you know when After launches. You can request the deletion of your email address at any time. Read our <a href="/privacy">privacy policy</a>.</p>
       </div>
     </div>
   </section>
@@ -346,7 +356,7 @@
 <footer>
   <div class="wrap">
     <p><strong>If it’s too much right now:</strong> UK and Ireland, Samaritans <span class="num">116 123</span> · France <span class="num">3114</span> · free, any time. If a life is in danger, call <span class="num">999</span> (UK) or <span class="num">112</span> (Ireland and France).</p>
-    <p><strong>After.</strong> We talk after. · <a href="/story">Our story</a> · <a href="/safety">Safety</a> · <a href="/pt/" lang="pt-BR">Português</a> · <a href="/fr/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
+    <p><strong>After.</strong> We talk after. · <a href="/story">Our story</a> · <a href="/safety">Safety</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/pt/" lang="pt-BR">Português</a> · <a href="/fr/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>
 

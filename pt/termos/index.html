@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Termos de uso · After</title>
+<meta name="description" content="O acordo entre você e o After, curto e claro.">
+<meta property="og:title" content="Termos de uso · After">
+<meta property="og:description" content="O acordo entre você e o After, curto e claro.">
+<meta property="og:image" content="https://wetalkafter.com/og.png">
+<meta property="og:url" content="https://wetalkafter.com/pt/termos/">
+<meta name="theme-color" content="#ECE7DF">
+<link rel="alternate" hreflang="en" href="https://wetalkafter.com/terms">
+<link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/termos/">
+<link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/conditions/">
+<link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/terms">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts.css">
+<style>
+  :root {
+    --cream: #ECE7DF; --paper: #F6F3EE; --line: #DDD6CB;
+    --forest: #2F4436; --brown: #875A47; --clay: #8A4F3A; --peach: #E9C3A6; --sage: #D8DDD5;
+    --ink: #2A2B28; --muted: #5F5B55; --error: #8A3B2E;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", -apple-system, system-ui, "Helvetica Neue", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; }
+  body { background: var(--cream); color: var(--ink); font: 400 17px/1.6 var(--sans); }
+  .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .narrow > * { max-width: 680px; }
+  section { padding: 72px 0; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--forest); margin: 0; }
+  h2 { font-size: clamp(32px, 5vw, 44px); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 14px; }
+  h3 { font-size: 26px; line-height: 1.2; margin: 6px 0 10px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--forest); text-underline-offset: 3px; }
+  a:hover { color: var(--brown); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--clay); outline-offset: 3px; border-radius: 4px;
+  }
+  .label { font: 500 12px/1.8 var(--sans); letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  .rule { width: 32px; height: 1.5px; background: var(--brown); border: 0; margin: 4px 0 18px; }
+
+  /* Top */
+  header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
+  header.top .brand { display: block; line-height: 0; }
+  header.top .brand img { display: block; height: 32px; width: auto; }
+  header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
+  header.top nav { display: flex; gap: 22px; font-size: 15px; }
+  header.top nav a { text-decoration: none; color: var(--muted); }
+  header.top nav a:hover { color: var(--forest); }
+  header.top nav .join { color: var(--forest); font-weight: 500; text-decoration: underline; }
+  @media (max-width: 720px) { header.top nav a:not(.join) { display: none; } }
+
+  /* Hero */
+  .hero { padding: 40px 0 84px; }
+  .hero .mark { width: 112px; height: 112px; margin: 0 0 28px -14px; display: block; }
+  .hero h1 { font: 300 clamp(44px, 9vw, 84px)/1.03 var(--serif); letter-spacing: -0.02em; max-width: 12ch; text-wrap: balance; margin-bottom: 26px; }
+  .hero h1 em { font-style: italic; color: var(--brown); }
+  .lede { font-size: 20px; max-width: 34em; margin-bottom: 30px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+  .button {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px;
+    border-radius: 10px; font: 600 16px var(--sans); text-decoration: none; border: 1.5px solid var(--forest);
+  }
+  .button.primary { background: var(--forest); color: #fff; }
+  .button.primary:hover { background: #3F5246; color: #fff; }
+  .button.outline { color: var(--forest); }
+  .facts { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 28px; }
+
+  /* Three parts */
+  .parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+  @media (max-width: 860px) { .parts { grid-template-columns: 1fr; } }
+  .card { background: var(--paper); border-radius: 16px; padding: 26px 26px 18px; }
+  .card p:last-child { color: var(--muted); font-size: 15px; }
+
+  /* Promise */
+  .promise { background: var(--forest); color: var(--cream); }
+  .promise h2 { color: var(--cream); }
+  .promise .label { color: var(--peach); }
+  .promise .rule { background: var(--peach); }
+  .promise .big { font: 400 clamp(22px, 3vw, 27px)/1.45 var(--serif); max-width: 32em; margin-bottom: 30px; }
+  .promise ul { list-style: none; padding: 0; margin: 0 0 22px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 32px; max-width: 860px; }
+  @media (max-width: 720px) { .promise ul { grid-template-columns: 1fr; } }
+  .promise li { color: var(--sage); padding-left: 18px; position: relative; }
+  .promise li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 6px; border-radius: 3px; background: var(--peach); }
+  .promise li strong { color: #fff; font-weight: 500; }
+  .promise .small { color: var(--sage); font-size: 15px; max-width: 40em; }
+
+  /* Price */
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 30px 0 22px; }
+  @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+  .plan { border-radius: 16px; padding: 26px; background: var(--paper); }
+  .plan.plus { background: transparent; border: 1.5px solid var(--line); }
+  .plan .price { font: 400 34px/1.1 var(--serif); color: var(--forest); margin: 4px 0 4px; }
+  .plan .price small { font: 400 16px var(--sans); color: var(--muted); }
+  .plan ul { margin: 16px 0 0; padding-left: 1.1em; }
+  .plan li { margin-bottom: 7px; }
+  .rules { max-width: 46em; color: var(--muted); font-size: 15px; }
+
+  /* FAQ */
+  details { border-top: 1px solid var(--line); padding: 4px 0; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; padding: 16px 32px 16px 0; font: 500 18px/1.4 var(--sans); position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 4px; top: 12px; font: 300 26px var(--sans); color: var(--brown); }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--ink); max-width: 40em; }
+
+  /* Join */
+  .join-box { background: var(--paper); border-radius: 16px; padding: 34px 30px; }
+  form { display: grid; gap: 14px; margin-top: 22px; max-width: 520px; }
+  label.field { display: grid; gap: 6px; font: 500 14px var(--sans); }
+  input[type=email], select {
+    min-height: 52px; border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: 0 14px;
+    font: 400 17px var(--sans); color: var(--ink); width: 100%;
+  }
+  .check { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; }
+  .check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--forest); flex: none; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  button.button { cursor: pointer; justify-self: start; }
+  button.button[disabled] { opacity: 0.6; cursor: default; }
+  .status { min-height: 1.5em; margin: 0; font-size: 15px; }
+  .status.error { color: var(--error); }
+  .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 max(28px, env(safe-area-inset-bottom)); font-size: 14px; color: var(--muted); }
+  footer p { margin: 0 0 8px; }
+  footer strong { color: var(--ink); font-weight: 500; }
+  .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .page h1 { font: 300 clamp(40px, 8vw, 68px)/1.05 var(--serif); letter-spacing: -0.02em; margin: 0 0 22px; max-width: 14ch; }
+  .page .lede { font-size: 19px; max-width: 36em; }
+  .blocks { display: grid; gap: 18px; margin-top: 34px; }
+  .block { background: var(--paper); border-radius: 16px; padding: 26px 26px 14px; }
+  .block h2 { font-size: 26px; line-height: 1.2; margin-bottom: 10px; }
+  .block ul { margin: 0 0 14px; padding-left: 20px; }
+  .block li { margin-bottom: 6px; }
+  .help-box { border: 1.5px solid var(--forest); border-radius: 16px; padding: 22px 26px 10px; margin-top: 18px; }
+  .story p { font: 400 20px/1.65 var(--serif); margin: 0 0 18px; max-width: 34em; }
+  .story p.beat { font-size: clamp(26px, 4vw, 32px); line-height: 1.3; color: var(--forest); margin: 34px 0; }
+  .story .note { font: 400 15px/1.6 var(--sans); color: var(--muted); margin-bottom: 34px; }
+  .story .help-box p { font: 400 17px/1.6 var(--sans); margin: 0 0 14px; }
+  .story .sign { font-style: italic; color: var(--brown); margin-top: 30px; }
+
+  .legal .draft { background: var(--peach); border-radius: 12px; padding: 12px 16px; font-size: 15px; margin-bottom: 22px; }
+  .legal h1 { margin-bottom: 10px; }
+  .legal h2 { font-size: 25px; line-height: 1.25; margin: 40px 0 10px; }
+  .legal h3 { font: 500 17px/1.4 var(--sans); color: var(--ink); margin: 24px 0 6px; }
+  .legal ul { padding-left: 1.2em; }
+  .legal li { margin-bottom: 6px; }
+  .legal .updated { color: var(--muted); font-size: 15px; margin-bottom: 26px; }
+  .legal .summary { background: var(--paper); border-radius: 16px; padding: 20px 22px; margin: 26px 0 8px; }
+  .legal .summary h2 { margin-top: 0; font-size: 22px; }
+  .legal .summary ul { margin-bottom: 0; }
+  .legal mark { background: #F3DCC9; color: var(--ink); padding: 0 3px; border-radius: 3px; }
+  .legal table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 18px; }
+  .legal th, .legal td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+  .legal th { font-weight: 500; color: var(--muted); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .legal .table-scroll { overflow-x: auto; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/pt/" aria-label="After, início"><img src="/images/wordmark.png" width="93" height="32" alt="After"></a>
+    <nav aria-label="Nesta página">
+      <a href="/terms" lang="en">English</a>
+      <a href="/fr/conditions/" lang="fr">Français</a>
+      <a class="join" href="/pt/#join">Quero saber quando abrir</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page legal">
+  <section>
+    <div class="wrap narrow">
+      <p class="draft"><strong>Rascunho.</strong> Estes termos estão sendo revisados por um advogado antes de o After abrir. As palavras entre <mark>[colchetes]</mark> ainda precisam ser preenchidas.</p>
+
+      <h1>Termos de uso</h1>
+      <p class="updated">Última atualização <mark>[data]</mark></p>
+
+      <p class="lede">O After é um lugar tranquilo para viver uma perda, junto de pessoas que também passaram por uma. Estes termos são o acordo entre você e nós. Tentamos deixá-los curtos e claros.</p>
+
+      <section class="summary">
+        <h2>Em resumo</h2>
+        <ul>
+          <li>O After é para pessoas com <strong>18 anos ou mais</strong>.</li>
+          <li>É <strong>apoio entre pessoas, não terapia nem serviço de crise</strong>. Se você estiver em perigo, ligue para o número de emergência do seu país.</li>
+          <li><strong>Seja gentil.</strong> Nada de mensagens sexuais, pedidos de dinheiro ou de contatos, nem IA ou robôs.</li>
+          <li>Quem desrespeita as regras pode receber um aviso, ser suspenso ou banido. Você sempre pode pedir que a gente reveja a decisão.</li>
+          <li>O que você escreve e guarda aqui é <strong>seu</strong>.</li>
+          <li>O After é <strong>gratuito</strong>.</li>
+        </ul>
+      </section>
+
+      <h2>Quem somos</h2>
+      <p>O After é administrado pela <mark>[nome da empresa] OÜ</mark>, uma empresa registrada na Estônia (código de registro <mark>[número]</mark>), <mark>[endereço registrado na Estônia]</mark>. Contato: <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a>.</p>
+
+      <h2>O que o After é, e o que não é</h2>
+      <p>O After permite guardar lembranças privadas, participar de pequenos grupos ao vivo (5 pessoas, mais 1 convidado que quem organiza pode chamar) e conversar a dois, com pessoas que você conheceu lá ou com alguém disponível quando você precisa conversar. Todo mundo aqui é uma pessoa de verdade que passou por uma perda. Elas escutam como quem entende, não como profissionais.</p>
+      <p><strong>O After não é um serviço de crise, nem aconselhamento médico, psicológico ou jurídico.</strong> Não conseguimos acompanhar todas as conversas. Se você ou outra pessoa estiver em perigo, ligue 192 (SAMU) no Brasil. O CVV atende no 188, de graça, a qualquer hora. A Ajuda, no canto superior de todas as telas, mostra essas linhas.</p>
+
+      <h2>Quem pode usar o After</h2>
+      <ul>
+        <li>Você precisa ter <strong>18 anos ou mais</strong>.</li>
+        <li>Você pode ter <strong>uma conta</strong>, e ela é só sua.</li>
+        <li>Você precisa informar um e-mail de verdade e um número de celular que receba SMS.</li>
+        <li>Você não pode usar o After se já foi banido antes.</li>
+        <li>Você aceita <strong>verificações rápidas de que é uma pessoa</strong>: a Cloudflare verifica isso quando você cria a conta, entra e antes de começar a conversar (no máximo cerca de uma vez por dia). Se sua conta mostrar sinais de estar sendo usada por um programa, podemos pedir que você faça a verificação de novo, e alguém da nossa equipe pode olhar a conta.</li>
+      </ul>
+
+      <h2>Como cuidamos uns dos outros</h2>
+      <p>Estas regras mantêm o After seguro para pessoas num momento muito difícil. Por favor:</p>
+      <ul>
+        <li><strong>Seja gentil.</strong> Nada de insultos, deboche, ameaças, ódio ou pressão para alguém contar mais do que quer.</li>
+        <li><strong>Nada sexual</strong>, nunca, e jamais nada que envolva alguém que possa ter menos de 18 anos.</li>
+        <li><strong>Não peça dinheiro</strong>, não venda nem faça propaganda, e não peça números de telefone, endereços ou redes sociais. Não dá para enviar links nem e-mails nas conversas.</li>
+        <li><strong>Nada de IA ou robôs.</strong> Escreva com suas próprias palavras. Não use IA para escrever mensagens para outras pessoas, e nunca deixe um programa, robô ou agente de IA usar sua conta ou se cadastrar por você.</li>
+        <li><strong>Seja você.</strong> Não finja ser outra pessoa nem ter vivido uma perda que você não viveu.</li>
+        <li><strong>Guarde em sigilo o que os outros compartilham.</strong> Não copie, não tire print e não repita fora do After.</li>
+        <li><strong>Não incentive ninguém a se machucar</strong>, nem compartilhe formas de fazer isso.</li>
+        <li>Não tente driblar um banimento, quebrar o app ou acessar informações que não são suas.</li>
+      </ul>
+
+      <h2>Se alguém desrespeitar as regras</h2>
+      <p>Você pode ocultar alguém, pedir ao seu grupo para remover a pessoa, denunciá-la ou, se você organiza o grupo, bani-la dele. Alguém da nossa equipe lê cada denúncia.</p>
+      <ul>
+        <li>Na primeira vez, normalmente removemos as mensagens e enviamos um <strong>aviso</strong>.</li>
+        <li>Depois disso, cada nova vez leva a uma <strong>suspensão de 7 dias</strong>. Depois de três suspensões, a conta é <strong>encerrada</strong>.</li>
+        <li>Algumas coisas levam a um <strong>banimento imediato</strong>: mensagens sexuais para alguém que possa ter menos de 18 anos, ameaças, pedidos de dinheiro e uso de IA ou de um robô para responder.</li>
+        <li>Se três pessoas diferentes denunciarem alguém no mesmo dia, a conta dessa pessoa é <strong>pausada</strong> até alguém da nossa equipe olhar.</li>
+      </ul>
+      <p>Contamos à pessoa o que decidimos, qual regra foi desrespeitada e por quê. Contamos a quem denunciou o que fizemos, sem dizer quem denunciou. Se você achar que erramos, pode <strong>pedir uma nova análise</strong> pelo app, e uma pessoa vai revisar.</p>
+
+      <h2>Seu conteúdo</h2>
+      <p>O que você escreve, grava e guarda no After é seu. Você nos autoriza a armazenar esse conteúdo e mostrá-lo às pessoas que você escolher: as pessoas do seu grupo, a pessoa com quem você está conversando ou as pessoas com quem você compartilha uma lembrança. Não usamos para mais nada, e nunca para treinar IA. Adicione apenas o que você tem o direito de compartilhar, e tenha cuidado com fotos ou gravações de outras pessoas.</p>
+      <p>As mensagens dos grupos somem 15 minutos depois do fim do encontro. Suas lembranças ficam até você apagá-las. Nossa <a href="/pt/privacidade/">política de privacidade</a> explica o que guardamos e por quanto tempo.</p>
+
+      <h2>Sua conta</h2>
+      <p>Não compartilhe sua senha. Você pode apagar sua conta a qualquer momento em Configurações, e tudo o que é seu vai junto. Podemos encerrar uma conta que desrespeite estes termos, como descrito acima.</p>
+
+      <h2>Preço</h2>
+      <p>Grupos, Conversar, Ajuda e escrita em Lembranças são gratuitos, sempre. Você também tem 500 MB de espaço para fotos, áudios, vídeos e arquivos, com vídeos de até 1 minuto cada.</p>
+      <p>Mais tarde, podemos oferecer o <strong>After+</strong>, uma assinatura opcional com mais espaço (50 GB) e vídeos mais longos, por R$ 19,90 por mês ou R$ 159,90 por ano no Brasil. Se você assinar e depois parar, <strong>nada é bloqueado nem apagado</strong>: você continua com todas as lembranças e ainda pode abrir, compartilhar e salvar; só não pode adicionar arquivos além do espaço gratuito. Os pagamentos passam pela App Store ou pelo Google Play, segundo as regras deles para cancelamento e reembolso. Ajuda em crise, grupos, Conversar e escrita nunca são pagos, e o After+ nunca significa anúncios ou venda das suas informações.</p>
+
+      <h2>Mudanças no After e nestes termos</h2>
+      <p>O After é novo e vai mudar à medida que aprendemos. Se mudarmos estes termos de uma forma que importe, avisaremos você no app antes de a mudança valer. Se você não concordar, pode apagar sua conta.</p>
+
+      <h2>Responsabilidade</h2>
+      <p>Trabalhamos muito para manter o After seguro e funcionando, mas não podemos prometer que ele estará sempre disponível ou livre de erros, e não somos responsáveis pelo que outras pessoas dizem ou fazem. Nada nestes termos limita nossa responsabilidade onde a lei não permite que ela seja limitada, nem tira seus direitos como consumidor.</p>
+
+      <h2>A lei</h2>
+      <p>Estes termos são regidos pela lei de <mark>[Estônia, a confirmar com nosso advogado]</mark>. Se você mora no Brasil, no Reino Unido ou em outro país da União Europeia, continua tendo a proteção das leis de defesa do consumidor do lugar onde vive, e pode entrar com uma ação na justiça local.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>After.</strong> A gente conversa depois. · <a href="/pt/">Início</a> · <a href="/pt/historia/">Nossa história</a> · <a href="/pt/seguranca/">Segurança</a> · <a href="/pt/privacidade/">Privacidade</a> · <a href="/terms" lang="en">English</a> · <a href="/fr/conditions/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
+  </div>
+</footer>
+</body>
+</html>

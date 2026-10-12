@@ -47,8 +47,8 @@
   /* Top */
   header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
   header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
-  header.top .brand { font: 400 30px/1 var(--serif); color: var(--forest); text-decoration: none; letter-spacing: -0.01em; }
-  header.top .brand:hover { color: var(--forest); }
+  header.top .brand { display: block; line-height: 0; }
+  header.top .brand img { display: block; height: 32px; width: auto; }
   header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
   header.top nav { display: flex; gap: 22px; font-size: 15px; }
   header.top nav a { text-decoration: none; color: var(--muted); }
@@ -148,13 +148,19 @@
   .card h3 { text-wrap: balance; }
   .plan .also { font-size: 15px; color: var(--muted); margin: 6px 0 0; }
   .fine { font-size: 14px; color: var(--muted); margin: 6px 0 0; }
+  /* App store buttons, not live yet */
+  .stores { display: flex; flex-wrap: wrap; gap: 10px; margin: -18px 0 32px; }
+  .store { display: inline-flex; flex-direction: column; justify-content: center; min-width: 150px; padding: 8px 16px;
+    border: 1.5px solid var(--line); border-radius: 10px; color: var(--muted); cursor: default; user-select: none; }
+  .store-name { font: 600 16px/1.2 var(--sans); }
+  .store-soon { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/pt/" aria-label="After, início">After.</a>
+    <a class="brand" href="/pt/" aria-label="After, início"><img src="/images/wordmark.png" width="93" height="32" alt="After"></a>
     <nav aria-label="Nesta página">
       <a href="#how">Como funciona</a>
       <a href="#promise">Nosso compromisso</a>
@@ -182,6 +188,10 @@
       <div class="buttons">
         <a class="button primary" href="#join">Quero saber quando abrir</a>
         <a class="button outline" href="#how">Como funciona</a>
+      </div>
+      <div class="stores" role="group" aria-label="O app After">
+        <span class="store" aria-disabled="true"><span class="store-name">App Store</span><span class="store-soon">Em breve</span></span>
+        <span class="store" aria-disabled="true"><span class="store-name">Google Play</span><span class="store-soon">Em breve</span></span>
       </div>
       <ul class="facts">
         <li class="label">Só pessoas de verdade</li>
@@ -336,7 +346,7 @@
           <button class="button primary" type="submit">Quero saber quando abrir</button>
           <p class="status" id="status" role="status" aria-live="polite"></p>
         </form>
-        <p class="fine">Guardaremos seu endereço de e-mail para avisar quando o After for lançado. Você poderá solicitar a exclusão do seu endereço de e-mail a qualquer momento.</p>
+        <p class="fine">Guardaremos seu endereço de e-mail para avisar quando o After for lançado. Você poderá solicitar a exclusão do seu endereço de e-mail a qualquer momento. Leia nossa <a href="/pt/privacidade/">política de privacidade</a>.</p>
       </div>
     </div>
   </section>
@@ -345,7 +355,7 @@
 <footer>
   <div class="wrap">
     <p><strong>Se estiver pesado demais agora:</strong> no Brasil, CVV <span class="num">188</span>, ligação gratuita, a qualquer hora, ou chat em <a href="https://cvv.org.br">cvv.org.br</a>. Se uma vida estiver em perigo, ligue <span class="num">192</span> (SAMU).</p>
-    <p><strong>After.</strong> A gente conversa depois. · <a href="/pt/historia/">Nossa história</a> · <a href="/pt/seguranca/">Segurança</a> · <a href="/" lang="en">English</a> · <a href="/fr/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
+    <p><strong>After.</strong> A gente conversa depois. · <a href="/pt/historia/">Nossa história</a> · <a href="/pt/seguranca/">Segurança</a> · <a href="/pt/privacidade/">Privacidade</a> · <a href="/pt/termos/">Termos</a> · <a href="/" lang="en">English</a> · <a href="/fr/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>
 

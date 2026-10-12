@@ -47,8 +47,8 @@
   /* Top */
   header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
   header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
-  header.top .brand { font: 400 30px/1 var(--serif); color: var(--forest); text-decoration: none; letter-spacing: -0.01em; }
-  header.top .brand:hover { color: var(--forest); }
+  header.top .brand { display: block; line-height: 0; }
+  header.top .brand img { display: block; height: 32px; width: auto; }
   header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
   header.top nav { display: flex; gap: 22px; font-size: 15px; }
   header.top nav a { text-decoration: none; color: var(--muted); }
@@ -150,7 +150,7 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/pt/" aria-label="After, início">After.</a>
+    <a class="brand" href="/pt/" aria-label="After, início"><img src="/images/wordmark.png" width="93" height="32" alt="After"></a>
     <nav aria-label="Nesta página">
       <a class="join" href="/pt/#join">Quero saber quando abrir</a>
     </nav>
@@ -246,7 +246,7 @@
 
 <footer>
   <div class="wrap">
-    <p><strong>After.</strong> A gente conversa depois. · <a href="/pt/">Início</a> · <a href="/pt/seguranca/">Segurança</a> · <a href="/story" lang="en">English</a> · <a href="/fr/histoire/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
+    <p><strong>After.</strong> A gente conversa depois. · <a href="/pt/">Início</a> · <a href="/pt/seguranca/">Segurança</a> · <a href="/pt/privacidade/">Privacidade</a> · <a href="/pt/termos/">Termos</a> · <a href="/story" lang="en">English</a> · <a href="/fr/histoire/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>
 </body>

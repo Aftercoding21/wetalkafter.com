@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Política de privacidade · After</title>
+<meta name="description" content="O que o After guarda, por quê, por quanto tempo e o que você pode fazer.">
+<meta property="og:title" content="Política de privacidade · After">
+<meta property="og:description" content="O que o After guarda, por quê, por quanto tempo e o que você pode fazer.">
+<meta property="og:image" content="https://wetalkafter.com/og.png">
+<meta property="og:url" content="https://wetalkafter.com/pt/privacidade/">
+<meta name="theme-color" content="#ECE7DF">
+<link rel="alternate" hreflang="en" href="https://wetalkafter.com/privacy">
+<link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/privacidade/">
+<link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/confidentialite/">
+<link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/privacy">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts.css">
+<style>
+  :root {
+    --cream: #ECE7DF; --paper: #F6F3EE; --line: #DDD6CB;
+    --forest: #2F4436; --brown: #875A47; --clay: #8A4F3A; --peach: #E9C3A6; --sage: #D8DDD5;
+    --ink: #2A2B28; --muted: #5F5B55; --error: #8A3B2E;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", -apple-system, system-ui, "Helvetica Neue", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; }
+  body { background: var(--cream); color: var(--ink); font: 400 17px/1.6 var(--sans); }
+  .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .narrow > * { max-width: 680px; }
+  section { padding: 72px 0; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--forest); margin: 0; }
+  h2 { font-size: clamp(32px, 5vw, 44px); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 14px; }
+  h3 { font-size: 26px; line-height: 1.2; margin: 6px 0 10px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--forest); text-underline-offset: 3px; }
+  a:hover { color: var(--brown); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--clay); outline-offset: 3px; border-radius: 4px;
+  }
+  .label { font: 500 12px/1.8 var(--sans); letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  .rule { width: 32px; height: 1.5px; background: var(--brown); border: 0; margin: 4px 0 18px; }
+
+  /* Top */
+  header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
+  header.top .brand { display: block; line-height: 0; }
+  header.top .brand img { display: block; height: 32px; width: auto; }
+  header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
+  header.top nav { display: flex; gap: 22px; font-size: 15px; }
+  header.top nav a { text-decoration: none; color: var(--muted); }
+  header.top nav a:hover { color: var(--forest); }
+  header.top nav .join { color: var(--forest); font-weight: 500; text-decoration: underline; }
+  @media (max-width: 720px) { header.top nav a:not(.join) { display: none; } }
+
+  /* Hero */
+  .hero { padding: 40px 0 84px; }
+  .hero .mark { width: 112px; height: 112px; margin: 0 0 28px -14px; display: block; }
+  .hero h1 { font: 300 clamp(44px, 9vw, 84px)/1.03 var(--serif); letter-spacing: -0.02em; max-width: 12ch; text-wrap: balance; margin-bottom: 26px; }
+  .hero h1 em { font-style: italic; color: var(--brown); }
+  .lede { font-size: 20px; max-width: 34em; margin-bottom: 30px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+  .button {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px;
+    border-radius: 10px; font: 600 16px var(--sans); text-decoration: none; border: 1.5px solid var(--forest);
+  }
+  .button.primary { background: var(--forest); color: #fff; }
+  .button.primary:hover { background: #3F5246; color: #fff; }
+  .button.outline { color: var(--forest); }
+  .facts { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 28px; }
+
+  /* Three parts */
+  .parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+  @media (max-width: 860px) { .parts { grid-template-columns: 1fr; } }
+  .card { background: var(--paper); border-radius: 16px; padding: 26px 26px 18px; }
+  .card p:last-child { color: var(--muted); font-size: 15px; }
+
+  /* Promise */
+  .promise { background: var(--forest); color: var(--cream); }
+  .promise h2 { color: var(--cream); }
+  .promise .label { color: var(--peach); }
+  .promise .rule { background: var(--peach); }
+  .promise .big { font: 400 clamp(22px, 3vw, 27px)/1.45 var(--serif); max-width: 32em; margin-bottom: 30px; }
+  .promise ul { list-style: none; padding: 0; margin: 0 0 22px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 32px; max-width: 860px; }
+  @media (max-width: 720px) { .promise ul { grid-template-columns: 1fr; } }
+  .promise li { color: var(--sage); padding-left: 18px; position: relative; }
+  .promise li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 6px; border-radius: 3px; background: var(--peach); }
+  .promise li strong { color: #fff; font-weight: 500; }
+  .promise .small { color: var(--sage); font-size: 15px; max-width: 40em; }
+
+  /* Price */
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 30px 0 22px; }
+  @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+  .plan { border-radius: 16px; padding: 26px; background: var(--paper); }
+  .plan.plus { background: transparent; border: 1.5px solid var(--line); }
+  .plan .price { font: 400 34px/1.1 var(--serif); color: var(--forest); margin: 4px 0 4px; }
+  .plan .price small { font: 400 16px var(--sans); color: var(--muted); }
+  .plan ul { margin: 16px 0 0; padding-left: 1.1em; }
+  .plan li { margin-bottom: 7px; }
+  .rules { max-width: 46em; color: var(--muted); font-size: 15px; }
+
+  /* FAQ */
+  details { border-top: 1px solid var(--line); padding: 4px 0; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; padding: 16px 32px 16px 0; font: 500 18px/1.4 var(--sans); position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 4px; top: 12px; font: 300 26px var(--sans); color: var(--brown); }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--ink); max-width: 40em; }
+
+  /* Join */
+  .join-box { background: var(--paper); border-radius: 16px; padding: 34px 30px; }
+  form { display: grid; gap: 14px; margin-top: 22px; max-width: 520px; }
+  label.field { display: grid; gap: 6px; font: 500 14px var(--sans); }
+  input[type=email], select {
+    min-height: 52px; border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: 0 14px;
+    font: 400 17px var(--sans); color: var(--ink); width: 100%;
+  }
+  .check { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; }
+  .check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--forest); flex: none; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  button.button { cursor: pointer; justify-self: start; }
+  button.button[disabled] { opacity: 0.6; cursor: default; }
+  .status { min-height: 1.5em; margin: 0; font-size: 15px; }
+  .status.error { color: var(--error); }
+  .thanks { font: 400 24px/1.4 var(--serif); color: var(--forest); }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 max(28px, env(safe-area-inset-bottom)); font-size: 14px; color: var(--muted); }
+  footer p { margin: 0 0 8px; }
+  footer strong { color: var(--ink); font-weight: 500; }
+  .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .page h1 { font: 300 clamp(40px, 8vw, 68px)/1.05 var(--serif); letter-spacing: -0.02em; margin: 0 0 22px; max-width: 14ch; }
+  .page .lede { font-size: 19px; max-width: 36em; }
+  .blocks { display: grid; gap: 18px; margin-top: 34px; }
+  .block { background: var(--paper); border-radius: 16px; padding: 26px 26px 14px; }
+  .block h2 { font-size: 26px; line-height: 1.2; margin-bottom: 10px; }
+  .block ul { margin: 0 0 14px; padding-left: 20px; }
+  .block li { margin-bottom: 6px; }
+  .help-box { border: 1.5px solid var(--forest); border-radius: 16px; padding: 22px 26px 10px; margin-top: 18px; }
+  .story p { font: 400 20px/1.65 var(--serif); margin: 0 0 18px; max-width: 34em; }
+  .story p.beat { font-size: clamp(26px, 4vw, 32px); line-height: 1.3; color: var(--forest); margin: 34px 0; }
+  .story .note { font: 400 15px/1.6 var(--sans); color: var(--muted); margin-bottom: 34px; }
+  .story .help-box p { font: 400 17px/1.6 var(--sans); margin: 0 0 14px; }
+  .story .sign { font-style: italic; color: var(--brown); margin-top: 30px; }
+
+  .legal .draft { background: var(--peach); border-radius: 12px; padding: 12px 16px; font-size: 15px; margin-bottom: 22px; }
+  .legal h1 { margin-bottom: 10px; }
+  .legal h2 { font-size: 25px; line-height: 1.25; margin: 40px 0 10px; }
+  .legal h3 { font: 500 17px/1.4 var(--sans); color: var(--ink); margin: 24px 0 6px; }
+  .legal ul { padding-left: 1.2em; }
+  .legal li { margin-bottom: 6px; }
+  .legal .updated { color: var(--muted); font-size: 15px; margin-bottom: 26px; }
+  .legal .summary { background: var(--paper); border-radius: 16px; padding: 20px 22px; margin: 26px 0 8px; }
+  .legal .summary h2 { margin-top: 0; font-size: 22px; }
+  .legal .summary ul { margin-bottom: 0; }
+  .legal mark { background: #F3DCC9; color: var(--ink); padding: 0 3px; border-radius: 3px; }
+  .legal table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 18px; }
+  .legal th, .legal td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+  .legal th { font-weight: 500; color: var(--muted); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .legal .table-scroll { overflow-x: auto; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/pt/" aria-label="After, início"><img src="/images/wordmark.png" width="93" height="32" alt="After"></a>
+    <nav aria-label="Nesta página">
+      <a href="/privacy" lang="en">English</a>
+      <a href="/fr/confidentialite/" lang="fr">Français</a>
+      <a class="join" href="/pt/#join">Quero saber quando abrir</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page legal">
+  <section>
+    <div class="wrap narrow">
+      <p class="draft"><strong>Rascunho.</strong> Esta política está sendo revisada por um advogado antes de o After abrir. As palavras entre <mark>[colchetes]</mark> ainda precisam ser preenchidas.</p>
+
+      <h1>Política de privacidade</h1>
+      <p class="updated">Última atualização <mark>[data]</mark></p>
+
+      <p class="lede">O After é um lugar para quem perdeu alguém, ou teve a vida mudada quando algo chegou ao fim. O que você compartilha aqui costuma ser o que você tem de mais íntimo. Esta página explica, com clareza, o que guardamos, por quê, por quanto tempo e o que você pode fazer a respeito.</p>
+
+      <section class="summary">
+        <h2>Em resumo</h2>
+        <ul>
+          <li><strong>Nenhuma IA</strong> lê suas conversas ou aprende com o que você compartilha.</li>
+          <li><strong>Sem anúncios, sem rastreamento, e nunca vendemos seus dados.</strong></li>
+          <li>Suas <strong>lembranças são privadas</strong>. Só você vê, a não ser que compartilhe uma.</li>
+          <li><strong>As mensagens dos grupos são apagadas</strong> 15 minutos depois de cada encontro.</li>
+          <li><strong>Nunca guardamos seu número de celular</strong>, só um código embaralhado a partir dele.</li>
+          <li>Alguém da nossa equipe lê mensagens <strong>somente</strong> quando alguém as denuncia ou toca em “Me preocupo com essa pessoa”.</li>
+          <li>Você pode <strong>apagar sua conta</strong> no app quando quiser, e tudo o que é seu vai junto.</li>
+        </ul>
+      </section>
+
+      <h2>Quem somos</h2>
+      <p>O After é administrado pela <mark>[nome da empresa] OÜ</mark>, uma empresa registrada na Estônia (código de registro <mark>[número]</mark>), <mark>[endereço registrado na Estônia]</mark>. Somos nós que decidimos como suas informações são usadas, o que nos torna o “controlador” segundo as leis de proteção de dados: o RGPD da União Europeia e o UK GDPR para quem está no Reino Unido.</p>
+      <p>Nosso representante no Reino Unido, para qualquer assunto de proteção de dados, é <mark>[nome e endereço do representante no Reino Unido]</mark>.</p>
+      <p>Dúvidas, pedidos ou preocupações sobre seus dados: <a href="mailto:privacy@wetalkafter.com">privacy@wetalkafter.com</a>. Respondemos em até um mês, normalmente bem antes.</p>
+
+      <h2>O que guardamos, e por quê</h2>
+
+      <h3>Quando você cria sua conta</h3>
+      <ul>
+        <li><strong>Seu e-mail e sua senha</strong>, para você entrar e para mandarmos um link se você esquecer a senha. A senha fica guardada embaralhada; não conseguimos lê-la.</li>
+        <li><strong>Seu nome de usuário.</strong> É o único nome que os outros veem. Sem fotos.</li>
+        <li><strong>Sua perda, se você quiser contar</strong> (quem ou o quê, e mais ou menos quando). Isso ajuda a encontrar pessoas vivendo algo parecido. Você pode deixar em branco.</li>
+        <li><strong>Que você declarou ter 18 anos ou mais.</strong></li>
+        <li><strong>Um código embaralhado do seu número de celular.</strong> Enviamos seu número ao nosso fornecedor de SMS para mandar um código de 6 dígitos e depois guardamos só um código feito a partir dele, que não pode ser transformado de volta no número. Ele serve para uma única coisa: impedir a volta de contas banidas.</li>
+        <li><strong>Um código aleatório para o seu telefone.</strong> O app cria esse código na primeira vez que é aberto. Ele não diz nada sobre você nem sobre o seu telefone. Usamos para pedir o código por SMS de novo quando você entra por um telefone novo, e para limitar novas contas a 3 por telefone por mês (guardamos uma cópia embaralhada por 30 dias).</li>
+        <li><strong>Uma verificação rápida de que você é uma pessoa.</strong> Quando você cria a conta ou entra, a Cloudflare verifica se você é uma pessoa e não um programa. Ela olha sinais do seu navegador ou telefone, nunca o que você escreve. Veja “Mantendo o After humano” abaixo.</li>
+      </ul>
+
+      <h3>Quando você usa o After</h3>
+      <ul>
+        <li><strong>Grupos:</strong> os grupos que você cria ou reserva, seu lugar numa lista de espera e as mensagens escritas neles. As mensagens são apagadas para todos 15 minutos depois do fim do encontro. O próprio grupo é apagado um dia depois. Se você organiza um encontro e convida alguém, guardamos o código do convite e quem o usou; o grupo vê com quem a pessoa convidada veio.</li>
+        <li><strong>Conversar:</strong> quem você conheceu, se você disse que conversaria de novo (ninguém mais vê sua resposta), as pessoas que você marcou com estrela, suas conversas privadas, se você ativou “Estou disponível para conversar” e os pedidos de conversa.</li>
+        <li><strong>Lembranças:</strong> seus espaços e lembranças: textos, fotos, vídeos, áudios e arquivos, com as palavras e datas que você adicionar. Só você pode vê-los. Se você compartilhar uma lembrança com alguém do Seu círculo, essa pessoa vê aquela lembrança. Se você criar um link privado, qualquer pessoa com o link vê aquela lembrança até você desativar o link.</li>
+        <li><strong>Segurança:</strong> denúncias, com as mensagens a que se referem; conversas sinalizadas com “Me preocupo com essa pessoa”; pessoas que você ocultou; remoções e banimentos de um grupo; e nossas decisões, avisos, suspensões e recursos.</li>
+        <li><strong>Ideias e problemas que você nos envia</strong> por “Uma ideia ou um problema?”, nossa resposta e se você permitiu que respondêssemos.</li>
+        <li><strong>Voluntariado:</strong> se você se oferecer para ajudar, o que você escreveu e nossa decisão.</li>
+        <li><strong>After+:</strong> se você disse que gostaria do After+ quando estiver pronto.</li>
+      </ul>
+
+      <h3>Mantendo o After humano</h3>
+      <p>O After é só para pessoas de verdade, por isso verificamos, com discrição, que ninguém seja um programa ou uma IA se passando por gente:</p>
+      <ul>
+        <li><strong>A verificação da Cloudflare</strong> acontece quando você cria a conta, entra e antes de começar a conversar (no máximo cerca de uma vez por dia). Guardamos a data e a hora da última vez que você passou por ela.</li>
+        <li><strong>Sinais de uma máquina.</strong> O app percebe como uma mensagem foi digitada: se uma mensagem longa aparece toda de uma vez, ou se as teclas são pressionadas num ritmo perfeito demais. Só esse sinal é enviado para nós, nunca suas teclas ou seus tempos. Também observamos respostas longas muito rápidas, muitas mensagens em um minuto e atividade em quase todas as horas do dia. Nunca olhamos o que você escreve para isso.</li>
+        <li>Quando vários sinais se somam num dia, você só precisa fazer a verificação de novo, e alguém da nossa equipe pode olhar a conta. Ninguém é banido automaticamente por esses sinais. Eles são apagados depois de 30 dias.</li>
+      </ul>
+
+      <h3>Se você pedir para ser avisado quando o After abrir</h3>
+      <p>Seu e-mail e o país que você escolheu em wetalkafter.com. Usamos isso para uma única coisa: avisar quando o After abrir onde você mora. Não enviamos e-mails publicitários. Você pode pedir a exclusão do seu e-mail a qualquer momento.</p>
+
+      <h3>No seu telefone</h3>
+      <p>O app guarda algumas coisinhas no seu telefone para funcionar bem: que você está conectado, as linhas de apoio de qual país mostrar, a aba e o espaço em que você estava por último, e os lembretes dos grupos (criados pelo próprio telefone, nos horários dos grupos que você reservou). Elas não saem do seu telefone, exceto o código aleatório descrito acima.</p>
+
+      <h3>O que não coletamos</h3>
+      <p>Nada de localização, contatos, identificadores de publicidade, ferramentas de análise ou rastreamento, nem fotos suas. O microfone e suas fotos só são usados quando você escolhe gravar um áudio ou adicionar uma foto.</p>
+
+      <h3>Informações sensíveis</h3>
+      <p>O luto toca tudo, então o que você escreve pode revelar coisas sobre sua saúde, suas crenças, seus relacionamentos ou sua família. Tratamos tudo o que você compartilha no After como sensível. Só usamos essas informações para fazer o After funcionar para você e para manter as pessoas seguras, e pedimos seu consentimento explícito para isso quando você cria a conta. Você pode retirá-lo a qualquer momento apagando sua conta.</p>
+
+      <h2>Nossas bases legais</h2>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>O quê</th><th>Por que podemos</th></tr></thead>
+        <tbody>
+          <tr><td>Sua conta, grupos, Conversar e Lembranças</td><td>Para oferecer o serviço que você pediu (um contrato com você), com seu consentimento explícito para qualquer informação sensível que você compartilhe.</td></tr>
+          <tr><td>O código embaralhado do telefone, e-mails banidos, denúncias e decisões</td><td>Nosso interesse legítimo, e o seu, em manter o After seguro e impedir a volta de quem foi banido.</td></tr>
+          <tr><td>Ler uma conversa denunciada ou sinalizada</td><td>Nosso interesse legítimo em manter as pessoas seguras e nossas obrigações legais como serviço online, com seu consentimento a essas regras quando você cria a conta.</td></tr>
+          <tr><td>Guardar registros das decisões</td><td>Obrigações legais dos serviços online de explicar decisões e permitir recursos.</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2>Sem IA, e sem venda de dados</h2>
+      <p>Nenhuma IA escreve para você, lê suas conversas ou lembranças, ou aprende com elas. O perigo é identificado por uma pequena lista de palavras que nós mesmos escrevemos: se você escrever uma delas, o app mostra <em>a você</em> uma linha de apoio, e ninguém mais fica sabendo. Nunca vendemos suas informações, nunca as usamos para publicidade e nunca deixamos as empresas com que trabalhamos usá-las para treinar IA.</p>
+      <p>Como muitas equipes pequenas, usamos ferramentas de IA para ajudar a criar o próprio app. Isso nunca envolveu nada do que você compartilha.</p>
+
+      <h2>Quem mais lida com seus dados</h2>
+      <p>Algumas empresas nos ajudam a fazer o After funcionar. Elas só lidam com suas informações seguindo nossas instruções, com contratos que as obrigam a mantê-las seguras.</p>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>Empresa</th><th>Para quê</th><th>Onde</th></tr></thead>
+        <tbody>
+          <tr><td>Supabase</td><td>Nosso banco de dados, login, e-mails de senha, armazenamento dos arquivos das lembranças e pequenas funções no servidor</td><td>Servidores em Londres, Reino Unido</td></tr>
+          <tr><td>Twilio</td><td>Envio do código de 6 dígitos para o seu telefone (eles veem seu número para enviá-lo)</td><td>Estados Unidos</td></tr>
+          <tr><td>Cloudflare</td><td>A verificação rápida de que você é uma pessoa (Turnstile) e a proteção deste site contra ataques e robôs</td><td>Rede mundial, empresa nos Estados Unidos</td></tr>
+          <tr><td>Forward Email</td><td>Encaminhamento dos e-mails enviados para nossos endereços @wetalkafter.com</td><td>Estados Unidos</td></tr>
+          <tr><td>Apple e Google</td><td>Levar o app até o seu telefone pelas lojas de aplicativos</td><td>Segundo as próprias políticas de privacidade</td></tr>
+          <tr><td>GitHub</td><td>Hospedagem deste site, por trás da Cloudflare (podem registrar o endereço IP dos visitantes por segurança)</td><td>Estados Unidos</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Quando informações saem do Reino Unido ou do Espaço Econômico Europeu, usamos as garantias legais exigidas por lei, como o Acordo Internacional de Transferência de Dados do Reino Unido e as Cláusulas Contratuais Padrão da União Europeia. Você pode nos pedir uma cópia.</p>
+      <p>Só compartilhamos informações com a polícia ou outras autoridades se a lei exigir, ou se acreditarmos que a vida de alguém está em perigo imediato.</p>
+
+      <h2>Quem no After pode ler o quê</h2>
+      <p>Alguém da nossa equipe lê mensagens somente quando:</p>
+      <ul>
+        <li>alguém as denuncia (as mensagens recentes da pessoa denunciada vão junto com a denúncia), ou</li>
+        <li>alguém toca em “Me preocupo com essa pessoa”, o que sinaliza aquela conversa, ou</li>
+        <li>alguém denuncia uma lembrança que foi compartilhada com ela.</li>
+      </ul>
+      <p>Não lemos mais nada: nem suas lembranças, nem suas conversas privadas, nem seus grupos.</p>
+
+      <h2>Por quanto tempo guardamos</h2>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>O quê</th><th>Por quanto tempo</th></tr></thead>
+        <tbody>
+          <tr><td>Mensagens dos grupos</td><td>15 minutos depois do fim do encontro. O próprio grupo, um dia.</td></tr>
+          <tr><td>Mensagens das conversas privadas</td><td>Enquanto a conversa estiver disponível para vocês dois. Quando uma conversa termina, ela é apagada um ano depois. Se você apagar sua conta, a outra pessoa ainda pode ler a conversa até lá, com suas mensagens aparecendo como de “Alguém que saiu”.</td></tr>
+          <tr><td>Lembranças e seus arquivos</td><td>Até você apagá-las, ou apagar sua conta</td></tr>
+          <tr><td>“Estou disponível para conversar”</td><td>6 horas, depois desativa sozinho</td></tr>
+          <tr><td>Sinais de uma máquina, e os códigos embaralhados de telefone para o limite de 3 contas</td><td>30 dias</td></tr>
+          <tr><td>Ideias e problemas que você nos envia</td><td>Um ano</td></tr>
+          <tr><td>Denúncias, sinalizações e decisões</td><td>Um ano depois de encerradas</td></tr>
+          <tr><td>Os dados da sua conta</td><td>Até você apagar sua conta</td></tr>
+          <tr><td>Seu e-mail na lista “quero saber quando abrir”</td><td>Pelo tempo necessário para avisar quando o After abrir. Você pode pedir a exclusão a qualquer momento.</td></tr>
+          <tr><td>O código embaralhado do telefone e o e-mail de uma conta banida</td><td>Enquanto durar o banimento, para a pessoa não conseguir criar outra conta</td></tr>
+          <tr><td>Cópias de segurança</td><td>Nosso provedor de hospedagem guarda cópias de segurança por até <mark>[número]</mark> dias; depois disso, as informações apagadas também somem delas</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2>Apagar sua conta</h2>
+      <p>No app, vá em Configurações → Apagar minha conta. Sua conta, nome de usuário, perda, espaços, lembranças e arquivos, compartilhamentos, links, lugares em grupos e suas pessoas são apagados na hora. Em conversas e grupos antigos, suas mensagens continuam para os outros, aparecendo como de “Alguém que saiu”. Antes de apagar, você pode salvar todas as suas lembranças num único arquivo em Configurações → Salvar todas as minhas lembranças.</p>
+
+      <h2>Seus direitos</h2>
+      <p>Você pode nos pedir para:</p>
+      <ul>
+        <li>receber uma cópia das informações que temos sobre você;</li>
+        <li>corrigir o que estiver errado;</li>
+        <li>apagar suas informações (você também pode fazer isso sozinho no app);</li>
+        <li>receber suas informações num formato que você possa levar para outro lugar;</li>
+        <li>parar ou limitar o uso delas, ou se opor à forma como as usamos.</li>
+      </ul>
+      <p>Escreva para <a href="mailto:privacy@wetalkafter.com">privacy@wetalkafter.com</a>. É gratuito, e respondemos em até um mês.</p>
+      <p>Se você não estiver satisfeito com a forma como tratamos suas informações, conte para nós primeiro. Você também pode reclamar à autoridade de proteção de dados: no Brasil, a ANPD (<a href="https://www.gov.br/anpd">gov.br/anpd</a>); no Reino Unido, o Information Commissioner’s Office (<a href="https://ico.org.uk/make-a-complaint/">ico.org.uk</a>); na França, a CNIL (<a href="https://www.cnil.fr/fr/plaintes">cnil.fr</a>); na Irlanda, a Data Protection Commission (<a href="https://www.dataprotection.ie">dataprotection.ie</a>).</p>
+
+      <h2>Mantendo tudo seguro</h2>
+      <p>Tudo é enviado criptografado. Regras no nosso banco de dados fazem com que cada pessoa só alcance as próprias informações, e testamos essas regras para garantir, por exemplo, que ninguém mais consiga abrir suas lembranças. Os arquivos são exibidos por links que param de funcionar depois de uma hora. Só um pequeno número de pessoas da nossa equipe pode ler denúncias, e ninguém pode ler mais nada.</p>
+
+      <h2>Idade</h2>
+      <p>O After é para pessoas com 18 anos ou mais. Se soubermos que alguém com menos de 18 anos tem uma conta, nós a fechamos e apagamos as informações.</p>
+
+      <h2>Este site</h2>
+      <p>O wetalkafter.com não usa ferramentas de análise nem de rastreamento. Ele é protegido pela Cloudflare, que pode definir um pequeno cookie de segurança para distinguir pessoas de robôs; ele nunca é usado para publicidade nem para seguir você em outros lugares. Se você deixar seu e-mail para saber quando o After abrir, ele vai direto para o nosso próprio banco de dados em Londres, e não para uma empresa de listas de e-mail. As fontes são servidas pelo próprio site, para que nenhuma outra empresa saiba que você o visitou. Se você abrir uma lembrança que alguém compartilhou com você, a página busca só aquela lembrança.</p>
+
+      <h2>Mudanças</h2>
+      <p>Se mudarmos esta política de uma forma que importe, avisaremos você no app antes de a mudança valer. A data no topo mostra quando ela foi alterada pela última vez.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>After.</strong> A gente conversa depois. · <a href="/pt/">Início</a> · <a href="/pt/historia/">Nossa história</a> · <a href="/pt/seguranca/">Segurança</a> · <a href="/pt/termos/">Termos</a> · <a href="/privacy" lang="en">English</a> · <a href="/fr/confidentialite/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
+  </div>
+</footer>
+</body>
+</html>

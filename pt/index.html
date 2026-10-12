@@ -154,6 +154,123 @@
     border: 1.5px solid var(--line); border-radius: 10px; color: var(--muted); cursor: default; user-select: none; }
   .store-name { font: 600 16px/1.2 var(--sans); }
   .store-soon { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  /* ---------- preview: new layout ---------- */
+  svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .hero2 { position: relative; padding: 0; min-height: 640px; display: flex; align-items: center;
+    background: url(/images/hero-wide-clean-1600.jpg) center 70% / cover no-repeat; }
+  .hero2::before { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(236,231,223,.88) 0%, rgba(236,231,223,.6) 38%, rgba(236,231,223,0) 62%); }
+  .hero2 .wrap { position: relative; padding-top: 56px; padding-bottom: 64px; }
+  .hero2 .big-mark { width: 260px; height: auto; display: block; margin: 0 0 22px -4px; }
+  .hero2 h1 { font: 300 clamp(44px, 6vw, 70px)/1.04 var(--serif); letter-spacing: -0.02em; max-width: 14ch; margin-bottom: 18px; }
+  .hero2 h1 em { font-style: italic; color: var(--brown); }
+  .hero2 .lede { max-width: 25em; margin-bottom: 26px; }
+  .hero2 .stores { margin: -12px 0 0; }
+  .hero2 .store { background: rgba(246,243,238,.7); }
+  .hero-phone { display: none; }
+  .icons { background: var(--paper); padding: 26px 0; border-bottom: 1px solid var(--line); }
+  .icons ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .icons li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--ink); }
+  .icons svg, .icons .age { width: 34px; height: 34px; color: var(--forest); flex: none; }
+  .icons .age { border: 1.5px solid var(--forest); border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 600; }
+  .alone { background: var(--cream); }
+  .alone .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .alone h2 em { font-style: italic; color: var(--brown); }
+  .collage { position: relative; height: 600px; width: 100%; max-width: 520px; margin-left: auto; }
+  .collage div { position: absolute; border-radius: 16px; background-repeat: no-repeat; background-size: cover; }
+  .collage .ph { border: 4px solid var(--paper); box-shadow: 0 10px 26px rgba(42,43,40,.12); }
+  .collage .sage { background: #C9CDBE; border-radius: 14px; }
+  .s1 { left: 34%; top: 0; width: 30%; height: 12%; }
+  .s2 { left: 0; top: 34%; width: 14%; height: 30%; }
+  .s3 { right: 0; top: 16%; width: 18%; height: 40%; }
+  .s4 { left: 48%; top: 80%; width: 26%; height: 16%; }
+  .c1 { left: 8%; top: 5%; width: 40%; height: 30%; background-image: url(/images/bench.jpg); background-position: center 48%; z-index: 2; }
+  .c2 { left: 50%; top: 3%; width: 32%; height: 40%; background-image: url(/images/hands.jpg); background-position: center 42%; z-index: 3; }
+  .c3 { left: 5%; top: 37%; width: 47%; height: 25%; background-image: url(/images/women.jpg); background-position: center 45%; z-index: 4; }
+  .c4 { left: 64%; top: 40%; width: 36%; height: 30%; background-image: url(/images/fog-bench.jpg); background-position: center 62%; z-index: 3; }
+  .c5 { left: 22%; top: 60%; width: 40%; height: 32%; background-image: url(/images/woman-sea.jpg); background-position: 72% center; z-index: 5; }
+  .how2 { background: #E3E3DC; }
+  .how2 .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; }
+  .steps { list-style: none; padding: 0; margin: 26px 0 0; }
+  .steps li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; margin-bottom: 22px; }
+  .steps .ic { width: 52px; height: 52px; border-radius: 50%; background: var(--paper); display: grid; place-items: center; color: var(--forest); }
+  .steps .ic svg { width: 26px; height: 26px; }
+  .steps h3 { font: 600 17px/1.3 var(--sans); color: var(--ink); margin: 2px 0 4px; }
+  .steps p { margin: 0; color: var(--muted); font-size: 15px; }
+  .steps p.small { font-size: 14px; color: var(--brown); margin-top: 4px; }
+  .phones { position: relative; height: 560px; }
+  .phone { position: absolute; width: 250px; height: 520px; border-radius: 40px; background: #1E1F1D; padding: 10px; box-shadow: 0 24px 50px rgba(42,43,40,.25); }
+  .phone.p1 { left: 0; top: 0; transform: rotate(-4deg); z-index: 2; }
+  .phone.p2 { right: -2%; top: 40px; transform: rotate(5deg); }
+  .scr { background: var(--cream); width: 100%; height: 100%; border-radius: 31px; overflow: hidden; position: relative; padding: 34px 16px 0; font-size: 12px; color: var(--ink); }
+  .scr::before { content: ""; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 80px; height: 20px; border-radius: 10px; background: #1E1F1D; }
+  .scr .t { font: 400 22px/1.15 var(--serif); color: var(--forest); margin: 6px 0 2px; }
+  .scr .s { color: var(--muted); margin: 0 0 12px; font-size: 11.5px; }
+  .scr .tile { background: var(--paper); border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; }
+  .scr .tile b { display: block; font-weight: 600; font-size: 12.5px; color: var(--ink); }
+  .scr .tile span { color: var(--muted); font-size: 11px; }
+  .scr .tile.dark { background: var(--forest); }
+  .scr .tile.dark b { color: #fff; } .scr .tile.dark span { color: var(--sage); }
+  .scr .k { font: 500 9.5px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 12px 0 6px; }
+  .scr .search { border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 8px 10px; color: var(--muted); font-size: 11px; margin-bottom: 4px; }
+  .scr .live { display: inline-block; background: var(--peach); color: var(--ink); border-radius: 6px; padding: 1px 6px; font-size: 10px; margin-left: 4px; }
+  .scr .row { display: flex; justify-content: space-between; align-items: center; }
+  .scr .menu { position: absolute; left: 0; right: 0; bottom: 0; background: var(--paper); border-top: 1px solid var(--line); display: flex; justify-content: space-around; padding: 9px 4px 16px; font-size: 9.5px; color: var(--muted); }
+  .scr .menu .on { color: var(--forest); font-weight: 600; }
+  .promise2 { padding: 0; background: #44574A; color: var(--cream); }
+  .promise2 .grid { display: grid; grid-template-columns: 1fr 1.15fr; }
+  .promise2 .photo { background: url(/images/gull.jpg) center 55% / cover no-repeat; min-height: 560px; }
+  .promise2 .text { padding: 72px 56px; }
+  .promise2 h2 { color: var(--cream); }
+  .promise2 .label { color: var(--peach); } .promise2 .rule { background: var(--peach); }
+  .promise2 ul { list-style: none; padding: 0; margin: 0 0 18px; }
+  .promise2 li { color: var(--sage); padding-left: 18px; position: relative; margin-bottom: 10px; font-size: 15.5px; }
+  .promise2 li::before { content: ""; position: absolute; left: 0; top: .72em; width: 6px; height: 6px; border-radius: 3px; background: var(--peach); }
+  .promise2 li strong { color: #fff; font-weight: 500; }
+  .promise2 .big { font: 400 21px/1.45 var(--serif); margin-bottom: 22px; }
+  #price .plans { align-items: center; }
+  #price .plan:not(.plus) { background: #44574A; color: var(--cream); padding: 34px 32px; box-shadow: 0 14px 34px rgba(42,43,40,.16); }
+  #price .plan:not(.plus) .label { color: var(--peach); }
+  #price .plan:not(.plus) .price { color: #fff; font-size: 52px; }
+  #price .plan:not(.plus) li { color: var(--cream); }
+  #price .plan.plus { padding: 22px 24px; }
+  #price .plan.plus .price { font-size: 26px; }
+  #price .plan.plus, #price .plan.plus li { font-size: 15px; color: var(--muted); }
+  /* 5 breathing room */
+  main > section { padding-top: 104px; padding-bottom: 104px; }
+  main > section.hero2, main > section.icons, main > section.promise2 { padding-top: 0; padding-bottom: 0; }
+  main > section.icons { padding: 26px 0; }
+  .pause { padding: 96px 0 !important; text-align: center; background: var(--cream); }
+  .pause p { font: 300 italic clamp(30px, 4vw, 44px)/1.2 var(--serif); color: var(--brown); margin: 0 auto; max-width: 18ch; }
+  @media (max-width: 860px) {
+    .hero2 { background: none; min-height: 0; display: block; }
+    .hero2::before { display: none; }
+    .hero-phone { display: block; width: 100%; height: auto; }
+    .hero2 .big-mark { display: none; }
+    .hero2 .wrap { padding-top: 34px; }
+    .icons ul { grid-template-columns: 1fr 1fr; }
+    .alone .wrap, .how2 .wrap, .promise2 .grid { grid-template-columns: 1fr; }
+    .collage { height: 600px; }
+    .phones { height: 540px; }
+    .phone.p1 { left: 50%; transform: translateX(-50%) rotate(-3deg); } .phone.p2 { display: none; }
+    .promise2 .photo { min-height: 300px; }
+    .promise2 .text { padding: 56px 24px; }
+  }
+  @media (min-width: 1700px) { .hero2 { background-image: url(/images/hero-wide-clean.jpg); } }
+  .hero-phone-pic { display: contents; }
+  .pause em { font-style: italic; color: inherit; }
+  .steps h3 { font-family: var(--sans); }
+  .promise2 .small { color: var(--sage); font-size: 14px; margin: 0; }
+  .join2 { position: relative; background: url(/images/hero-wide-clean-1600.jpg) 80% 92% / 190% auto no-repeat; }
+  .join2::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(236,231,223,.55) 0%, rgba(236,231,223,.25) 60%, rgba(236,231,223,0) 100%); }
+  .join2 .wrap { position: relative; }
+  .join2 .join-box { background: rgba(246,243,238,.95); box-shadow: 0 14px 40px rgba(42,43,40,.12); }
+  @media (max-width: 860px) {
+    main > section { padding-top: 64px; padding-bottom: 64px; }
+    .pause { padding: 64px 0 !important; }
+    .collage { height: 500px; margin-bottom: -24px; }
+    .join2 { background-size: 420% auto; background-position: 85% 100%; }
+  }
 </style>
 </head>
 <body>
@@ -175,16 +292,15 @@
 </header>
 
 <main>
-  <section class="hero">
-    <picture class="hero-img">
-      <source media="(max-width: 720px)" srcset="/images/hero-tall.jpg" width="853" height="1844">
-      <img src="/images/hero-wide-1600.jpg" srcset="/images/hero-wide-1600.jpg 1600w, /images/hero-wide.jpg 3000w" sizes="100vw" width="3000" height="1275" alt="After. Uma praia tranquila ao pôr do sol." fetchpriority="high">
+  <section class="hero2">
+    <picture class="hero-phone-pic">
+      <source media="(min-width: 861px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACw=">
+      <img class="hero-phone" src="/images/hero-tall.jpg" width="853" height="1844" alt="After. Uma praia tranquila ao pôr do sol.">
     </picture>
     <div class="wrap">
-      <p class="label">Pessoas de verdade. Histórias de verdade. Um jeito mais gentil de se sentir menos sozinho.</p>
-      <h1>Algumas perdas <em>mudam tudo.</em></h1>
-      <p class="lede">A morte de alguém que você ama. O fim de um relacionamento. Uma mudança de vida que você nunca imaginou enfrentar.</p>
-      <p class="lede">Seja qual for a sua perda, o After é um espaço acolhedor para encontrar pessoas que entendem o que você está vivendo, porque já passaram por algo parecido. Compartilhe sua história em pequenos grupos, converse individualmente ou preserve as lembranças que mais importam para você. Aqui, não existe uma maneira certa de sentir, nem a obrigação de enfrentar tudo sozinho.</p>
+      <img class="big-mark" src="/images/wordmark.png" width="655" height="226" alt="After">
+      <h1>Um jeito mais gentil <em>de se sentir menos sozinho.</em></h1>
+      <p class="lede">Uma comunidade de pessoas de verdade para quem vive um luto, uma perda ou uma grande mudança na vida.</p>
       <div class="buttons">
         <a class="button primary" href="#join">Quero saber quando abrir</a>
         <a class="button outline" href="#how">Como funciona</a>
@@ -193,60 +309,90 @@
         <span class="store" aria-disabled="true"><span class="store-name">App Store</span><span class="store-soon">Em breve</span></span>
         <span class="store" aria-disabled="true"><span class="store-name">Google Play</span><span class="store-soon">Em breve</span></span>
       </div>
-      <ul class="facts">
-        <li class="label">Só pessoas de verdade</li>
-        <li class="label">Grátis</li>
-        <li class="label">Anônimo, se você quiser</li>
-        <li class="label">18+</li>
+    </div>
+  </section>
+
+  <section class="icons">
+    <div class="wrap">
+      <ul>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="16.5" cy="9" r="2.6"/><path d="M15.5 14.2c2.4-.3 4.4 1.3 5 4.3"/></svg>Só pessoas de verdade</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><circle cx="12" cy="15.5" r="1.2"/></svg>Anônimo, se você quiser</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-8"/><path d="M12 13c0-4 3-7 8-7 0 5-3 8-8 7z"/><path d="M12 15c0-3-2.5-5.5-7-5.5 0 4 2.5 6.5 7 5.5z"/></svg>Grátis</li>
+        <li><span class="age" aria-hidden="true">18+</span>Só para adultos</li>
       </ul>
     </div>
   </section>
 
-  <section id="how">
+  <section class="alone">
     <div class="wrap">
-      <p class="label">Três formas de se conectar</p>
-      <hr class="rule">
-      <h2>Do seu jeito, no seu tempo.</h2>
-      <p class="lede">Participe de um grupo, converse com alguém ou guarde suas lembranças em um espaço só seu. Você escolhe o que faz sentido para você, quando fizer sentido.</p>
-      <p class="lede" style="margin-bottom:0">Aqui, as conexões acontecem entre pessoas que também já passaram por uma perda. Não como terapeutas, mas como gente que se escuta, compartilha experiências e encontra apoio umas nas outras.</p>
-      <div class="parts">
-        <article class="card">
-          <p class="label">Grupos</p>
-          <h3>Grupos pequenos, conversas de verdade</h3>
-          <p>Um encontro ao vivo, com até seis pessoas que passaram por perdas parecidas. Durante duas horas, você pode compartilhar sua história, ouvir outras experiências ou simplesmente estar ali. Sem pressão para falar, sem julgamentos e com toda a liberdade para sair quando quiser.</p>
-          <p>As mensagens somem 15 minutos depois que o encontro termina.</p>
-        </article>
-        <article class="card">
-          <p class="label">Conversar</p>
-          <h3>Alguém para conversar, quando você precisar</h3>
-          <p>Às vezes, tudo o que a gente precisa é de alguém que entenda. Se você conhecer uma pessoa em um grupo e os dois quiserem continuar em contato, poderão conversar em particular.</p>
-          <p>E, sempre que sentir vontade de conversar, é só perguntar: “Alguém pode conversar agora?” Quem já passou por uma perda parecida pode estar disponível para ouvir, trocar experiências ou simplesmente fazer companhia.</p>
-          <p>Ninguém pode mandar mensagem para você sem um sim dos dois lados.</p>
-        </article>
-        <article class="card">
-          <p class="label">Lembrar</p>
-          <h3>Um lugar para guardar o que importa</h3>
-          <p>Algumas lembranças são preciosas demais para se perder. Uma foto, uma carta, uma mensagem de voz, uma receita de família ou uma história que você não quer esquecer.</p>
-          <p>No After, você tem um espaço privado para guardar tudo isso e revisitar essas memórias sempre que quiser. E, quando faltar inspiração ou as palavras não vierem, pequenas sugestões ajudam você a começar.</p>
-          <p>Só você vê, a não ser que escolha compartilhar uma lembrança.</p>
-        </article>
+      <div>
+        <p class="label">Você não está sozinho</p>
+        <hr class="rule">
+        <h2>Pessoas de verdade. <em>Histórias de verdade.</em></h2>
+        <p class="lede">Seja qual for a sua perda, o After é um espaço acolhedor para encontrar pessoas que entendem o que você está vivendo, porque já passaram por algo parecido.</p>
+        <p class="lede">Compartilhe sua história em pequenos grupos, converse individualmente ou preserve as lembranças que mais importam para você. Aqui, não existe uma maneira certa de sentir, nem a obrigação de enfrentar tudo sozinho.</p>
+        <a class="button primary" href="#join">Quero saber quando abrir</a>
+      </div>
+      <div class="collage" aria-hidden="true"><div class="sage s1"></div><div class="sage s2"></div><div class="sage s3"></div><div class="sage s4"></div><div class="ph c1"></div><div class="ph c2"></div><div class="ph c3"></div><div class="ph c4"></div><div class="ph c5"></div></div>
+    </div>
+  </section>
+
+  <section class="how2" id="how">
+    <div class="wrap">
+      <div>
+        <p class="label">Três formas de se conectar</p>
+        <hr class="rule">
+        <h2>Do seu jeito, no seu tempo.</h2>
+        <p class="lede">Aqui, as conexões acontecem entre pessoas que também já passaram por uma perda. Não como terapeutas, mas como gente que se escuta, compartilha experiências e encontra apoio umas nas outras.</p>
+        <ul class="steps">
+          <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="16.5" cy="9" r="2.6"/><path d="M15.5 14.2c2.4-.3 4.4 1.3 5 4.3"/></svg></span><div><h3>Grupos</h3><p>Um encontro ao vivo, com até seis pessoas que passaram por perdas parecidas. Durante duas horas, você pode compartilhar sua história, ouvir outras experiências ou simplesmente estar ali. Sem pressão para falar, sem julgamentos e com toda a liberdade para sair quando quiser.</p><p class="small">As mensagens somem 15 minutos depois que o encontro termina.</p></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 7 0 1 1 3.5 5.8L4 19.5l1.2-3.6A6.6 6.6 0 0 1 4 12z"/></svg></span><div><h3>Conversar</h3><p>Às vezes, tudo o que a gente precisa é de alguém que entenda. Se você conhecer uma pessoa em um grupo e os dois quiserem continuar em contato, poderão conversar em particular.</p><p class="small">Ninguém pode mandar mensagem para você sem um sim dos dois lados.</p></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 15l4.5-4 4 3.5 2.5-2 5 4"/><circle cx="15.5" cy="9" r="1.4"/></svg></span><div><h3>Lembrar</h3><p>Algumas lembranças são preciosas demais para se perder. Uma foto, uma carta, uma mensagem de voz, uma receita de família ou uma história que você não quer esquecer.</p><p class="small">Só você vê, a não ser que escolha compartilhar uma lembrança.</p></div></li>
+        </ul>
+        <a class="button primary" href="#join">Quero saber quando abrir</a>
+      </div>
+      <div class="phones" role="img" aria-label="Duas telas do app After: Início e Grupos.">
+        <div class="phone p1" aria-hidden="true"><div class="scr">
+          <p class="t">Olá, Ana</p><p class="s">Que bom ver você aqui.</p>
+          <div class="tile dark"><b>Seu próximo grupo</b><span>Perda do pai ou da mãe · Quinta, 20h</span></div>
+          <div class="tile"><b>Alguém pode conversar agora?</b><span>Pergunte a quem está disponível</span></div>
+          <div class="tile"><b>Lembranças</b><span>Um espaço só seu para quem deixou saudade</span></div>
+          <div class="tile"><b>Cantinho da calma</b><span>Respire, escute, relaxe</span></div>
+          <div class="menu"><span class="on">Início</span><span>Grupos</span><span>Conversar</span><span>Calma</span><span>Lembranças</span></div></div></div>
+        <div class="phone p2" aria-hidden="true"><div class="scr">
+          <p class="t">Grupos</p>
+          <div class="search">Buscar grupos por perda</div>
+          <p class="k">Ao vivo</p>
+          <div class="tile"><b>Perda de um companheiro ou companheira <span class="live">Ao vivo</span></b><span>Restam 2 vagas</span></div>
+          <p class="k">Próximos</p>
+          <div class="tile"><b>Perda do pai ou da mãe</b><span>Quinta, 20h · Resta 1 vaga</span></div>
+          <div class="tile"><b>Uma separação</b><span>Sábado, 11h · Restam 3 vagas</span></div>
+          <div class="tile"><b>Perda de um animal de estimação</b><span>Domingo, 18h · Restam 4 vagas</span></div>
+          <div class="menu"><span>Início</span><span class="on">Grupos</span><span>Conversar</span><span>Calma</span><span>Lembranças</span></div></div></div>
       </div>
     </div>
   </section>
 
-  <section class="promise" id="promise">
-    <div class="wrap">
-      <p class="label">Nosso compromisso</p>
-      <hr class="rule">
-      <h2>Conexões humanas, com respeito e privacidade.</h2>
-      <p class="big">Quando a gente passa por um momento difícil, faz diferença encontrar alguém que realmente entenda. O After nasceu para criar esse espaço: um lugar onde pessoas se encontram, compartilham suas histórias e se escutam de verdade. Sem inteligência artificial se passando por gente. Apenas pessoas, com suas próprias experiências, oferecendo companhia umas às outras.</p>
-      <ul>
-        <li><strong>Você escolhe o que quer mostrar.</strong> Aqui, basta um nome de usuário. Não é preciso usar foto de perfil, e seu e-mail e telefone não ficam visíveis para outros membros.</li>
-        <li><strong>Suas conversas merecem respeito.</strong> Não lemos suas mensagens privadas rotineiramente. Conteúdos podem ser analisados quando há denúncia ou sinalização por motivos de segurança, conforme nossas políticas.</li>
-        <li><strong>Se precisar de outro tipo de ajuda, ela está ao seu alcance.</strong> Encontre informações sobre serviços de apoio emocional e emergência do seu país. O After não é um serviço de emergência.</li>
-        <li><strong>Você é livre para seguir seu caminho.</strong> Exclua sua conta pelo aplicativo. Seus dados serão tratados conforme nossa Política de Privacidade e as exigências legais.</li>
-      </ul>
-      <p class="small">Como muitas equipes pequenas, usamos ferramentas de IA para ajudar a criar o próprio app. Isso nunca envolve nada do que você compartilha.</p>
+  <section class="pause">
+    <div class="wrap"><p>Algumas perdas <em>mudam tudo.</em></p></div>
+  </section>
+
+  <section class="promise2" id="promise">
+    <div class="grid">
+      <div class="photo"></div>
+      <div class="text">
+        <p class="label">Nosso compromisso</p>
+        <hr class="rule">
+        <h2>Conexões humanas, com respeito e privacidade.</h2>
+        <p class="big">Quando a gente passa por um momento difícil, faz diferença encontrar alguém que realmente entenda. O After nasceu para criar esse espaço: um lugar onde pessoas se encontram, compartilham suas histórias e se escutam de verdade. Sem inteligência artificial se passando por gente. Apenas pessoas, com suas próprias experiências, oferecendo companhia umas às outras.</p>
+        <ul>
+          <li><strong>Você escolhe o que quer mostrar.</strong> Aqui, basta um nome de usuário. Não é preciso usar foto de perfil, e seu e-mail e telefone não ficam visíveis para outros membros.</li>
+          <li><strong>Suas conversas merecem respeito.</strong> Não lemos suas mensagens privadas rotineiramente. Conteúdos podem ser analisados quando há denúncia ou sinalização por motivos de segurança, conforme nossas políticas.</li>
+          <li><strong>Se precisar de outro tipo de ajuda, ela está ao seu alcance.</strong> Encontre informações sobre serviços de apoio emocional e emergência do seu país. O After não é um serviço de emergência.</li>
+          <li><strong>Você é livre para seguir seu caminho.</strong> Exclua sua conta pelo aplicativo. Seus dados serão tratados conforme nossa Política de Privacidade e as exigências legais.</li>
+        </ul>
+        <p class="small">Como muitas equipes pequenas, usamos ferramentas de IA para ajudar a criar o próprio app. Isso nunca envolve nada do que você compartilha.</p>
+      </div>
     </div>
   </section>
 
@@ -315,7 +461,7 @@
     </div>
   </section>
 
-  <section id="join">
+  <section id="join" class="join2">
     <div class="wrap narrow">
       <div class="join-box">
         <p class="label">Quero saber quando abrir</p>

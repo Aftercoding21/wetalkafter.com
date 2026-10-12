@@ -6,10 +6,14 @@
 <title>Safety · After</title>
 <meta name="description" content="How After keeps its community safe: only real people, no AI in your conversations, a wall against bots, real moderators, and help one tap away.">
 <meta property="og:title" content="Safety · After">
-<meta property="og:description" content="Someone died, or something ended. A quiet place to be with it, with people who have been there too.">
+<meta property="og:description" content="Some losses change everything. Real people. Real stories. A kinder way to feel less alone.">
 <meta property="og:image" content="https://wetalkafter.com/og.png">
 <meta property="og:url" content="https://wetalkafter.com/safety">
 <meta name="theme-color" content="#ECE7DF">
+<link rel="alternate" hreflang="en" href="https://wetalkafter.com/safety">
+<link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/seguranca/">
+<link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/securite/">
+<link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/safety">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/fonts.css">
@@ -42,7 +46,9 @@
 
   /* Top */
   header.top { padding: max(18px, env(safe-area-inset-top)) 0 0; }
-  header.top .wrap { display: flex; align-items: center; justify-content: flex-end; gap: 16px; min-height: 44px; }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
+  header.top .brand { font: 400 30px/1 var(--serif); color: var(--forest); text-decoration: none; letter-spacing: -0.01em; }
+  header.top .brand:hover { color: var(--forest); }
   header.top img { width: 52px; height: 52px; margin-left: -8px; display: block; }
   header.top nav { display: flex; gap: 22px; font-size: 15px; }
   header.top nav a { text-decoration: none; color: var(--muted); }
@@ -126,7 +132,6 @@
   footer p { margin: 0 0 8px; }
   footer strong { color: var(--ink); font-weight: 500; }
   .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
-</style><style>
   .page h1 { font: 300 clamp(40px, 8vw, 68px)/1.05 var(--serif); letter-spacing: -0.02em; margin: 0 0 22px; max-width: 14ch; }
   .page .lede { font-size: 19px; max-width: 36em; }
   .blocks { display: grid; gap: 18px; margin-top: 34px; }
@@ -134,15 +139,19 @@
   .block h2 { font-size: 26px; line-height: 1.2; margin-bottom: 10px; }
   .block ul { margin: 0 0 14px; padding-left: 20px; }
   .block li { margin-bottom: 6px; }
-  .home { text-decoration: none; color: var(--forest); font-weight: 500; margin-right: auto; }
   .help-box { border: 1.5px solid var(--forest); border-radius: 16px; padding: 22px 26px 10px; margin-top: 18px; }
+  .story p { font: 400 20px/1.65 var(--serif); margin: 0 0 18px; max-width: 34em; }
+  .story p.beat { font-size: clamp(26px, 4vw, 32px); line-height: 1.3; color: var(--forest); margin: 34px 0; }
+  .story .note { font: 400 15px/1.6 var(--sans); color: var(--muted); margin-bottom: 34px; }
+  .story .help-box p { font: 400 17px/1.6 var(--sans); margin: 0 0 14px; }
+  .story .sign { font-style: italic; color: var(--brown); margin-top: 30px; }
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="home" href="/">← After</a>
-    <nav aria-label="Pages">
+    <a class="brand" href="/" aria-label="After, home">After.</a>
+    <nav aria-label="On this page">
       <a class="join" href="/#join">Tell me when it opens</a>
     </nav>
   </div>
@@ -217,7 +226,7 @@
       <div class="help-box">
         <h2 style="font-size:26px;margin-bottom:10px">Help, one tap away</h2>
         <p>Every screen in After has a Help button with a free crisis line for your country. If you write something that sounds like you’re not safe, you’ll privately see where to find help straight away. And if you’re worried about someone, you can tell us.</p>
-        <p><strong>If it’s too much right now:</strong> UK and Ireland, Samaritans <span class="num">116 123</span> · France <span class="num">3114</span> · free, any time. If a life is in danger, call <span class="num">999</span> (UK) or <span class="num">112</span> (France and Ireland).</p>
+        <p><strong>If it’s too much right now:</strong> UK and Ireland, Samaritans <span class="num">116 123</span> · France <span class="num">3114</span> · free, any time. If a life is in danger, call <span class="num">999</span> (UK) or <span class="num">112</span> (Ireland and France).</p>
       </div>
     </div>
   </section>
@@ -225,7 +234,7 @@
 
 <footer>
   <div class="wrap">
-    <p><strong>After.</strong> We talk after. · <a href="/">Home</a> · <a href="/story">Our story</a> · <a href="/safety">Safety</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
+    <p><strong>After.</strong> We talk after. · <a href="/">Home</a> · <a href="/story">Our story</a> · <a href="/pt/seguranca/" lang="pt-BR">Português</a> · <a href="/fr/securite/" lang="fr">Français</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>
 </body>

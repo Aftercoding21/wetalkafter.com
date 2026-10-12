@@ -138,6 +138,7 @@
   .three li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 6px; height: 6px; border-radius: 3px; background: var(--brown); }
   #human:empty { display: none; }
   .thanks { margin-top: 22px; }
+  .share-btn { margin-top: 14px; font: 500 15px/1 var(--sans); color: var(--forest); background: transparent; border: 1.5px solid var(--forest); border-radius: 999px; padding: 12px 20px; cursor: pointer; }
 
   /* Hero picture: wide on computers, tall on phones */
   .hero { padding: 0 0 84px; }
@@ -410,7 +411,7 @@
             <li>Participe de grupos e converse com outras pessoas</li>
             <li>Compartilhe suas experiências e encontre apoio</li>
             <li>Escreva quantas histórias e lembranças quiser, sem limite</li>
-            <li>Guarde até 500 MB de fotos, áudios, vídeos e arquivos</li>
+            <li>Guarde 50 fotos, 5 vídeos e 20 áudios</li>
             <li>Compartilhe vídeos de até 1 minuto</li>
           </ul>
         </div>
@@ -419,8 +420,8 @@
           <p class="price">R$ 19,90 <small>por mês, ou R$ 159,90 por ano</small></p>
           <ul>
             <li>Tudo o que já é gratuito</li>
-            <li>50 GB para guardar fotos, áudios, vídeos e arquivos</li>
-            <li>Espaço para vídeos mais longos</li>
+            <li>Fotos e áudios sem limite</li>
+            <li>Vídeos de até 10 minutos</li>
           </ul>
         </div>
       </div>
@@ -513,6 +514,9 @@
   var button = form.querySelector('button');
   var FUNCTION_URL = 'https://lnnvivctgxniahykocyy.supabase.co/functions/v1/clever-processor';
   var T = {
+    share: 'Contar para alguém',
+    share_text: 'After: um lugar gentil para quem vive um luto, uma perda ou uma grande mudança. Pessoas de verdade, sem IA.',
+    copied: 'Link copiado. Obrigado por compartilhar.',
     thanks: 'Obrigado. Avisamos você assim que o After estiver no ar!',
     wrong: 'Algo deu errado. Tente de novo daqui a pouco.',
     email: 'Confira seu endereço de e-mail.',
@@ -530,7 +534,12 @@
       body: JSON.stringify({ email: form.email.value.trim(), country: form.country.value, consent: true, website: form.website.value, token: token || '' })
     }).then(function (r) { return r.json().then(function (d) { if (!r.ok || !d.ok) throw new Error(); }); })
       .then(function () {
-        form.outerHTML = '<p class="thanks" role="status">' + T.thanks + '</p>';
+        form.outerHTML = '<p class="thanks" role="status">' + T.thanks + '</p>' + '<button type="button" class="share-btn" id="share">' + T.share + '</button><p class="status" id="shared"></p>';
+        var url = location.origin + location.pathname;
+        document.getElementById('share').addEventListener('click', function () {
+          if (navigator.share) { navigator.share({ title: 'After', text: T.share_text, url: url }).catch(function () {}); return; }
+          navigator.clipboard.writeText(T.share_text + ' ' + url).then(function () { document.getElementById('shared').textContent = T.copied; });
+        });
       })
       .catch(function () {
         if (widget !== null) window.turnstile.reset(widget);

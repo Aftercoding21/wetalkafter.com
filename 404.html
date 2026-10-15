@@ -1,46 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-<script>if(!/^\/try(\/|$)/.test(location.pathname)){location.replace("/")}</script>
-
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="After">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="apple-touch-icon" href="/try/apple-touch-icon.png">
-    
-    <meta charset="utf-8" />
-    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>After</title>
-    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
-    <style id="expo-reset">
-      /* These styles make the body full-height */
-      html,
-      body {
-        height: 100%;
-      }
-      /* These styles disable body scrolling if you are using <ScrollView> */
-      body {
-        overflow: hidden;
-      }
-      /* These styles make the root element full-height */
-      #root {
-        display: flex;
-        height: 100%;
-        flex: 1;
-      }
-    </style>
-  <meta name="theme-color" content="#ECE7DF">
-<link rel="icon" href="/try/favicon.ico"/></head>
-
-  <body>
-    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <!-- The root element for your Expo app. -->
-    <div id="root"></div>
-  <script src="/try/_expo/static/js/web/entry-704b7d3ebbecca24044ddb6d1b8ea59e.js" defer></script>
-</body>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>After</title>
+<style>html,body{margin:0;height:100%;background:#ECE7DF}</style>
+<script>
+// GitHub Pages shows this page for any address it has no file for.
+// Inside /try (the web test version) that happens on refresh, back and
+// forward on an inner screen like /try/settings: load the current
+// /try/index.html in its place, so the app opens on that screen. It never
+// points at a particular build, so it can't go out of date.
+// Anywhere else, go to the home page.
+(function () {
+  if (!/^\/try(\/|$)/.test(location.pathname)) { location.replace("/"); return; }
+  fetch("/try/index.html", { cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error(); return r.text(); })
+    .then(function (html) { document.open(); document.write(html); document.close(); })
+    .catch(function () { location.replace("/try/"); });
+})();
+</script>
+</head>
+<body></body>
 </html>

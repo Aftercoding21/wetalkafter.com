@@ -203,7 +203,7 @@
         <h2>Em resumo</h2>
         <ul>
           <li><strong>Nenhuma IA</strong> lê suas conversas ou aprende com o que você compartilha.</li>
-          <li><strong>Sem rastreamento, e nunca vendemos seus dados.</strong></li>
+          <li><strong>Sem rastreamento, e nunca vendemos seus dados.</strong> Contagens simples de uso, só se você ativar “Ajudar a melhorar o After”.</li>
           <li>Suas <strong>lembranças são privadas</strong>. Só você vê, a não ser que compartilhe uma.</li>
           <li><strong>As mensagens dos grupos são apagadas</strong> 15 minutos depois de cada encontro.</li>
           <li><strong>Nunca guardamos seu número de celular</strong>, só um código embaralhado a partir dele.</li>
@@ -238,6 +238,9 @@
         <li><strong>Segurança:</strong> denúncias, com as mensagens a que se referem; conversas sinalizadas com “Me preocupo com essa pessoa”; pessoas que você ocultou; remoções e banimentos de um grupo; e nossas decisões, avisos, suspensões e recursos.</li>
         <li><strong>Ideias e problemas que você nos envia</strong> por “Uma ideia ou um problema?”, nossa resposta e se você permitiu que respondêssemos.</li>
         <li><strong>Voluntariado:</strong> se você se oferecer para ajudar, o que você escreveu e nossa decisão.</li>
+        <li><strong>Voltar:</strong> quando você escreve numa conversa ou num grupo, anotamos a semana, com sua conta, para contar quantas pessoas voltam na semana seguinte. A equipe só vê totais por semana.</li>
+        <li><strong>“Isso ajudou você a se sentir compreendido?”</strong> Sua resposta é guardada sem sua conta nem seu nome, então não pode ser ligada a você. Só anotamos, com sua conta, quando a pergunta foi feita, para que ela apareça no máximo uma vez por semana.</li>
+        <li><strong>Ajudar a melhorar o After (só se você ativar):</strong> fica desligado a menos que você ative nas Configurações. Aí o app conta alguns momentos: uma conversa iniciada, um grupo em que você entrou ou não (com um motivo fixo, como “grupo cheio”), um exercício do Calma iniciado, terminado ou interrompido antes do fim, um som que não tocou e o app travando. Cada contagem guarda só o momento, o dia e um código aleatório para que uma nova tentativa não conte duas vezes. Nunca sua conta, seu nome, com quem você conversa, seus grupos, suas lembranças, suas mensagens nem nada que você digite. Nosso banco de dados confere com sua conta que você disse sim, mas não guarda quem enviou a contagem. As contagens ficam no nosso próprio banco de dados (Supabase, Londres), não numa empresa de análise. A equipe vê totais de 7 ou 30 dias, arredondados para 5, e qualquer número abaixo de 5 aparece como “menos de 5”. Desligar para tudo na hora.</li>
         <li><strong>After+:</strong> se você disse que gostaria do After+ quando estiver pronto.</li>
       </ul>
 
@@ -256,7 +259,7 @@
       <p>O app guarda algumas coisinhas no seu telefone para funcionar bem: que você está conectado, as linhas de apoio de qual país mostrar, a aba e o espaço em que você estava por último, e os lembretes dos grupos (criados pelo próprio telefone, nos horários dos grupos que você reservou). Elas não saem do seu telefone, exceto o código aleatório descrito acima.</p>
 
       <h3>O que não coletamos</h3>
-      <p>Nada de localização, contatos, identificadores de publicidade, ferramentas de análise ou rastreamento, nem fotos suas. O microfone e suas fotos só são usados quando você escolhe gravar um áudio ou adicionar uma foto.</p>
+      <p>Nada de localização, contatos, identificadores de publicidade, ferramentas externas de análise ou rastreamento, gravações ou capturas da sua tela, nem fotos suas. O microfone e suas fotos só são usados quando você escolhe gravar um áudio ou adicionar uma foto.</p>
 
       <h3>Informações sensíveis</h3>
       <p>O luto toca tudo, então o que você escreve pode revelar coisas sobre sua saúde, suas crenças, seus relacionamentos ou sua família. Tratamos tudo o que você compartilha no After como sensível. Só usamos essas informações para fazer o After funcionar para você e para manter as pessoas seguras, e pedimos seu consentimento explícito para isso quando você cria a conta. Você pode retirá-lo a qualquer momento apagando sua conta.</p>
@@ -270,6 +273,8 @@
           <tr><td>O código embaralhado do telefone, e-mails banidos, denúncias e decisões</td><td>Nosso interesse legítimo, e o seu, em manter o After seguro e impedir a volta de quem foi banido.</td></tr>
           <tr><td>Ler uma conversa denunciada ou sinalizada</td><td>Nosso interesse legítimo em manter as pessoas seguras e nossas obrigações legais como serviço online, com seu consentimento a essas regras quando você cria a conta.</td></tr>
           <tr><td>Guardar registros das decisões</td><td>Obrigações legais dos serviços online de explicar decisões e permitir recursos.</td></tr>
+          <tr><td>Contagens de uso de “Ajudar a melhorar o After”</td><td>Seu consentimento. Você pode desligar nas Configurações a qualquer momento.</td></tr>
+          <tr><td>Contagens semanais de retorno e respostas “compreendido”</td><td>Nosso interesse legítimo em saber se o After ajuda as pessoas, usando só totais.</td></tr>
         </tbody>
       </table>
       </div>
@@ -284,7 +289,7 @@
       <table>
         <thead><tr><th>Empresa</th><th>Para quê</th><th>Onde</th></tr></thead>
         <tbody>
-          <tr><td>Supabase</td><td>Nosso banco de dados, login, e-mails de senha, armazenamento dos arquivos das lembranças e pequenas funções no servidor</td><td>Servidores em Londres, Reino Unido</td></tr>
+          <tr><td>Supabase</td><td>Nosso banco de dados, login, e-mails de senha, armazenamento dos arquivos das lembranças, pequenas funções no servidor e as contagens de uso. Como qualquer servidor, os deles veem o endereço de internet (IP) do seu aparelho quando o app se conecta, e podem guardá-lo por pouco tempo em registros técnicos. Não o adicionamos às contagens de uso.</td><td>Servidores em Londres, Reino Unido</td></tr>
           <tr><td>Twilio</td><td>Envio do código de 6 dígitos para o seu telefone (eles veem seu número para enviá-lo)</td><td>Estados Unidos</td></tr>
           <tr><td>Sentry</td><td>Relatórios de falhas do app: o erro, o tipo de celular e a versão do app, nunca suas mensagens nem o que você escreve</td><td>União Europeia</td></tr>
           <tr><td>Cloudflare</td><td>A verificação rápida de que você é uma pessoa (Turnstile) e a proteção deste site contra ataques e robôs</td><td>Rede mundial, empresa nos Estados Unidos</td></tr>
@@ -318,6 +323,8 @@
           <tr><td>Sinais de uma máquina, e os códigos embaralhados de telefone para o limite de 3 contas</td><td>30 dias</td></tr>
           <tr><td>Ideias e problemas que você nos envia</td><td>Um ano</td></tr>
           <tr><td>Denúncias, sinalizações e decisões</td><td>Um ano depois de encerradas</td></tr>
+          <tr><td>Contagens de uso de “Ajudar a melhorar o After”</td><td>30 dias, apagadas automaticamente toda noite. Depois disso, só ficam totais por dia: números, sem nada sobre ninguém.</td></tr>
+          <tr><td>As semanas em que você escreveu numa conversa ou grupo</td><td>Até você apagar sua conta</td></tr>
           <tr><td>Os dados da sua conta</td><td>Até você apagar sua conta</td></tr>
           <tr><td>Seu e-mail na lista “quero saber quando abrir”</td><td>Pelo tempo necessário para avisar quando o After abrir. Você pode pedir a exclusão a qualquer momento.</td></tr>
           <tr><td>O código embaralhado do telefone e o e-mail de uma conta banida</td><td>Enquanto durar o banimento, para a pessoa não conseguir criar outra conta</td></tr>

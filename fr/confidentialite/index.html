@@ -203,7 +203,7 @@
         <h2>En bref</h2>
         <ul>
           <li><strong>Aucune IA</strong> ne lit vos conversations ni n’apprend de ce que vous partagez.</li>
-          <li><strong>Pas de pistage, et nous ne vendons jamais vos données.</strong></li>
+          <li><strong>Pas de pistage, et nous ne vendons jamais vos données.</strong> De simples comptages d’utilisation, seulement si vous activez « Aider à améliorer After ».</li>
           <li>Vos <strong>souvenirs sont privés</strong>. Vous seul les voyez, sauf si vous en partagez un.</li>
           <li><strong>Les messages des groupes sont supprimés</strong> 15 minutes après chaque rencontre.</li>
           <li>Nous <strong>ne conservons jamais votre numéro de mobile</strong>, seulement un code brouillé créé à partir de lui.</li>
@@ -238,6 +238,9 @@
         <li><strong>Sécurité :</strong> les signalements, avec les messages concernés ; les conversations signalées avec « Je m’inquiète pour cette personne » ; les personnes que vous avez masquées ; les exclusions et bannissements d’un groupe ; et nos décisions, avertissements, suspensions et recours.</li>
         <li><strong>Les idées et problèmes que vous nous envoyez</strong> depuis « Une idée ou un problème ? », notre réponse, et si vous avez accepté que nous vous répondions.</li>
         <li><strong>Bénévolat :</strong> si vous proposez votre aide, ce que vous avez écrit et notre décision.</li>
+        <li><strong>Revenir :</strong> quand vous écrivez dans une conversation ou un groupe, nous notons la semaine, avec votre compte, pour compter combien de personnes reviennent la semaine suivante. L’équipe ne voit que des totaux par semaine.</li>
+        <li><strong>« Cela vous a-t-il aidé à vous sentir compris ? »</strong> Votre réponse est gardée sans votre compte ni votre nom, elle ne peut donc pas être reliée à vous. Nous notons seulement, avec votre compte, quand la question vous a été posée, pour qu’elle ne revienne qu’une fois par semaine au plus.</li>
+        <li><strong>Aider à améliorer After (seulement si vous l’activez) :</strong> c’est désactivé tant que vous ne l’activez pas dans les Réglages. L’application compte alors quelques moments : une conversation commencée, un groupe rejoint ou non (avec une raison fixe, comme « groupe complet »), un exercice Calme commencé, terminé ou arrêté avant la fin, un son qui n’a pas pu jouer, et un plantage de l’application. Chaque comptage ne contient que le moment, le jour et un code aléatoire pour qu’un nouvel essai ne soit pas compté deux fois. Jamais votre compte, votre nom, les personnes avec qui vous parlez, vos groupes, vos souvenirs, vos messages ni rien de ce que vous tapez. Notre base de données vérifie avec votre compte que vous avez dit oui, mais ne garde pas qui a envoyé un comptage. Les comptages restent dans notre propre base de données (Supabase, Londres), pas chez une société d’analyse. L’équipe voit des totaux sur 7 ou 30 jours, arrondis à 5, et tout ce qui est en dessous de 5 s’affiche « moins de 5 ». Le désactiver arrête tout de suite.</li>
         <li><strong>After+ :</strong> si vous avez dit que vous aimeriez After+ quand il sera prêt.</li>
       </ul>
 
@@ -256,7 +259,7 @@
       <p>L’application garde quelques petites choses sur votre téléphone pour bien fonctionner : le fait que vous êtes connecté, les lignes d’écoute de quel pays afficher, l’onglet et l’espace où vous étiez en dernier, et vos rappels de groupe (créés par votre téléphone lui-même, aux heures des groupes que vous avez réservés). Elles ne quittent pas votre téléphone, à part le code aléatoire décrit plus haut.</p>
 
       <h3>Ce que nous ne collectons pas</h3>
-      <p>Pas de localisation, pas de contacts, pas d’identifiants publicitaires, pas d’outils d’analyse ou de pistage, pas de photos de vous. Le micro et vos photos ne sont utilisés que lorsque vous choisissez d’enregistrer un message vocal ou d’ajouter une photo.</p>
+      <p>Pas de localisation, pas de contacts, pas d’identifiants publicitaires, pas d’outils d’analyse ou de pistage externes, pas d’enregistrement ni de capture de votre écran, pas de photos de vous. Le micro et vos photos ne sont utilisés que lorsque vous choisissez d’enregistrer un message vocal ou d’ajouter une photo.</p>
 
       <h3>Informations sensibles</h3>
       <p>Le deuil touche à tout, alors ce que vous écrivez peut révéler des choses sur votre santé, vos convictions, vos relations ou votre famille. Nous traitons tout ce que vous partagez sur After comme sensible. Nous ne l’utilisons que pour faire fonctionner After pour vous et pour assurer la sécurité de chacun, et nous vous demandons votre consentement explicite pour cela lors de votre inscription. Vous pouvez le retirer à tout moment en supprimant votre compte.</p>
@@ -270,6 +273,8 @@
           <tr><td>Le code brouillé du téléphone, les adresses e-mail bannies, les signalements et les décisions</td><td>Notre intérêt légitime, et le vôtre, à garder After sûr et à empêcher le retour des personnes bannies.</td></tr>
           <tr><td>La lecture d’une conversation signalée</td><td>Notre intérêt légitime à protéger les personnes et nos obligations légales en tant que service en ligne, avec votre accord à ces règles lors de votre inscription.</td></tr>
           <tr><td>La conservation des décisions</td><td>Les obligations légales des services en ligne d’expliquer leurs décisions et de permettre des recours.</td></tr>
+          <tr><td>Les comptages d’utilisation de « Aider à améliorer After »</td><td>Votre consentement. Vous pouvez le désactiver dans les Réglages à tout moment.</td></tr>
+          <tr><td>Les comptages de retour par semaine et les réponses « compris »</td><td>Notre intérêt légitime à savoir si After aide les gens, uniquement avec des totaux.</td></tr>
         </tbody>
       </table>
       </div>
@@ -284,7 +289,7 @@
       <table>
         <thead><tr><th>Entreprise</th><th>Pour quoi</th><th>Où</th></tr></thead>
         <tbody>
-          <tr><td>Supabase</td><td>Notre base de données, la connexion, les e-mails de mot de passe, le stockage des fichiers de vos souvenirs et de petites fonctions serveur</td><td>Serveurs à Londres, Royaume-Uni</td></tr>
+          <tr><td>Supabase</td><td>Notre base de données, la connexion, les e-mails de mot de passe, le stockage des fichiers de vos souvenirs, de petites fonctions serveur et les comptages d’utilisation. Comme tout serveur, les leurs voient l’adresse internet (IP) de votre appareil quand l’application se connecte, et peuvent la garder peu de temps dans des journaux techniques. Nous ne l’ajoutons pas aux comptages d’utilisation.</td><td>Serveurs à Londres, Royaume-Uni</td></tr>
           <tr><td>Twilio</td><td>L’envoi du code à 6 chiffres sur votre téléphone (ils voient votre numéro pour l’envoyer)</td><td>États-Unis</td></tr>
           <tr><td>Sentry</td><td>Les rapports de plantage de l’application : l’erreur, le type de téléphone et la version de l’application, jamais vos messages ni ce que vous écrivez</td><td>Union européenne</td></tr>
           <tr><td>Cloudflare</td><td>La vérification rapide que vous êtes une personne (Turnstile), et la protection de ce site contre les attaques et les robots</td><td>Réseau mondial, société aux États-Unis</td></tr>
@@ -318,6 +323,8 @@
           <tr><td>Signes d’une machine, et codes de téléphone brouillés pour la limite de 3 comptes</td><td>30 jours</td></tr>
           <tr><td>Idées et problèmes que vous nous envoyez</td><td>Un an</td></tr>
           <tr><td>Signalements et décisions</td><td>Un an après leur clôture</td></tr>
+          <tr><td>Les comptages d’utilisation de « Aider à améliorer After »</td><td>30 jours, effacés automatiquement chaque nuit. Ensuite, seuls des totaux par jour sont gardés : des nombres, sans rien sur personne.</td></tr>
+          <tr><td>Les semaines où vous avez écrit dans une conversation ou un groupe</td><td>Jusqu’à la suppression de votre compte</td></tr>
           <tr><td>Les informations de votre compte</td><td>Jusqu’à la suppression de votre compte</td></tr>
           <tr><td>Votre e-mail sur la liste « Me prévenir au lancement »</td><td>Le temps nécessaire pour vous prévenir de l’ouverture d’After. Vous pouvez demander sa suppression à tout moment.</td></tr>
           <tr><td>Le code de téléphone brouillé et l’e-mail d’un compte banni</td><td>Tant que dure le bannissement, pour que la personne ne puisse pas se réinscrire</td></tr>

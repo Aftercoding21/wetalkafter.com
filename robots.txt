@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /try/
+
+Sitemap: https://wetalkafter.com/sitemap.xml

@@ -172,6 +172,10 @@
   .legal th, .legal td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
   .legal th { font-weight: 500; color: var(--muted); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
   .legal .table-scroll { overflow-x: auto; }
+  /* 2026-10-18: footer crisis lines and easier-to-tap links */
+  footer .crisis { line-height: 1.7; margin-bottom: 14px; }
+  footer a { display: inline-block; padding: 6px 0; }
+  @media (max-width: 720px) { footer p { line-height: 2.1; } footer a { padding: 10px 2px; } }
 </style>
 </head>
 <body>
@@ -179,7 +183,7 @@
   <div class="wrap">
     <a class="brand" href="/" aria-label="After, home"><img src="/images/wordmark.png" width="93" height="32" alt="After"></a>
     <nav aria-label="On this page">
-      <a class="join" href="/#join">Tell me when it opens</a>
+      <a class="join" href="/#join">Notify me at launch</a>
       <span class="langs"><strong lang="en" aria-current="true">EN</strong><span aria-hidden="true">·</span><a href="/pt/privacidade/" lang="pt-BR" hreflang="pt-BR" aria-label="Português">PT</a><span aria-hidden="true">·</span><a href="/fr/confidentialite/" lang="fr" hreflang="fr" aria-label="Français">FR</a></span>
     </nav>
   </div>
@@ -246,7 +250,7 @@
       </ul>
 
       <h3>If you ask us to tell you when After opens</h3>
-      <p>Your email address and the country you chose on wetalkafter.com. We use it for one thing: to let you know when After opens where you live. We don’t send promotional emails. You can ask us to delete it at any time.</p>
+      <p>Your email address and the country you chose on wetalkafter.com. We use it for one thing: to let you know when After opens where you live. We may also write to you if there’s something important you need to know about After or your information. We don’t send promotional emails. You can ask us to delete it at any time.</p>
 
       <h3>On your phone</h3>
       <p>The app keeps a few small things on your phone so it works smoothly: that you’re signed in, which country’s crisis lines to show, the tab and space you were last on, and your group reminders (made by your phone itself, at the times of the groups you booked). They don’t leave your phone, apart from the random phone code described above.</p>
@@ -354,6 +358,7 @@
 
 <footer>
   <div class="wrap">
+    <p class="crisis"><strong>In danger right now?</strong> Call <span class="num">999</span> (UK) or <span class="num">112</span> (Ireland).<br><strong>Need to talk to someone?</strong> Samaritans, <span class="num">116 123</span>, free, day and night, in the UK and Ireland. <a href="/support/">Other countries</a></p>
     <p><strong>After.</strong> We talk after. · <a href="/">Home</a> · <a href="/story/">Our story</a> · <a href="/safety/">Safety</a> · <a href="/terms/">Terms</a> · <a href="https://www.instagram.com/wetalkafter/" rel="me">Instagram</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>

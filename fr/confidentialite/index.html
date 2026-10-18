@@ -172,6 +172,10 @@
   .legal th, .legal td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
   .legal th { font-weight: 500; color: var(--muted); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
   .legal .table-scroll { overflow-x: auto; }
+  /* 2026-10-18: footer crisis lines and easier-to-tap links */
+  footer .crisis { line-height: 1.7; margin-bottom: 14px; }
+  footer a { display: inline-block; padding: 6px 0; }
+  @media (max-width: 720px) { footer p { line-height: 2.1; } footer a { padding: 10px 2px; } }
 </style>
 </head>
 <body>
@@ -179,7 +183,7 @@
   <div class="wrap">
     <a class="brand" href="/fr/" aria-label="After, accueil"><img src="/images/wordmark.png" width="93" height="32" alt="After"></a>
     <nav aria-label="Sur cette page">
-      <a class="join" href="/fr/#join">Prévenez-moi à l’ouverture</a>
+      <a class="join" href="/fr/#join">Me prévenir au lancement</a>
       <span class="langs"><a href="/privacy/" lang="en" hreflang="en" aria-label="English">EN</a><span aria-hidden="true">·</span><a href="/pt/privacidade/" lang="pt-BR" hreflang="pt-BR" aria-label="Português">PT</a><span aria-hidden="true">·</span><strong lang="fr" aria-current="true">FR</strong></span>
     </nav>
   </div>
@@ -246,7 +250,7 @@
       </ul>
 
       <h3>Si vous demandez à être prévenu de l’ouverture d’After</h3>
-      <p>Votre adresse e-mail et le pays que vous avez choisi sur wetalkafter.com. Nous les utilisons pour une seule chose : vous prévenir lorsque After ouvrira là où vous vivez. Nous n’envoyons pas d’e-mails publicitaires. Vous pouvez demander la suppression de votre adresse à tout moment.</p>
+      <p>Votre adresse e-mail et le pays que vous avez choisi sur wetalkafter.com. Nous les utilisons pour une seule chose : vous prévenir lorsque After ouvrira là où vous vivez. Nous pourrons aussi vous écrire si vous devez être informé de quelque chose d’important concernant After ou vos informations. Nous n’envoyons pas d’e-mails publicitaires. Vous pouvez demander la suppression de votre adresse à tout moment.</p>
 
       <h3>Sur votre téléphone</h3>
       <p>L’application garde quelques petites choses sur votre téléphone pour bien fonctionner : le fait que vous êtes connecté, les lignes d’écoute de quel pays afficher, l’onglet et l’espace où vous étiez en dernier, et vos rappels de groupe (créés par votre téléphone lui-même, aux heures des groupes que vous avez réservés). Elles ne quittent pas votre téléphone, à part le code aléatoire décrit plus haut.</p>
@@ -315,7 +319,7 @@
           <tr><td>Idées et problèmes que vous nous envoyez</td><td>Un an</td></tr>
           <tr><td>Signalements et décisions</td><td>Un an après leur clôture</td></tr>
           <tr><td>Les informations de votre compte</td><td>Jusqu’à la suppression de votre compte</td></tr>
-          <tr><td>Votre e-mail sur la liste « Prévenez-moi à l’ouverture »</td><td>Le temps nécessaire pour vous prévenir de l’ouverture d’After. Vous pouvez demander sa suppression à tout moment.</td></tr>
+          <tr><td>Votre e-mail sur la liste « Me prévenir au lancement »</td><td>Le temps nécessaire pour vous prévenir de l’ouverture d’After. Vous pouvez demander sa suppression à tout moment.</td></tr>
           <tr><td>Le code de téléphone brouillé et l’e-mail d’un compte banni</td><td>Tant que dure le bannissement, pour que la personne ne puisse pas se réinscrire</td></tr>
           <tr><td>Sauvegardes</td><td>Notre hébergeur conserve des sauvegardes jusqu’à <mark>[nombre]</mark> jours ; ensuite, les informations supprimées disparaissent aussi des sauvegardes</td></tr>
         </tbody>
@@ -354,6 +358,7 @@
 
 <footer>
   <div class="wrap">
+    <p class="crisis"><strong>En danger immédiat ?</strong> Appelez le <span class="num">15</span> (SAMU) ou le <span class="num">112</span>.<br><strong>Besoin de parler à quelqu’un ?</strong> Le <span class="num">3114</span>, gratuit, jour et nuit, en France. <a href="/fr/soutien/">Autres pays</a></p>
     <p><strong>After.</strong> On se parle après. · <a href="/fr/">Accueil</a> · <a href="/fr/histoire/">Notre histoire</a> · <a href="/fr/securite/">Sécurité</a> · <a href="/fr/conditions/">Conditions</a> · <a href="https://www.instagram.com/wetalkafter/" rel="me">Instagram</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>

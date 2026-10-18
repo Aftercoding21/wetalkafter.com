@@ -105,4 +105,25 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/termos/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/terms/"/>
   </url>
+  <url>
+    <loc>https://wetalkafter.com/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/support/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/soutien/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/apoio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/support/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/fr/soutien/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/support/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/soutien/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/apoio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/support/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/pt/apoio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/support/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/soutien/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/apoio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/support/"/>
+  </url>
 </urlset>

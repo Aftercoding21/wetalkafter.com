@@ -156,6 +156,31 @@
   .story .note { font: 400 15px/1.6 var(--sans); color: var(--muted); margin-bottom: 34px; }
   .story .help-box p { font: 400 17px/1.6 var(--sans); margin: 0 0 14px; }
   .story .sign { font-style: italic; color: var(--brown); margin-top: 30px; }
+  /* 2026-10-18: centred reading column, like a personal letter */
+  .story .wrap { max-width: 780px; padding: 0 40px; }
+  .story .wrap.narrow > *, .story p, .page.story h1, .page.story .lede { max-width: none; }
+  .page.story h1 { font-size: clamp(40px, 7vw, 70px); text-wrap: balance; }
+  .page.story .lede { font-size: 20px; line-height: 1.5; margin-bottom: 18px; }
+  .story .note { font-size: 15px; line-height: 1.6; padding: 12px 16px; border-left: 2px solid var(--peach); background: rgba(246, 243, 238, .6); border-radius: 0 10px 10px 0; margin-bottom: 44px; }
+  .story p { font-size: 20px; line-height: 1.75; margin-bottom: 20px; }
+  .story p.beat { margin: 48px 0; }
+  .story p.beat.last { font-size: clamp(26px, 3.4vw, 32px); line-height: 1.35; margin: 72px 0 36px; }
+  .story .sign { font-style: normal; margin: 0 0 64px; }
+  .story .sign-name { display: block; font: italic 400 32px/1.2 var(--serif); color: var(--brown); }
+  .story .sign-role { display: block; font: 400 14px/1.6 var(--sans); color: var(--muted); letter-spacing: .02em; }
+  .story .help-box { background: var(--paper); border: 1px solid rgba(47, 68, 54, .3); border-radius: 16px; padding: 32px 34px; margin-top: 0; }
+  .story .help-box h2 { font-size: 28px; line-height: 1.2; margin: 0 0 10px; }
+  .story .help-box p { font: 400 17px/1.6 var(--sans); margin: 0 0 22px; }
+  .story .help-box .button { margin: 0; }
+  @media (max-width: 720px) {
+    .story .wrap { padding: 0 24px; }
+    .story p { font-size: 18px; line-height: 1.72; }
+    .story .help-box { padding: 24px; }
+  }
+  /* 2026-10-18: footer crisis lines and easier-to-tap links */
+  footer .crisis { line-height: 1.7; margin-bottom: 14px; }
+  footer a { display: inline-block; padding: 6px 0; }
+  @media (max-width: 720px) { footer p { line-height: 2.1; } footer a { padding: 10px 2px; } }
 </style>
 </head>
 <body>
@@ -163,7 +188,7 @@
   <div class="wrap">
     <a class="brand" href="/pt/" aria-label="After, início"><img src="/images/wordmark.png" width="93" height="32" alt="After"></a>
     <nav aria-label="Nesta página">
-      <a class="join" href="/pt/#join">Quero saber quando abrir</a>
+      <a class="join" href="/pt/#join">Me avise no lançamento</a>
       <span class="langs"><a href="/story/" lang="en" hreflang="en" aria-label="English">EN</a><span aria-hidden="true">·</span><strong lang="pt-BR" aria-current="true">PT</strong><span aria-hidden="true">·</span><a href="/fr/histoire/" lang="fr" hreflang="fr" aria-label="Français">FR</a></span>
     </nav>
   </div>
@@ -243,14 +268,13 @@
       <p>Acredito que existam milhões de pessoas que sentem o mesmo por alguém, ou por alguma coisa, que perderam.</p>
       <p>E talvez, se conseguirmos nos encontrar, essa caminhada possa ser um pouco menos solitária.</p>
       <p>Foi por isso que criei o After.</p>
-      <p class="beat">Pessoas de verdade. Histórias de verdade. Um lugar onde sua voz tem espaço.</p>
-      <p class="sign">Sandra, fundadora do After</p>
+      <p class="beat last">Pessoas de verdade. Histórias de verdade. Um lugar onde sua voz tem espaço.</p>
+      <p class="sign"><span class="sign-name">Sandra</span><span class="sign-role">Fundadora do After</span></p>
 
       <div class="help-box">
-        <h2 style="font-size:26px;margin-bottom:10px">Vamos nos encontrar</h2>
-        <p>O After abre em breve: primeiro no Reino Unido e na Irlanda, depois na França e no Brasil. Deixe seu e-mail e escrevemos uma única vez, quando ele abrir onde você mora.</p>
-        <p><a class="button primary" href="/pt/#join">Quero saber quando abrir</a></p>
-        <p><strong>Se estiver pesado demais agora:</strong> no Brasil, CVV <span class="num">188</span>, ligação gratuita, a qualquer hora, ou chat em <a href="https://cvv.org.br">cvv.org.br</a>. Se uma vida estiver em perigo, ligue <span class="num">192</span> (SAMU).</p>
+        <h2>Vamos nos encontrar.</h2>
+        <p>O After chega em breve. Deixe seu e-mail e avisaremos quando a plataforma estiver disponível no seu país.</p>
+        <a class="button primary" href="/pt/#join">Me avise no lançamento</a>
       </div>
     </div>
   </section>
@@ -258,6 +282,7 @@
 
 <footer>
   <div class="wrap">
+    <p class="crisis"><strong>Em perigo agora?</strong> Ligue <span class="num">192</span> (SAMU).<br><strong>Precisa conversar com alguém?</strong> CVV, <span class="num">188</span>, ligação gratuita, a qualquer hora, ou chat em <a href="https://cvv.org.br">cvv.org.br</a>. <a href="/pt/apoio/">Outros países</a></p>
     <p><strong>After.</strong> A gente conversa depois. · <a href="/pt/">Início</a> · <a href="/pt/seguranca/">Segurança</a> · <a href="/pt/privacidade/">Privacidade</a> · <a href="/pt/termos/">Termos</a> · <a href="https://www.instagram.com/wetalkafter/" rel="me">Instagram</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>

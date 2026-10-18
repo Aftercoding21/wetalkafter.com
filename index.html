@@ -232,7 +232,7 @@
   .scr .menu .on { color: var(--forest); font-weight: 600; }
   .promise2 { padding: 0; background: #44574A; color: var(--cream); }
   .promise2 .grid { display: grid; grid-template-columns: 1fr 1.15fr; }
-  .promise2 .photo { background: url(/images/gull.jpg) center 55% / cover no-repeat; min-height: 560px; }
+  .promise2 .photo { background: url(/images/hands.jpg) center 42% / cover no-repeat; min-height: 560px; }
   .promise2 .text { padding: 72px 56px; }
   .promise2 h2 { color: var(--cream); }
   .promise2 .label { color: var(--peach); } .promise2 .rule { background: var(--peach); }
@@ -283,6 +283,41 @@
     .collage { height: 500px; margin-bottom: -24px; }
     .join2 { background-size: 420% auto; background-position: 85% 100%; }
   }
+  /* 2026-10-18: faces, Calm, promise rows, story extract */
+  .faces { width: 100%; max-width: 560px; margin-left: auto; }
+  .faces-line { font: 400 italic clamp(24px, 3vw, 30px)/1.3 var(--serif); color: var(--forest); margin: 0 0 22px; text-wrap: balance; }
+  .faces-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .faces figure { margin: 0; }
+  .faces img, .journeys img { display: block; width: 100%; height: auto; object-fit: cover; border-radius: 16px; }
+  .faces img { aspect-ratio: 2 / 3; }
+  .faces figcaption { margin-top: 12px; font-size: 15px; line-height: 1.45; color: var(--muted); }
+  .faces figcaption strong { display: block; font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .calm { background: var(--paper); }
+  .calm h2 em { font-style: italic; color: var(--brown); }
+  .journeys { list-style: none; padding: 0; margin: 34px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 760px; }
+  .journeys img { aspect-ratio: 3 / 4; }
+  .promise2 .rows { list-style: none; padding: 0; margin: 0 0 22px; }
+  .promise2 .rows li { display: grid; grid-template-columns: 26px 1fr; column-gap: 14px; padding: 14px 0; margin: 0; border-top: 1px solid rgba(216, 221, 213, .22); font-size: 15.5px; }
+  .promise2 .rows li::before { display: none; }
+  .promise2 .rows svg { width: 22px; height: 22px; color: var(--peach); margin-top: 2px; }
+  .promise2 .rows strong { display: block; color: #fff; font-weight: 500; margin-bottom: 2px; }
+  .how2 { overflow-x: clip; }
+  .teaser { background: var(--paper); }
+  .teaser blockquote { margin: 0; }
+  .teaser blockquote p { text-wrap: pretty; }
+  .teaser blockquote p { font: 400 clamp(22px, 3vw, 28px)/1.45 var(--serif); color: var(--forest); margin: 0 0 16px; max-width: 30em; }
+  .teaser .who { margin: 24px 0 28px; color: var(--muted); font-size: 14px; }
+  .teaser .who em { display: block; font: italic 400 26px/1.2 var(--serif); color: var(--brown); margin-bottom: 2px; }
+  @media (max-width: 860px) {
+    .faces { max-width: none; margin: 8px 14px 0; width: auto; }
+    .journeys { gap: 10px; margin-top: 26px; }
+    .journeys img { border-radius: 12px; }
+  }
+  @media (max-width: 420px) { .faces-grid { gap: 12px; } }
+  /* 2026-10-18: footer crisis lines and easier-to-tap links */
+  footer .crisis { line-height: 1.7; margin-bottom: 14px; }
+  footer a { display: inline-block; padding: 6px 0; }
+  @media (max-width: 720px) { footer p { line-height: 2.1; } footer a { padding: 10px 2px; } }
 </style>
 </head>
 <body>
@@ -293,10 +328,10 @@
     <nav aria-label="On this page">
       <a href="#how">How it works</a>
       <a href="#promise">Our promise</a>
-      <a href="#price">Price</a>
-      <a href="#questions">Questions</a>
       <a href="/story/">Our story</a>
-      <a class="join" href="#join">Tell me when it opens</a>
+      <a href="#price">Pricing</a>
+      <a href="#questions">Questions</a>
+      <a class="join" href="#join">Notify me at launch</a>
       <span class="langs"><strong lang="en" aria-current="true">EN</strong><span aria-hidden="true">·</span><a href="/pt/" lang="pt-BR" hreflang="pt-BR" aria-label="Português">PT</a><span aria-hidden="true">·</span><a href="/fr/" lang="fr" hreflang="fr" aria-label="Français">FR</a></span>
     </nav>
   </div>
@@ -311,9 +346,9 @@
     <div class="wrap">
       <img class="big-mark" src="/images/wordmark.png" width="655" height="226" alt="After">
       <h1>A kinder way <em>to feel less alone.</em></h1>
-      <p class="lede">A community of real people for anyone living with grief, loss or a big change in life.</p>
+      <p class="lede">Connect with real people who understand what you’re going through. Whether you’re grieving someone, going through a breakup, or living a life that has changed, find a place to talk, share, and feel understood.</p>
       <div class="buttons">
-        <a class="button primary" href="#join">Tell me when it opens</a>
+        <a class="button primary" href="#join">Notify me at launch</a>
         <a class="button outline" href="#how">How it works</a>
       </div>
       <div class="stores" role="group" aria-label="The After app">
@@ -339,9 +374,12 @@
         <h2>Real people. <em>Real stories.</em></h2>
         <p class="lede">Whatever you’re going through, from bereavement to a breakup, After is a place to feel understood.</p>
         <p class="lede">Connect with people who have experienced something similar, share your story in a small group, talk one-on-one, or hold on to the memories that matter most. There’s no right way to feel, and no need to face it all alone.</p>
-        <a class="button primary" href="#join">Tell me when it opens</a>
+        <a class="button primary" href="#join">Notify me at launch</a>
       </div>
-      <div class="collage" aria-hidden="true"><div class="sage s1"></div><div class="sage s2"></div><div class="sage s3"></div><div class="sage s4"></div><div class="ph c1"></div><div class="ph c2"></div><div class="ph c3"></div><div class="ph c4"></div><div class="ph c5"></div></div>
+      <div class="faces">
+        <p class="faces-line">You don’t have to explain everything to someone who understands.</p>
+        <div class="faces-grid"><figure><img src="/images/face-woman-sea.jpg" width="720" height="1080" alt="" loading="lazy"><figcaption><strong>Find your people</strong>Connect with others who have experienced a similar loss.</figcaption></figure><figure><img src="/images/face-man-bench.jpg" width="720" height="1080" alt="" loading="lazy"><figcaption><strong>Share at your pace</strong>Talk openly, listen, or simply be present.</figcaption></figure></div>
+      </div>
     </div>
   </section>
 
@@ -357,7 +395,7 @@
           <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 7 0 1 1 3.5 5.8L4 19.5l1.2-3.6A6.6 6.6 0 0 1 4 12z"/></svg></span><div><h3>Talk</h3><p>Sometimes, one conversation makes all the difference. If you connect with someone in a group and you both wish to stay in touch, you can continue talking privately.</p><p class="small">Nobody can message you unless you’ve both said yes.</p></div></li>
           <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 15l4.5-4 4 3.5 2.5-2 5 4"/><circle cx="15.5" cy="9" r="1.4"/></svg></span><div><h3>Remember</h3><p>Some memories are too precious to lose. Keep their stories alive through photos, words, voice recordings, letters, and the little things that remind you of them.</p><p class="small">Only you can see it, unless you choose to share one memory.</p></div></li>
         </ul>
-        <a class="button primary" href="#join">Tell me when it opens</a>
+        <a class="button primary" href="#join">Notify me at launch</a>
       </div>
       <div class="phones" role="img" aria-label="Two screens of the After app: Home and Groups.">
         <div class="phone p1" aria-hidden="true"><div class="scr">
@@ -365,8 +403,8 @@
           <div class="tile dark"><b>Your next group</b><span>Lost a parent · Thursday, 8pm</span></div>
           <div class="tile"><b>Can somebody talk now?</b><span>Ask people who are around</span></div>
           <div class="tile"><b>Remember</b><span>A private space for the one you miss</span></div>
-          <div class="tile"><b>Quiet room</b><span>Breathe, listen, slow down</span></div>
-          <div class="menu"><span class="on">Home</span><span>Groups</span><span>Talk</span><span>Quiet</span><span>Remember</span></div></div></div>
+          <div class="tile"><b>Calm</b><span>Breathe, listen, slow down</span></div>
+          <div class="menu"><span class="on">Home</span><span>Groups</span><span>Talk</span><span>Calm</span><span>Remember</span></div></div></div>
         <div class="phone p2" aria-hidden="true"><div class="scr">
           <p class="t">Groups</p>
           <div class="search">Search groups by loss</div>
@@ -376,8 +414,18 @@
           <div class="tile"><b>Lost a parent</b><span>Thursday, 8pm · 1 place left</span></div>
           <div class="tile"><b>A separation</b><span>Saturday, 11am · 3 places left</span></div>
           <div class="tile"><b>Lost a pet</b><span>Sunday, 6pm · 4 places left</span></div>
-          <div class="menu"><span>Home</span><span class="on">Groups</span><span>Talk</span><span>Quiet</span><span>Remember</span></div></div></div>
+          <div class="menu"><span>Home</span><span class="on">Groups</span><span>Talk</span><span>Calm</span><span>Remember</span></div></div></div>
       </div>
+    </div>
+  </section>
+
+  <section class="calm" id="calm">
+    <div class="wrap">
+      <p class="label">A moment of Calm</p>
+      <hr class="rule">
+      <h2>Calm. <em>A quiet place for the hard moments.</em></h2>
+      <p class="lede">Breathe, listen to a guided body scan, let the sea or the stars carry you for a while, or write what you can’t say out loud.</p>
+      <ul class="journeys"><li><img src="/images/calm-ocean.jpg" width="660" height="880" alt="Sunlight through deep blue water" loading="lazy"></li><li><img src="/images/calm-starlight.jpg" width="660" height="880" alt="A sky full of stars" loading="lazy"></li><li><img src="/images/calm-floating.jpg" width="660" height="880" alt="Floating above the clouds at sunset" loading="lazy"></li></ul>
     </div>
   </section>
 
@@ -391,22 +439,33 @@
       <div class="text">
         <p class="label">Our promise</p>
         <hr class="rule">
-        <h2>Real people. Real conversations. Your privacy matters.</h2>
-        <p class="big">After is built around genuine human connection. No AI companions, no automated replies pretending to be people. Just real conversations with others who understand what you’re going through.</p>
-        <ul>
-          <li><strong>Your identity stays private.</strong> Use a username, without a public profile photo. Your email address and phone number are never displayed to other members.</li>
-          <li><strong>Your conversations are personal.</strong> We don’t routinely read private messages. Content may be reviewed when it’s reported or flagged for safety, in accordance with our privacy and safety policies.</li>
-          <li><strong>Support resources are always within reach.</strong> Find crisis and emergency support information for your country. After is a peer-support community, not an emergency service.</li>
-          <li><strong>You’re free to leave.</strong> Delete your account directly in the app. Your personal data will be deleted in accordance with our privacy policy and applicable legal requirements.</li>
+        <h2>Real people. Real conversations.</h2>
+        <p class="big">A community built around genuine human connection.</p>
+        <ul class="rows">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="16.5" cy="9" r="2.6"/><path d="M15.5 14.2c2.4-.3 4.4 1.3 5 4.3"/></svg><div><strong>Human connection</strong>No AI companions or automated conversations pretending to be people.</div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><div><strong>Your privacy matters</strong>Use a pseudonym. Your personal contact details aren’t shown to other members.</div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><div><strong>Clear boundaries</strong>Conversations aren’t routinely read, but reported or flagged content may be reviewed for safety.</div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20V5a1 1 0 0 1 1-1h7v16"/><path d="M14 4l4 1v15"/><path d="M4 20h16"/><circle cx="11.5" cy="12" r=".6"/></svg><div><strong>Your choice, always</strong>Participate at your own pace, leave whenever you wish, and delete your account any time.</div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg><div><strong>Help when you need it</strong>Crisis lines for your country are one tap away. After is peer support, not an emergency service.</div></li>
         </ul>
         <p class="small">Like many small teams, we used AI tools to help design and build the app itself. That never involves anything you share.</p>
       </div>
     </div>
   </section>
 
+  <section class="teaser" id="story">
+    <div class="wrap narrow">
+      <p class="label">Our story</p>
+      <hr class="rule">
+      <blockquote><p>My little brother Charles died in an accident. He was only 21.</p><p>I created After because I wish something like it had existed when I lost Charles. And because, 23 years later, I still want to talk about my brother.</p></blockquote>
+      <p class="who"><em>Sandra</em>Founder of After</p>
+      <a class="button outline" href="/story/">Read my story</a>
+    </div>
+  </section>
+
   <section id="price">
     <div class="wrap">
-      <p class="label">Price</p>
+      <p class="label">Pricing</p>
       <hr class="rule">
       <h2>Free to connect. Optional to keep more.</h2>
       <p class="lede" style="margin-bottom:0">At After, finding support, sharing experiences, and connecting with others will always be free. After+ simply gives you more space to preserve the memories that matter.</p>
@@ -473,21 +532,15 @@
   <section id="join" class="join2">
     <div class="wrap narrow">
       <div class="join-box">
-        <p class="label">Tell me when it opens</p>
+        <p class="label">Be the first to know</p>
         <hr class="rule">
         <h2>We’ll be here soon.</h2>
-        <p>After is coming soon, starting in the UK and Ireland, followed by France and then Brazil. Leave us your email, and we’ll let you know when After becomes available in your country. Just one email, when it’s time. Nothing more.</p>
-        <ul class="three">
-          <li>Only real people, no AI</li>
-          <li>Private by default</li>
-          <li>Small, safe groups</li>
-        </ul>
+        <p>After is coming soon, starting in the UK and Ireland, followed by France and Brazil. Leave your email and we’ll notify you when After opens in your country. Just one email, when it’s time. Nothing more.</p>
         <form id="waitlist" novalidate>
-          <label class="field">Email
-            <input type="email" name="email" autocomplete="email" required placeholder="you@example.com">
+          <label class="field">Email address<input type="email" name="email" autocomplete="email" required placeholder="you@example.com">
           </label>
-          <label class="field">Where do you live?
-            <select name="country">
+          <label class="field">Country<select name="country" required>
+              <option value="" disabled selected>Select your country</option>
               <option value="GB">United Kingdom</option>
               <option value="IE">Ireland</option>
               <option value="FR">France</option>
@@ -496,12 +549,12 @@
             </select>
           </label>
           <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-          <label class="check"><input type="checkbox" name="consent" required> <span>Email me once when After opens in my country.</span></label>
+          <label class="check"><input type="checkbox" name="consent" required> <span>Send me one email when After launches in my country.</span></label>
           <div id="human"></div>
-          <button class="button primary" type="submit">Tell me when it opens</button>
+          <button class="button primary" type="submit">Notify me at launch</button>
           <p class="status" id="status" role="status" aria-live="polite"></p>
         </form>
-        <p class="fine">We’ll keep your email address to let you know when After launches. You can request the deletion of your email address at any time. Read our <a href="/privacy/">privacy policy</a>.</p>
+        <p class="fine">We keep your email to send your launch notification. You can request deletion at any time. See our <a href="/privacy/">privacy policy</a>.</p>
       </div>
     </div>
   </section>
@@ -509,7 +562,7 @@
 
 <footer>
   <div class="wrap">
-    <p><strong>If it’s too much right now:</strong> UK and Ireland, Samaritans <span class="num">116 123</span> · France <span class="num">3114</span> · free, any time. If a life is in danger, call <span class="num">999</span> (UK) or <span class="num">112</span> (Ireland and France).</p>
+    <p class="crisis"><strong>In danger right now?</strong> Call <span class="num">999</span> (UK) or <span class="num">112</span> (Ireland).<br><strong>Need to talk to someone?</strong> Samaritans, <span class="num">116 123</span>, free, day and night, in the UK and Ireland. <a href="/support/">Other countries</a></p>
     <p><strong>After.</strong> We talk after. · <a href="/story/">Our story</a> · <a href="/safety/">Safety</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="https://www.instagram.com/wetalkafter/" rel="me">Instagram</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>
@@ -529,7 +582,8 @@
     wrong: 'Something went wrong. Please try again in a moment.',
     email: 'Please check your email address.',
     tick: 'Please tick the box so we can email you.',
-    sending: 'Sending…'
+    sending: 'Sending…',
+    country: 'Please choose your country.'
   };
   var widget = null;
 
@@ -560,6 +614,7 @@
     var email = form.email.value.trim();
     status.className = 'status';
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { fail(T.email); form.email.focus(); return; }
+    if (!form.country.value) { fail(T.country); form.country.focus(); return; }
     if (!form.consent.checked) { fail(T.tick); return; }
     button.disabled = true; status.textContent = T.sending;
     // Cloudflare's quiet "I'm a person" check. It only shows a box if it is

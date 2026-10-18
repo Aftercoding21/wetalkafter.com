@@ -1,3 +1,3 @@
-commit: 0f5738545f64a7e1ecdee37608b13940f87a8c29
+commit: b724defe6512bebc0039e48ae43c819c141a4341
 branch: main
 supabase: connected

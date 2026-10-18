@@ -203,7 +203,7 @@
         <h2>In short</h2>
         <ul>
           <li><strong>No AI</strong> reads your conversations or learns from what you share.</li>
-          <li><strong>No tracking, and we never sell your data.</strong></li>
+          <li><strong>No tracking, and we never sell your data.</strong> Simple usage counts only if you switch on “Help improve After”.</li>
           <li>Your <strong>memories are private</strong>. Only you see them, unless you share one.</li>
           <li><strong>Group messages are deleted</strong> 15 minutes after each meeting ends.</li>
           <li>We <strong>never store your mobile number</strong>, only a scrambled code of it.</li>
@@ -238,6 +238,9 @@
         <li><strong>Safety:</strong> reports, with the messages they’re about; conversations flagged with “I’m worried about them”; people you’ve hidden; removals and bans from a group; and our decisions, warnings, suspensions and appeals.</li>
         <li><strong>Ideas and problems you send us</strong> from “An idea or a problem?”, our answer, and whether you said we may reply.</li>
         <li><strong>Volunteering:</strong> if you offer to help, what you wrote and our decision.</li>
+        <li><strong>Coming back:</strong> when you write in a chat or a group, we note the week, with your account, so we can count how many people come back the week after. The team only ever sees weekly totals.</li>
+        <li><strong>“Did this help you feel understood?”</strong> Your answer is kept without your account or name, so it can’t be linked to you. We only note, with your account, when you were last asked, so it’s at most once a week.</li>
+        <li><strong>Help improve After (only if you switch it on):</strong> it’s off unless you switch it on in Settings. Then the app counts a few moments: a chat started, a group joined or not (with a fixed reason, like “group full”), a Calm exercise started, finished or stopped before the end, a sound that couldn’t play, and the app crashing. Each count holds only the moment, the day and a random code so a retry isn’t counted twice. Never your account, your name, who you talk to, your groups, your memories, your messages or anything you type. Our database checks with your account that you said yes, but doesn’t store who sent a count. The counts stay in our own database (Supabase, London), not with an analytics company. The team sees totals for 7 or 30 days, rounded to 5, with anything under 5 shown as “fewer than 5”. Switching it off stops it straight away.</li>
         <li><strong>After+:</strong> whether you said you’d like After+ when it’s ready.</li>
       </ul>
 
@@ -256,7 +259,7 @@
       <p>The app keeps a few small things on your phone so it works smoothly: that you’re signed in, which country’s crisis lines to show, the tab and space you were last on, and your group reminders (made by your phone itself, at the times of the groups you booked). They don’t leave your phone, apart from the random phone code described above.</p>
 
       <h3>What we don’t collect</h3>
-      <p>No location, no contacts, no advertising IDs, no analytics or tracking tools, no photos of you. The microphone and your photos are only used when you choose to record a voice note or add a photo.</p>
+      <p>No location, no contacts, no advertising IDs, no outside analytics or tracking tools, no screen recordings or screenshots, no photos of you. The microphone and your photos are only used when you choose to record a voice note or add a photo.</p>
 
       <h3>Sensitive information</h3>
       <p>Grief touches everything, so what you write may reveal things about your health, beliefs, relationships or family. We treat everything you share in After as sensitive. We only use it to run After for you and to keep people safe, and we ask for your explicit consent to this when you sign up. You can withdraw it at any time by deleting your account.</p>
@@ -270,6 +273,8 @@
           <tr><td>The scrambled phone code, banned email addresses, reports and decisions</td><td>Our legitimate interest, and yours, in keeping After safe and keeping out people who have been banned.</td></tr>
           <tr><td>Reading a reported or flagged conversation</td><td>Our legitimate interest in keeping people safe and our legal duties as an online service, with your consent to these rules when you sign up.</td></tr>
           <tr><td>Keeping records of decisions</td><td>Legal duties on online services to explain decisions and allow appeals.</td></tr>
+          <tr><td>Usage counts from “Help improve After”</td><td>Your consent. Switch it off in Settings at any time.</td></tr>
+          <tr><td>Weekly return counts and “felt understood” answers</td><td>Our legitimate interest in knowing whether After helps people, using totals only.</td></tr>
         </tbody>
       </table>
       </div>
@@ -284,7 +289,7 @@
       <table>
         <thead><tr><th>Company</th><th>What for</th><th>Where</th></tr></thead>
         <tbody>
-          <tr><td>Supabase</td><td>Our database, sign-in, password emails, file storage for memories, and small server functions</td><td>Servers in London, UK</td></tr>
+          <tr><td>Supabase</td><td>Our database, sign-in, password emails, file storage for memories, small server functions, and the usage counts. Like any server, theirs see your device’s internet (IP) address when the app connects, and may keep it for a short time in technical logs. We don’t add it to the usage counts.</td><td>Servers in London, UK</td></tr>
           <tr><td>Twilio</td><td>Sending the 6-digit code to your phone (they see your number to send it)</td><td>United States</td></tr>
           <tr><td>Sentry</td><td>Crash reports from the app: the error and your phone’s type and app version, never your messages or anything you write</td><td>European Union</td></tr>
           <tr><td>Cloudflare</td><td>The quick human check (Turnstile), and protecting this website from attacks and bots</td><td>Worldwide network, company in the United States</td></tr>
@@ -318,6 +323,8 @@
           <tr><td>Signs of a machine, and the scrambled phone codes for the 3-accounts limit</td><td>30 days</td></tr>
           <tr><td>Ideas and problems you send us</td><td>One year</td></tr>
           <tr><td>Reports, flags and decisions</td><td>One year after they’re closed</td></tr>
+          <tr><td>Usage counts from “Help improve After”</td><td>30 days, deleted automatically every night. After that, only daily totals are kept: numbers, with nothing about anyone.</td></tr>
+          <tr><td>The weeks you wrote in a chat or group</td><td>Until you delete your account</td></tr>
           <tr><td>Your account details</td><td>Until you delete your account</td></tr>
           <tr><td>Your email on the “tell me when it opens” list</td><td>As long as we need it to tell you when After opens. You can ask us to delete it at any time.</td></tr>
           <tr><td>The scrambled phone code and email of a banned account</td><td>For as long as the ban lasts, so the person can’t sign up again</td></tr>

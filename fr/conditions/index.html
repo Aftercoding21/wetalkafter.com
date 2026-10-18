@@ -172,6 +172,10 @@
   .legal th, .legal td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
   .legal th { font-weight: 500; color: var(--muted); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
   .legal .table-scroll { overflow-x: auto; }
+  /* 2026-10-18: footer crisis lines and easier-to-tap links */
+  footer .crisis { line-height: 1.7; margin-bottom: 14px; }
+  footer a { display: inline-block; padding: 6px 0; }
+  @media (max-width: 720px) { footer p { line-height: 2.1; } footer a { padding: 10px 2px; } }
 </style>
 </head>
 <body>
@@ -179,7 +183,7 @@
   <div class="wrap">
     <a class="brand" href="/fr/" aria-label="After, accueil"><img src="/images/wordmark.png" width="93" height="32" alt="After"></a>
     <nav aria-label="Sur cette page">
-      <a class="join" href="/fr/#join">Prévenez-moi à l’ouverture</a>
+      <a class="join" href="/fr/#join">Me prévenir au lancement</a>
       <span class="langs"><a href="/terms/" lang="en" hreflang="en" aria-label="English">EN</a><span aria-hidden="true">·</span><a href="/pt/termos/" lang="pt-BR" hreflang="pt-BR" aria-label="Português">PT</a><span aria-hidden="true">·</span><strong lang="fr" aria-current="true">FR</strong></span>
     </nav>
   </div>
@@ -271,6 +275,7 @@
 
 <footer>
   <div class="wrap">
+    <p class="crisis"><strong>En danger immédiat ?</strong> Appelez le <span class="num">15</span> (SAMU) ou le <span class="num">112</span>.<br><strong>Besoin de parler à quelqu’un ?</strong> Le <span class="num">3114</span>, gratuit, jour et nuit, en France. <a href="/fr/soutien/">Autres pays</a></p>
     <p><strong>After.</strong> On se parle après. · <a href="/fr/">Accueil</a> · <a href="/fr/histoire/">Notre histoire</a> · <a href="/fr/securite/">Sécurité</a> · <a href="/fr/confidentialite/">Confidentialité</a> · <a href="https://www.instagram.com/wetalkafter/" rel="me">Instagram</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>

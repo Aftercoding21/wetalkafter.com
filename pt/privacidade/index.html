@@ -172,6 +172,10 @@
   .legal th, .legal td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
   .legal th { font-weight: 500; color: var(--muted); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
   .legal .table-scroll { overflow-x: auto; }
+  /* 2026-10-18: footer crisis lines and easier-to-tap links */
+  footer .crisis { line-height: 1.7; margin-bottom: 14px; }
+  footer a { display: inline-block; padding: 6px 0; }
+  @media (max-width: 720px) { footer p { line-height: 2.1; } footer a { padding: 10px 2px; } }
 </style>
 </head>
 <body>
@@ -179,7 +183,7 @@
   <div class="wrap">
     <a class="brand" href="/pt/" aria-label="After, início"><img src="/images/wordmark.png" width="93" height="32" alt="After"></a>
     <nav aria-label="Nesta página">
-      <a class="join" href="/pt/#join">Quero saber quando abrir</a>
+      <a class="join" href="/pt/#join">Me avise no lançamento</a>
       <span class="langs"><a href="/privacy/" lang="en" hreflang="en" aria-label="English">EN</a><span aria-hidden="true">·</span><strong lang="pt-BR" aria-current="true">PT</strong><span aria-hidden="true">·</span><a href="/fr/confidentialite/" lang="fr" hreflang="fr" aria-label="Français">FR</a></span>
     </nav>
   </div>
@@ -354,6 +358,7 @@
 
 <footer>
   <div class="wrap">
+    <p class="crisis"><strong>Em perigo agora?</strong> Ligue <span class="num">192</span> (SAMU).<br><strong>Precisa conversar com alguém?</strong> CVV, <span class="num">188</span>, ligação gratuita, a qualquer hora, ou chat em <a href="https://cvv.org.br">cvv.org.br</a>. <a href="/pt/apoio/">Outros países</a></p>
     <p><strong>After.</strong> A gente conversa depois. · <a href="/pt/">Início</a> · <a href="/pt/historia/">Nossa história</a> · <a href="/pt/seguranca/">Segurança</a> · <a href="/pt/termos/">Termos</a> · <a href="https://www.instagram.com/wetalkafter/" rel="me">Instagram</a> · <a href="mailto:hello@wetalkafter.com">hello@wetalkafter.com</a> · © 2026</p>
   </div>
 </footer>

@@ -126,4 +126,25 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/apoio/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/support/"/>
   </url>
+  <url>
+    <loc>https://wetalkafter.com/left-right-sounds/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/left-right-sounds/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/sons-bilateraux/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/sons-bilaterais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/left-right-sounds/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/fr/sons-bilateraux/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/left-right-sounds/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/sons-bilateraux/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/sons-bilaterais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/left-right-sounds/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/pt/sons-bilaterais/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/left-right-sounds/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/sons-bilateraux/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/sons-bilaterais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/left-right-sounds/"/>
+  </url>
 </urlset>

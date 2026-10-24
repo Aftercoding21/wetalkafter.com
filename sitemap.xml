@@ -168,4 +168,25 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/primeiro-natal-apos-uma-perda/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/first-christmas-after-a-loss/"/>
   </url>
+  <url>
+    <loc>https://wetalkafter.com/hard-days/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/hard-days/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/jours-difficiles/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/dias-dificeis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/hard-days/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/fr/jours-difficiles/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/hard-days/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/jours-difficiles/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/dias-dificeis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/hard-days/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/pt/dias-dificeis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/hard-days/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/jours-difficiles/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/dias-dificeis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/hard-days/"/>
+  </url>
 </urlset>

@@ -189,4 +189,25 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/dias-dificeis/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/hard-days/"/>
   </url>
+  <url>
+    <loc>https://wetalkafter.com/losing-a-brother-or-sister/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/losing-a-brother-or-sister/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/perte-d-un-frere-ou-d-une-soeur/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/perda-de-um-irmao-ou-irma/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/losing-a-brother-or-sister/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/fr/perte-d-un-frere-ou-d-une-soeur/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/losing-a-brother-or-sister/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/perte-d-un-frere-ou-d-une-soeur/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/perda-de-um-irmao-ou-irma/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/losing-a-brother-or-sister/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/pt/perda-de-um-irmao-ou-irma/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/losing-a-brother-or-sister/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/perte-d-un-frere-ou-d-une-soeur/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/perda-de-um-irmao-ou-irma/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/losing-a-brother-or-sister/"/>
+  </url>
 </urlset>

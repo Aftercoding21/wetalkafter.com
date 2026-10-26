@@ -231,4 +231,25 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/perda-de-um-filho/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/losing-a-child/"/>
   </url>
+  <url>
+    <loc>https://wetalkafter.com/losing-a-parent/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/losing-a-parent/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/perte-d-un-parent/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/perda-de-um-pai-ou-mae/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/losing-a-parent/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/fr/perte-d-un-parent/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/losing-a-parent/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/perte-d-un-parent/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/perda-de-um-pai-ou-mae/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/losing-a-parent/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/pt/perda-de-um-pai-ou-mae/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/losing-a-parent/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/perte-d-un-parent/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/perda-de-um-pai-ou-mae/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/losing-a-parent/"/>
+  </url>
 </urlset>

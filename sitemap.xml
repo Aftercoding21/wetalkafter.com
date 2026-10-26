@@ -273,4 +273,25 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/depois-de-um-termino/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/after-a-breakup/"/>
   </url>
+  <url>
+    <loc>https://wetalkafter.com/birthdays-and-anniversaries/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/birthdays-and-anniversaries/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/anniversaires-apres-un-deuil/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/aniversarios-e-datas-dificeis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/birthdays-and-anniversaries/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/fr/anniversaires-apres-un-deuil/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/birthdays-and-anniversaries/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/anniversaires-apres-un-deuil/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/aniversarios-e-datas-dificeis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/birthdays-and-anniversaries/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/pt/aniversarios-e-datas-dificeis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/birthdays-and-anniversaries/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/anniversaires-apres-un-deuil/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/aniversarios-e-datas-dificeis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/birthdays-and-anniversaries/"/>
+  </url>
 </urlset>

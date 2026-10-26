@@ -252,4 +252,25 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/perda-de-um-pai-ou-mae/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/losing-a-parent/"/>
   </url>
+  <url>
+    <loc>https://wetalkafter.com/after-a-breakup/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/after-a-breakup/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/apres-une-rupture/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/depois-de-um-termino/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/after-a-breakup/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/fr/apres-une-rupture/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/after-a-breakup/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/apres-une-rupture/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/depois-de-um-termino/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/after-a-breakup/"/>
+  </url>
+  <url>
+    <loc>https://wetalkafter.com/pt/depois-de-um-termino/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wetalkafter.com/after-a-breakup/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wetalkafter.com/fr/apres-une-rupture/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://wetalkafter.com/pt/depois-de-um-termino/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wetalkafter.com/after-a-breakup/"/>
+  </url>
 </urlset>

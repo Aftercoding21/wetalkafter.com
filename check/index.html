@@ -8,16 +8,47 @@
 <title>After · quick check</title>
 <style>
   html, body { margin: 0; background: transparent; }
-  body { display: flex; justify-content: center; align-items: flex-start; padding-top: 4px; }
+  body { display: flex; flex-direction: column; align-items: center; padding-top: 4px;
+         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #2A2B28; }
+  #done { display: none; text-align: center; padding: 24px 16px; }
+  #done p { margin: 0 0 16px; font-size: 17px; }
+  #back { display: inline-block; background: #2F4436; color: #fff; text-decoration: none;
+          font-size: 18px; padding: 16px 32px; border-radius: 999px; }
 </style>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=go&render=explicit" async defer></script>
 </head>
 <body>
 <div id="w"></div>
+<div id="done"><p id="msg"></p><a id="back" href="#"></a></div>
 <script>
   // The After app opens this page in a small web view for the "I'm a person"
   // check, and gets the Cloudflare token back. Nothing else happens here.
   var p = new URLSearchParams(location.search);
+  // Words for the "back to the app" step, in the app's language.
+  var words = {
+    en: { ok: 'Thank you, that’s done.', fail: 'The check didn’t go through.', go: 'Continue to After', back: 'Back to After' },
+    fr: { ok: 'Merci, c’est fait.', fail: 'La vérification n’a pas abouti.', go: 'Continuer vers After', back: 'Retour à After' },
+    pt: { ok: 'Obrigado, está feito.', fail: 'A verificação não funcionou.', go: 'Continuar para o After', back: 'Voltar ao After' }
+  };
+  var w = words[(p.get('lang') || 'en').slice(0, 2)] || words.en;
+  // Go back to the app. iPhone follows the link by itself. Android's Chrome
+  // only follows it after a tap, so a big button is shown as well.
+  function backToApp(link, ok) {
+    document.getElementById('msg').textContent = ok ? w.ok : w.fail;
+    var a = document.getElementById('back');
+    a.textContent = ok ? w.go : w.back;
+    a.href = link;
+    document.getElementById('w').style.display = 'none';
+    document.getElementById('done').style.display = 'block';
+    location.href = link;
+  }
+  function appLink() {
+    var b = p.get('return');
+    return b && /^(after|exp|exps):\/\//.test(b) ? b : null;
+  }
+  function withParam(link, kv) {
+    return link + (link.indexOf('?') < 0 ? '?' : '&') + kv;
+  }
   function send(m) {
     var s = JSON.stringify(m);
     if (window.ReactNativeWebView) window.ReactNativeWebView.postMessage(s);
@@ -31,14 +62,14 @@
       callback: function (t) {
         // Opened by the app in a Safari sheet: hand the token back through the
         // app's own link. Only After's own app links are accepted.
-        var back = p.get('return');
-        if (back && /^(after|exp|exps):\/\//.test(back)) {
-          location.href = back + (back.indexOf('?') < 0 ? '?' : '&') + 'token=' + encodeURIComponent(t);
+        var back = appLink();
+        if (back) {
+          backToApp(withParam(back, 'token=' + encodeURIComponent(t)), true);
         } else {
           send({ token: t });
         }
       },
-      'error-callback': function () { var b = p.get('return'); if (b && /^(after|exp|exps):\/\//.test(b)) location.href = b + (b.indexOf('?') < 0 ? '?' : '&') + 'error=1'; else send({ error: true }); },
+      'error-callback': function () { var b = appLink(); if (b) backToApp(withParam(b, 'error=1'), false); else send({ error: true }); },
       'expired-callback': function () { send({ error: true }); },
       'timeout-callback': function () { send({ error: true }); }
     });

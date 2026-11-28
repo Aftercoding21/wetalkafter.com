@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Get the After app</title>
+<meta name="description" content="After is a free app where people who are grieving talk to others who have lived a similar loss. No AI, only people.">
+<meta property="og:title" content="Get the After app">
+<meta property="og:description" content="A free app where people who are grieving talk to others who understand. No AI, only people.">
+<meta property="og:image" content="https://wetalkafter.com/og.png">
+<meta property="og:url" content="https://wetalkafter.com/download/">
+<meta name="theme-color" content="#ECE7DF">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>
+  // Smart download link: iPhone/iPad -> App Store, Android -> Google Play, anything else -> /try/.
+  (function () {
+    var ua = navigator.userAgent || "";
+    var iPadOS = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1; // iPads report as a Mac
+    var url = "/try/";
+    if (/iPhone|iPad|iPod/.test(ua) || iPadOS) url = "https://apps.apple.com/app/id6827635162";
+    else if (/Android/i.test(ua)) url = "https://play.google.com/store/apps/details?id=com.aftercoding21.after";
+    window.location.replace(url);
+  })();
+</script>
+<style>
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: #ECE7DF; color: #2A2B28; font: 400 17px/1.6 "DM Sans", -apple-system, system-ui, sans-serif;
+    padding: 24px 16px; box-sizing: border-box; text-align: center; }
+  a { color: #2F4436; }
+</style>
+</head>
+<body>
+  <p>Opening the store… If nothing happens, <a href="https://apps.apple.com/app/id6827635162">App Store</a> · <a href="https://play.google.com/store/apps/details?id=com.aftercoding21.after">Google Play</a> · <a href="/try/">More options</a></p>
+</body>
+</html>
